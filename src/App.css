@@ -1,0 +1,1012 @@
+/*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */
+/* Document
+       ========================================================================== */
+/**
+     * 1. Correct the line height in all browsers.
+     * 2. Prevent adjustments of font size after orientation changes in
+     *    IE on Windows Phone and in iOS.
+     */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/* Sections
+       ========================================================================== */
+/**
+     * Remove the margin in all browsers (opinionated).
+     */
+body {
+  margin: 0; }
+
+/**
+     * Add the correct display in IE 9-.
+     */
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block; }
+
+/**
+     * Correct the font size and margin on `h1` elements within `section` and
+     * `article` contexts in Chrome, Firefox, and Safari.
+     */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/* Grouping content
+       ========================================================================== */
+/**
+     * Add the correct display in IE 9-.
+     */
+figcaption,
+figure {
+  display: block; }
+
+/**
+     * Add the correct margin in IE 8.
+     */
+figure {
+  margin: 1em 40px; }
+
+/**
+     * 1. Add the correct box sizing in Firefox.
+     * 2. Show the overflow in Edge and IE.
+     */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */ }
+
+/**
+     * Add the correct display in IE.
+     */
+main {
+  display: block; }
+
+/**
+     * 1. Correct the inheritance and scaling of font size in all browsers.
+     * 2. Correct the odd `em` font sizing in all browsers.
+     */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/* Links
+       ========================================================================== */
+/**
+     * 1. Remove the gray background on active links in IE 10.
+     * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+     */
+a {
+  background-color: transparent;
+  /* 1 */
+  -webkit-text-decoration-skip: objects;
+  /* 2 */ }
+
+/* Text-level semantics
+       ========================================================================== */
+/**
+     * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
+     * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+     */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */ }
+
+/**
+     * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+     */
+b,
+strong {
+  font-weight: inherit; }
+
+/**
+     * Add the correct font weight in Chrome, Edge, and Safari.
+     */
+b,
+strong {
+  font-weight: bolder; }
+
+/**
+     * 1. Correct the inheritance and scaling of font size in all browsers.
+     * 2. Correct the odd `em` font sizing in all browsers.
+     */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/**
+     * Add the correct font style in Android 4.3-.
+     */
+dfn {
+  font-style: italic; }
+
+/**
+     * Add the correct background and color in IE 9-.
+     */
+mark {
+  background-color: #ff0;
+  color: #000; }
+
+/**
+     * Add the correct font size in all browsers.
+     */
+small {
+  font-size: 80%; }
+
+/**
+     * Prevent `sub` and `sup` elements from affecting the line height in
+     * all browsers.
+     */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sub {
+  bottom: -0.25em; }
+
+sup {
+  top: -0.5em; }
+
+/* Embedded content
+       ========================================================================== */
+/**
+     * Add the correct display in IE 9-.
+     */
+audio,
+video {
+  display: inline-block; }
+
+/**
+     * Add the correct display in iOS 4-7.
+     */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+     * Remove the border on images inside links in IE 10-.
+     */
+img {
+  border-style: none; }
+
+/**
+     * Hide the overflow in IE.
+     */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Forms
+       ========================================================================== */
+/**
+     * 1. Change the font styles in all browsers (opinionated).
+     * 2. Remove the margin in Firefox and Safari.
+     */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: sans-serif;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */ }
+
+/**
+     * Show the overflow in IE.
+     */
+button {
+  overflow: visible; }
+
+/**
+     * Remove the inheritance of text transform in Edge, Firefox, and IE.
+     * 1. Remove the inheritance of text transform in Firefox.
+     */
+button,
+select {
+  /* 1 */
+  text-transform: none; }
+
+/**
+     * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+     *    controls in Android 4.
+     * 2. Correct the inability to style clickable types in iOS and Safari.
+     */
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */ }
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  /**
+       * Remove the inner border and padding in Firefox.
+       */
+  /**
+       * Restore the focus styles unset by the previous rule.
+       */ }
+  button::-moz-focus-inner,
+  [type="button"]::-moz-focus-inner,
+  [type="reset"]::-moz-focus-inner,
+  [type="submit"]::-moz-focus-inner {
+    border-style: none;
+    padding: 0; }
+  button:-moz-focusring,
+  [type="button"]:-moz-focusring,
+  [type="reset"]:-moz-focusring,
+  [type="submit"]:-moz-focusring {
+    outline: 1px dotted ButtonText; }
+
+/**
+     * Show the overflow in Edge.
+     */
+input {
+  overflow: visible; }
+
+/**
+     * 1. Add the correct box sizing in IE 10-.
+     * 2. Remove the padding in IE 10-.
+     */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+     * Correct the cursor style of increment and decrement buttons in Chrome.
+     */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+     * 1. Correct the odd appearance in Chrome and Safari.
+     * 2. Correct the outline style in Safari.
+     */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+  /**
+       * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+       */ }
+  [type="search"]::-webkit-search-cancel-button, [type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none; }
+
+/**
+     * 1. Correct the inability to style clickable types in iOS and Safari.
+     * 2. Change font properties to `inherit` in Safari.
+     */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */ }
+
+/**
+     * Correct the padding in Firefox.
+     */
+fieldset {
+  padding: 0.35em 0.75em 0.625em; }
+
+/**
+     * 1. Correct the text wrapping in Edge and IE.
+     * 2. Correct the color inheritance from `fieldset` elements in IE.
+     * 3. Remove the padding so developers are not caught out when they zero out
+     *    `fieldset` elements in all browsers.
+     */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  color: inherit;
+  /* 2 */
+  white-space: normal;
+  /* 1 */ }
+
+/**
+     * 1. Add the correct display in IE 9-.
+     * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+     */
+progress {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */ }
+
+/**
+     * Remove the default vertical scrollbar in IE.
+     */
+textarea {
+  overflow: auto; }
+
+/* Interactive
+       ========================================================================== */
+/*
+     * Add the correct display in Edge, IE, and Firefox.
+     */
+details {
+  display: block; }
+
+/*
+     * Add the correct display in all browsers.
+     */
+summary {
+  display: list-item; }
+
+/*
+     * Add the correct display in IE 9-.
+     */
+menu {
+  display: block; }
+
+/* Scripting
+       ========================================================================== */
+/**
+     * Add the correct display in IE 9-.
+     */
+canvas {
+  display: inline-block; }
+
+/**
+     * Add the correct display in IE.
+     */
+template {
+  display: none; }
+
+/* Hidden
+       ========================================================================== */
+/**
+     * Add the correct display in IE 10-.
+     */
+[hidden] {
+  display: none; }
+
+/* BASIC STYLES
+ * ------------------------------------------------ */
+html {
+  font-size: 62.5%; }
+
+body {
+  background: #fff;
+  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: #222;
+  margin: 0 auto; }
+
+/* SPACING
+ * ------------------------------------------------ */
+button,
+.button {
+  margin-bottom: 1rem; }
+
+input,
+textarea,
+select,
+fieldset {
+  margin-bottom: 1.5rem; }
+
+pre,
+blockquote,
+dl,
+figure,
+table,
+p,
+ul,
+ol,
+form {
+  margin-bottom: 2.5rem; }
+
+/* TYPOGRAPHY
+ * ------------------------------------------------ */
+h1, h2, h3, h4, h5, h6 {
+  color: #222;
+  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  margin-top: 0;
+  margin-bottom: 2rem; }
+
+h1 {
+  font-size: 4rem;
+  line-height: 1.2;
+  letter-spacing: -0.1rem; }
+
+h2 {
+  font-size: 3.6rem;
+  line-height: 1.25;
+  letter-spacing: -0.1rem; }
+
+h3 {
+  font-size: 3rem;
+  line-height: 1.3;
+  letter-spacing: -0.1rem; }
+
+h4 {
+  font-size: 2.4rem;
+  line-height: 1.35;
+  letter-spacing: -0.08rem; }
+
+h5 {
+  font-size: 1.8rem;
+  line-height: 1.5;
+  letter-spacing: -0.05rem; }
+
+h6 {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  letter-spacing: 0; }
+
+/* Larger than phablet */
+@media (min-width: 550px) {
+  h1 {
+    font-size: 5rem; }
+  h2 {
+    font-size: 4.2rem; }
+  h3 {
+    font-size: 3.6rem; }
+  h4 {
+    font-size: 3rem; }
+  h5 {
+    font-size: 2.4rem; }
+  h6 {
+    font-size: 1.5rem; } }
+
+p {
+  margin-top: 0; }
+
+/* BUTTONS
+ * ------------------------------------------------ */
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  display: inline-block;
+  height: 38px;
+  padding: 0 3rem;
+  color: #555;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 38px;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  cursor: pointer;
+  box-sizing: border-box; }
+  .button:hover, .button:focus,
+  button:hover,
+  button:focus,
+  input[type="submit"]:hover,
+  input[type="submit"]:focus,
+  input[type="reset"]:hover,
+  input[type="reset"]:focus,
+  input[type="button"]:hover,
+  input[type="button"]:focus {
+    color: #333;
+    border-color: #888;
+    outline: 0; }
+  .button.button-primary,
+  button.button-primary,
+  input[type="submit"].button-primary,
+  input[type="reset"].button-primary,
+  input[type="button"].button-primary {
+    color: #FFF;
+    background-color: #33C3F0;
+    border-color: #33C3F0; }
+    .button.button-primary:hover, .button.button-primary:focus,
+    button.button-primary:hover,
+    button.button-primary:focus,
+    input[type="submit"].button-primary:hover,
+    input[type="submit"].button-primary:focus,
+    input[type="reset"].button-primary:hover,
+    input[type="reset"].button-primary:focus,
+    input[type="button"].button-primary:hover,
+    input[type="button"].button-primary:focus {
+      color: #FFF;
+      background-color: #1EAEDB;
+      border-color: #1EAEDB; }
+
+.button:visited {
+  color: #555; }
+
+/* Fix for odd Mozilla border & padding issues */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/* CODE
+ * ------------------------------------------------ */
+code {
+  padding: 0.2rem 0.5rem;
+  margin: 0 0.2rem;
+  font-size: 90%;
+  white-space: nowrap;
+  background: #F1F1F1;
+  border: 1px solid #E1E1E1;
+  border-radius: 4px; }
+
+pre > code {
+  display: block;
+  padding: 1rem 1.5rem;
+  white-space: pre; }
+
+/* MISC
+ * ------------------------------------------------ */
+hr {
+  margin-top: 3rem;
+  margin-bottom: 3.5rem;
+  border-width: 0;
+  border-top: 1px solid #E1E1E1; }
+
+/* LINKS
+ * ------------------------------------------------ */
+a, a:visited {
+  color: #1EAEDB;
+  text-decoration: underline; }
+
+a:hover, a:focus, a:active {
+  color: #0FA0CE; }
+
+/* LISTS
+ * ------------------------------------------------ */
+ul {
+  list-style: circle inside; }
+
+ol {
+  list-style: decimal inside; }
+
+ol, ul {
+  padding-left: 0;
+  margin-top: 0; }
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin: 1.5rem 0 1.5rem 3rem;
+  font-size: 90%; }
+
+li {
+  margin-bottom: 1rem; }
+
+/* FORMS
+ * ------------------------------------------------ */
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea,
+select {
+  height: 38px;
+  padding: 6px 10px;
+  /* The 6px vertically centers text on FF, ignored by Webkit */
+  background-color: #fff;
+  border: 1px solid #D1D1D1;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box; }
+
+/* Removes awkward default styles on some inputs for iOS */
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; }
+
+textarea {
+  min-height: 65px;
+  padding-top: 6px;
+  padding-bottom: 6px; }
+
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  border: 1px solid #33C3F0;
+  outline: 0; }
+
+label,
+legend {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600; }
+
+fieldset {
+  padding: 0;
+  border-width: 0; }
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline; }
+
+label > .label-body {
+  display: inline-block;
+  margin-left: 0.5rem;
+  font-weight: normal; }
+
+/* TABLES
+ * ------------------------------------------------ */
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #E1E1E1; }
+  th:first-child,
+  td:first-child {
+    padding-left: 0; }
+  th:last-child,
+  td:last-child {
+    padding-right: 0; }
+
+/* UTILITIES
+ * ------------------------------------------------ */
+.u-full-width {
+  width: 100%;
+  box-sizing: border-box; }
+
+.u-max-full-width {
+  max-width: 100%;
+  box-sizing: border-box; }
+
+.u-pull-right {
+  float: right; }
+
+.u-pull-left {
+  float: left; }
+
+/* IMAGES
+ * ------------------------------------------------ */
+img.scale-with-grid {
+  max-width: 100%;
+  height: auto; }
+
+/* BASE GRID
+ * ------------------------------------------------ */
+.container, .App {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  box-sizing: border-box; }
+
+.column, .SelectedTaskList, .AvailableTaskList,
+.columns,
+div.task .code,
+div.task .desc,
+div.task .day {
+  width: 100%;
+  float: left;
+  box-sizing: border-box; }
+
+.row, .TaskSelector, div.task {
+  margin-bottom: 2rem; }
+
+/* For devices larger than 400px */
+@media (min-width: 400px) {
+  .container, .App {
+    width: 85%;
+    padding: 0; } }
+
+/* For devices larger than 550px */
+@media (min-width: 550px) {
+  /* Overrides */
+  .container, .App {
+    width: 80%; }
+  .column, .SelectedTaskList, .AvailableTaskList,
+  .columns,
+  div.task .code,
+  div.task .desc,
+  div.task .day {
+    margin-left: 4%; }
+    .column:first-child:not([class^="offset"]), .SelectedTaskList:first-child:not([class^="offset"]), .AvailableTaskList:first-child:not([class^="offset"]),
+    .columns:first-child:not([class^="offset"]),
+    div.task .code:first-child:not([class^="offset"]),
+    div.task .desc:first-child:not([class^="offset"]),
+    div.task .day:first-child:not([class^="offset"]) {
+      margin-left: 0; }
+  .one.column, .one.SelectedTaskList, .one.AvailableTaskList,
+  .one.columns,
+  div.task .one.code,
+  div.task .one.desc,
+  div.task .one.day {
+    width: 4.66667%; }
+  .two.columns, div.task .code, div.task .two.desc, div.task .day {
+    width: 13.33333%; }
+  .three.columns, div.task .three.code, div.task .three.desc, div.task .three.day {
+    width: 22%; }
+  .four.columns, div.task .four.code, div.task .four.desc, div.task .four.day {
+    width: 30.66667%; }
+  .five.columns, div.task .five.code, div.task .five.desc, div.task .five.day {
+    width: 39.33333%; }
+  .six.columns, div.task .six.code, div.task .six.desc, div.task .six.day {
+    width: 48%; }
+  .seven.columns, div.task .seven.code, div.task .seven.desc, div.task .seven.day {
+    width: 56.66667%; }
+  .eight.columns, div.task .eight.code, div.task .desc, div.task .eight.day {
+    width: 65.33333%; }
+  .nine.columns, div.task .nine.code, div.task .nine.desc, div.task .nine.day {
+    width: 74%; }
+  .ten.columns, div.task .ten.code, div.task .ten.desc, div.task .ten.day {
+    width: 82.66667%; }
+  .eleven.columns, div.task .eleven.code, div.task .eleven.desc, div.task .eleven.day {
+    width: 91.33333%; }
+  .twelve.columns, div.task .twelve.code, div.task .twelve.desc, div.task .twelve.day {
+    width: 100%;
+    margin-left: 0; }
+  .one-third.column, .one-third.SelectedTaskList, .AvailableTaskList,
+  .one-third.columns,
+  .columns.AvailableTaskList,
+  div.task .AvailableTaskList.code,
+  div.task .AvailableTaskList.desc,
+  div.task .AvailableTaskList.day,
+  div.task .one-third.code,
+  div.task .one-third.desc,
+  div.task .one-third.day {
+    width: 30.66667%; }
+  .two-thirds.column, .SelectedTaskList, .two-thirds.AvailableTaskList,
+  .two-thirds.columns,
+  .columns.SelectedTaskList,
+  div.task .SelectedTaskList.code,
+  div.task .SelectedTaskList.desc,
+  div.task .SelectedTaskList.day,
+  div.task .two-thirds.code,
+  div.task .two-thirds.desc,
+  div.task .two-thirds.day {
+    width: 63.33333%; }
+  .one-half.column, .one-half.SelectedTaskList, .one-half.AvailableTaskList,
+  .one-half.columns,
+  div.task .one-half.code,
+  div.task .one-half.desc,
+  div.task .one-half.day {
+    width: 48%; }
+  .full-width.column, .full-width.SelectedTaskList, .full-width.AvailableTaskList,
+  .full-width.columns,
+  div.task .full-width.code,
+  div.task .full-width.desc,
+  div.task .full-width.day {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0; }
+  .offset-by-one {
+    margin-left: 8.66667%; }
+  .offset-by-two {
+    margin-left: 17.33333%; }
+  .offset-by-three {
+    margin-left: 26%; }
+  .offset-by-four {
+    margin-left: 34.66667%; }
+  .offset-by-five {
+    margin-left: 43.33333%; }
+  .offset-by-six {
+    margin-left: 52%; }
+  .offset-by-seven {
+    margin-left: 60.66667%; }
+  .offset-by-eight {
+    margin-left: 69.33333%; }
+  .offset-by-nine {
+    margin-left: 78%; }
+  .offset-by-ten {
+    margin-left: 86.66667%; }
+  .offset-by-eleven {
+    margin-left: 95.33333%; }
+  .offset-by-one-third.column, .offset-by-one-third.SelectedTaskList, .offset-by-one-third.AvailableTaskList,
+  .offset-by-one-third.columns,
+  div.task .offset-by-one-third.code,
+  div.task .offset-by-one-third.desc,
+  div.task .offset-by-one-third.day {
+    margin-left: 34.66667%; }
+  .offset-by-two-thirds.column, .offset-by-two-thirds.SelectedTaskList, .offset-by-two-thirds.AvailableTaskList,
+  .offset-by-two-thirds.columns,
+  div.task .offset-by-two-thirds.code,
+  div.task .offset-by-two-thirds.desc,
+  div.task .offset-by-two-thirds.day {
+    margin-left: 69.33333%; }
+  .offset-by-one-half.column, .offset-by-one-half.SelectedTaskList, .offset-by-one-half.AvailableTaskList,
+  .offset-by-one-half.columns,
+  div.task .offset-by-one-half.code,
+  div.task .offset-by-one-half.desc,
+  div.task .offset-by-one-half.day {
+    margin-left: 52%; } }
+
+/* TABLET (PORTRAIT)
+ * ------------------------------------------------ */
+@media only screen and (min-width: 768px) and (max-width: 99%) {
+  .container, .App {
+    width: 768px; }
+    .container .column.alpha, .App .column.alpha, .container .alpha.SelectedTaskList, .App .alpha.SelectedTaskList, .container .alpha.AvailableTaskList, .App .alpha.AvailableTaskList,
+    .container .columns.alpha, .App .columns.alpha,
+    .container div.task .alpha.code, div.task
+    .container .alpha.code, .App div.task .alpha.code, div.task .App .alpha.code,
+    .container div.task .alpha.desc, div.task
+    .container .alpha.desc, .App div.task .alpha.desc, div.task .App .alpha.desc,
+    .container div.task .alpha.day, div.task
+    .container .alpha.day, .App div.task .alpha.day, div.task .App .alpha.day {
+      margin-left: 0;
+      margin-right: 2%; }
+    .container .column.omega, .App .column.omega, .container .omega.SelectedTaskList, .App .omega.SelectedTaskList, .container .omega.AvailableTaskList, .App .omega.AvailableTaskList,
+    .container .columns.omega, .App .columns.omega,
+    .container div.task .omega.code, div.task
+    .container .omega.code, .App div.task .omega.code, div.task .App .omega.code,
+    .container div.task .omega.desc, div.task
+    .container .omega.desc, .App div.task .omega.desc, div.task .App .omega.desc,
+    .container div.task .omega.day, div.task
+    .container .omega.day, .App div.task .omega.day, div.task .App .omega.day {
+      margin-right: 0;
+      margin-left: 2%; }
+  .alpha.omega {
+    margin-left: 0;
+    margin-right: 0; } }
+
+/*  MOBILE (PORTRAIT)
+ * ------------------------------------------------ */
+@media only screen and (max-width: 767px) {
+  .container, .App {
+    width: 100%; }
+    .container .column, .App .column, .container .SelectedTaskList, .App .SelectedTaskList, .container .AvailableTaskList, .App .AvailableTaskList,
+    .container .columns, .App .columns,
+    .container div.task .code, div.task
+    .container .code, .App div.task .code, div.task .App .code,
+    .container div.task .desc, div.task
+    .container .desc, .App div.task .desc, div.task .App .desc,
+    .container div.task .day, div.task
+    .container .day, .App div.task .day, div.task .App .day {
+      max-width: 100%;
+      margin-left: 2%;
+      margin-right: 2%; }
+    .container .one.column, .App .one.column, .container .one.SelectedTaskList, .App .one.SelectedTaskList, .container .one.AvailableTaskList, .App .one.AvailableTaskList {
+      width: 96%; }
+    .container .one.columns, .App .one.columns, .container div.task .one.code, div.task .container .one.code, .App div.task .one.code, div.task .App .one.code, .container div.task .one.desc, div.task .container .one.desc, .App div.task .one.desc, div.task .App .one.desc, .container div.task .one.day, div.task .container .one.day, .App div.task .one.day, div.task .App .one.day, .container .two.columns, .App .two.columns, .container div.task .code, div.task .container .code, .App div.task .code, div.task .App .code, .container div.task .two.desc, div.task .container .two.desc, .App div.task .two.desc, div.task .App .two.desc, .container div.task .day, div.task .container .day, .App div.task .day, div.task .App .day, .container .three.columns, .App .three.columns, .container div.task .three.code, div.task .container .three.code, .App div.task .three.code, div.task .App .three.code, .container div.task .three.desc, div.task .container .three.desc, .App div.task .three.desc, div.task .App .three.desc, .container div.task .three.day, div.task .container .three.day, .App div.task .three.day, div.task .App .three.day, .container .four.columns, .App .four.columns, .container div.task .four.code, div.task .container .four.code, .App div.task .four.code, div.task .App .four.code, .container div.task .four.desc, div.task .container .four.desc, .App div.task .four.desc, div.task .App .four.desc, .container div.task .four.day, div.task .container .four.day, .App div.task .four.day, div.task .App .four.day, .container .five.columns, .App .five.columns, .container div.task .five.code, div.task .container .five.code, .App div.task .five.code, div.task .App .five.code, .container div.task .five.desc, div.task .container .five.desc, .App div.task .five.desc, div.task .App .five.desc, .container div.task .five.day, div.task .container .five.day, .App div.task .five.day, div.task .App .five.day, .container .six.columns, .App .six.columns, .container div.task .six.code, div.task .container .six.code, .App div.task .six.code, div.task .App .six.code, .container div.task .six.desc, div.task .container .six.desc, .App div.task .six.desc, div.task .App .six.desc, .container div.task .six.day, div.task .container .six.day, .App div.task .six.day, div.task .App .six.day, .container .seven.columns, .App .seven.columns, .container div.task .seven.code, div.task .container .seven.code, .App div.task .seven.code, div.task .App .seven.code, .container div.task .seven.desc, div.task .container .seven.desc, .App div.task .seven.desc, div.task .App .seven.desc, .container div.task .seven.day, div.task .container .seven.day, .App div.task .seven.day, div.task .App .seven.day, .container .eight.columns, .App .eight.columns, .container div.task .eight.code, div.task .container .eight.code, .App div.task .eight.code, div.task .App .eight.code, .container div.task .desc, div.task .container .desc, .App div.task .desc, div.task .App .desc, .container div.task .eight.day, div.task .container .eight.day, .App div.task .eight.day, div.task .App .eight.day, .container .nine.columns, .App .nine.columns, .container div.task .nine.code, div.task .container .nine.code, .App div.task .nine.code, div.task .App .nine.code, .container div.task .nine.desc, div.task .container .nine.desc, .App div.task .nine.desc, div.task .App .nine.desc, .container div.task .nine.day, div.task .container .nine.day, .App div.task .nine.day, div.task .App .nine.day, .container .ten.columns, .App .ten.columns, .container div.task .ten.code, div.task .container .ten.code, .App div.task .ten.code, div.task .App .ten.code, .container div.task .ten.desc, div.task .container .ten.desc, .App div.task .ten.desc, div.task .App .ten.desc, .container div.task .ten.day, div.task .container .ten.day, .App div.task .ten.day, div.task .App .ten.day, .container .eleven.columns, .App .eleven.columns, .container div.task .eleven.code, div.task .container .eleven.code, .App div.task .eleven.code, div.task .App .eleven.code, .container div.task .eleven.desc, div.task .container .eleven.desc, .App div.task .eleven.desc, div.task .App .eleven.desc, .container div.task .eleven.day, div.task .container .eleven.day, .App div.task .eleven.day, div.task .App .eleven.day, .container .twelve.columns, .App .twelve.columns, .container div.task .twelve.code, div.task .container .twelve.code, .App div.task .twelve.code, div.task .App .twelve.code, .container div.task .twelve.desc, div.task .container .twelve.desc, .App div.task .twelve.desc, div.task .App .twelve.desc, .container div.task .twelve.day, div.task .container .twelve.day, .App div.task .twelve.day, div.task .App .twelve.day {
+      width: 96%; }
+    .container .one-third.column, .App .one-third.column, .container .one-third.SelectedTaskList, .App .one-third.SelectedTaskList, .container .SelectedTaskList.AvailableTaskList, .container .AvailableTaskList, .App .AvailableTaskList {
+      width: 96%; }
+    .container .two-thirds.column, .App .two-thirds.column, .container .SelectedTaskList, .App .SelectedTaskList, .container .two-thirds.AvailableTaskList, .App .two-thirds.AvailableTaskList, .container .AvailableTaskList.SelectedTaskList {
+      width: 96%; }
+    .container .full-width.columns, .App .full-width.columns, .container div.task .full-width.code, div.task .container .full-width.code, .App div.task .full-width.code, div.task .App .full-width.code, .container div.task .full-width.desc, div.task .container .full-width.desc, .App div.task .full-width.desc, div.task .App .full-width.desc, .container div.task .full-width.day, div.task .container .full-width.day, .App div.task .full-width.day, div.task .App .full-width.day {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0; }
+    .container .offset-by-one, .App .offset-by-one, .container .offset-by-two, .App .offset-by-two, .container .offset-by-three, .App .offset-by-three, .container .offset-by-four, .App .offset-by-four, .container .offset-by-five, .App .offset-by-five, .container .offset-by-six, .App .offset-by-six, .container .offset-by-seven, .App .offset-by-seven, .container .offset-by-eight, .App .offset-by-eight, .container .offset-by-nine, .App .offset-by-nine, .container .offset-by-ten, .App .offset-by-ten, .container .offset-by-eleven, .App .offset-by-eleven {
+      padding-left: 0; } }
+
+/* MOBILE (LANDSCAPE)
+ * ------------------------------------------------ */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  .container, .App {
+    width: 100%; }
+    .container .column, .App .column, .container .SelectedTaskList, .App .SelectedTaskList, .container .AvailableTaskList, .App .AvailableTaskList,
+    .container .columns, .App .columns,
+    .container div.task .code, div.task
+    .container .code, .App div.task .code, div.task .App .code,
+    .container div.task .desc, div.task
+    .container .desc, .App div.task .desc, div.task .App .desc,
+    .container div.task .day, div.task
+    .container .day, .App div.task .day, div.task .App .day {
+      max-width: 100%;
+      margin-left: 2%;
+      margin-right: 2%; }
+    .container .one.column, .App .one.column, .container .one.SelectedTaskList, .App .one.SelectedTaskList, .container .one.AvailableTaskList, .App .one.AvailableTaskList {
+      width: 96%; }
+    .container .one.columns, .App .one.columns, .container div.task .one.code, div.task .container .one.code, .App div.task .one.code, div.task .App .one.code, .container div.task .one.desc, div.task .container .one.desc, .App div.task .one.desc, div.task .App .one.desc, .container div.task .one.day, div.task .container .one.day, .App div.task .one.day, div.task .App .one.day, .container .two.columns, .App .two.columns, .container div.task .code, div.task .container .code, .App div.task .code, div.task .App .code, .container div.task .two.desc, div.task .container .two.desc, .App div.task .two.desc, div.task .App .two.desc, .container div.task .day, div.task .container .day, .App div.task .day, div.task .App .day, .container .three.columns, .App .three.columns, .container div.task .three.code, div.task .container .three.code, .App div.task .three.code, div.task .App .three.code, .container div.task .three.desc, div.task .container .three.desc, .App div.task .three.desc, div.task .App .three.desc, .container div.task .three.day, div.task .container .three.day, .App div.task .three.day, div.task .App .three.day, .container .four.columns, .App .four.columns, .container div.task .four.code, div.task .container .four.code, .App div.task .four.code, div.task .App .four.code, .container div.task .four.desc, div.task .container .four.desc, .App div.task .four.desc, div.task .App .four.desc, .container div.task .four.day, div.task .container .four.day, .App div.task .four.day, div.task .App .four.day, .container .five.columns, .App .five.columns, .container div.task .five.code, div.task .container .five.code, .App div.task .five.code, div.task .App .five.code, .container div.task .five.desc, div.task .container .five.desc, .App div.task .five.desc, div.task .App .five.desc, .container div.task .five.day, div.task .container .five.day, .App div.task .five.day, div.task .App .five.day, .container .six.columns, .App .six.columns, .container div.task .six.code, div.task .container .six.code, .App div.task .six.code, div.task .App .six.code, .container div.task .six.desc, div.task .container .six.desc, .App div.task .six.desc, div.task .App .six.desc, .container div.task .six.day, div.task .container .six.day, .App div.task .six.day, div.task .App .six.day, .container .seven.columns, .App .seven.columns, .container div.task .seven.code, div.task .container .seven.code, .App div.task .seven.code, div.task .App .seven.code, .container div.task .seven.desc, div.task .container .seven.desc, .App div.task .seven.desc, div.task .App .seven.desc, .container div.task .seven.day, div.task .container .seven.day, .App div.task .seven.day, div.task .App .seven.day, .container .eight.columns, .App .eight.columns, .container div.task .eight.code, div.task .container .eight.code, .App div.task .eight.code, div.task .App .eight.code, .container div.task .desc, div.task .container .desc, .App div.task .desc, div.task .App .desc, .container div.task .eight.day, div.task .container .eight.day, .App div.task .eight.day, div.task .App .eight.day, .container .nine.columns, .App .nine.columns, .container div.task .nine.code, div.task .container .nine.code, .App div.task .nine.code, div.task .App .nine.code, .container div.task .nine.desc, div.task .container .nine.desc, .App div.task .nine.desc, div.task .App .nine.desc, .container div.task .nine.day, div.task .container .nine.day, .App div.task .nine.day, div.task .App .nine.day, .container .ten.columns, .App .ten.columns, .container div.task .ten.code, div.task .container .ten.code, .App div.task .ten.code, div.task .App .ten.code, .container div.task .ten.desc, div.task .container .ten.desc, .App div.task .ten.desc, div.task .App .ten.desc, .container div.task .ten.day, div.task .container .ten.day, .App div.task .ten.day, div.task .App .ten.day, .container .eleven.columns, .App .eleven.columns, .container div.task .eleven.code, div.task .container .eleven.code, .App div.task .eleven.code, div.task .App .eleven.code, .container div.task .eleven.desc, div.task .container .eleven.desc, .App div.task .eleven.desc, div.task .App .eleven.desc, .container div.task .eleven.day, div.task .container .eleven.day, .App div.task .eleven.day, div.task .App .eleven.day, .container .twelve.columns, .App .twelve.columns, .container div.task .twelve.code, div.task .container .twelve.code, .App div.task .twelve.code, div.task .App .twelve.code, .container div.task .twelve.desc, div.task .container .twelve.desc, .App div.task .twelve.desc, div.task .App .twelve.desc, .container div.task .twelve.day, div.task .container .twelve.day, .App div.task .twelve.day, div.task .App .twelve.day {
+      width: 96%; }
+    .container .one-third.column, .App .one-third.column, .container .one-third.SelectedTaskList, .App .one-third.SelectedTaskList, .container .SelectedTaskList.AvailableTaskList, .container .AvailableTaskList, .App .AvailableTaskList {
+      width: 96%; }
+    .container .two-thirds.column, .App .two-thirds.column, .container .SelectedTaskList, .App .SelectedTaskList, .container .two-thirds.AvailableTaskList, .App .two-thirds.AvailableTaskList, .container .AvailableTaskList.SelectedTaskList {
+      width: 96%; }
+    .container .full-width.columns, .App .full-width.columns, .container div.task .full-width.code, div.task .container .full-width.code, .App div.task .full-width.code, div.task .App .full-width.code, .container div.task .full-width.desc, div.task .container .full-width.desc, .App div.task .full-width.desc, div.task .App .full-width.desc, .container div.task .full-width.day, div.task .container .full-width.day, .App div.task .full-width.day, div.task .App .full-width.day {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0; }
+    .container .offset-by-one, .App .offset-by-one, .container .offset-by-two, .App .offset-by-two, .container .offset-by-three, .App .offset-by-three, .container .offset-by-four, .App .offset-by-four, .container .offset-by-five, .App .offset-by-five, .container .offset-by-six, .App .offset-by-six, .container .offset-by-seven, .App .offset-by-seven, .container .offset-by-eight, .App .offset-by-eight, .container .offset-by-nine, .App .offset-by-nine, .container .offset-by-ten, .App .offset-by-ten, .container .offset-by-eleven, .App .offset-by-eleven {
+      padding-left: 0; } }
+
+/* CLEARING
+ * ------------------------------------------------ */
+.container:after, .App:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden; }
+
+.clearfix, .row, .TaskSelector, div.task {
+  zoom: 1; }
+  .clearfix:before, .clearfix:after, .row:before, .TaskSelector:before, div.task:before, .row:after, .TaskSelector:after, div.task:after {
+    content: "\0020";
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0; }
+  .clearfix:after, .row:after, .TaskSelector:after, div.task:after {
+    clear: both; }
+
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0; }
+
+.availabletasks, .availabletasks ul {
+  list-style: none; }
+
+.availabletasks h3.category {
+  text-align: center; }
+
+.availabletasks ul {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em; }
+
+.taskgroup {
+  border: 1px solid grey; }
+
+label {
+  display: inline; }
