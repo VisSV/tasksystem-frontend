@@ -1,0 +1,72 @@
+
+@import "skeleton";
+
+// basic site layout
+.App {
+  @extend .container;
+}
+
+.TaskSelector {
+  @extend .row;
+}
+
+.SelectedTaskList {
+  @extend .two-thirds;
+  @extend .column;
+}
+
+.AvailableTaskList {
+  @extend .one-third;
+  @extend .column;
+}
+
+.availabletasks {
+  &, ul {
+    list-style: none;
+  }
+
+  h3.category {
+    text-align: center;
+  }
+
+  ul {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+}
+
+.taskgroup {
+  border: 1px solid grey;
+}
+
+label {
+  display: inline;
+}
+
+div.task {
+  @extend .row;
+
+  &:hover {
+    // TODO: nice drop shadow
+  }
+
+  .code {
+    @extend .two;
+    @extend .columns;
+  }
+
+  .desc {
+    @extend .eight;
+    @extend .columns;
+  }
+
+  .day {
+    @extend .two;
+    @extend .columns;
+  }
+
+  // TODO: put the times on the next row nicely
+}
+

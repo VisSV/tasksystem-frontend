@@ -3,13 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.16.2",
+    "cortexjs": "^2.1.1",
+    "lodash": "^4.17.4",
+    "node-sass-chokidar": "0.0.3",
+    "npm-run-all": "^4.1.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-scripts": "1.0.11"
+    "react-scripts": "1.0.11",
+    "skeleton-sass-official": "^3.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build-css": "node-sass-chokidar src/ --include-path ./node_modules -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ --include-path ./node_modules -o src/ --watch --recursive",
+    "start-js": "react-scripts start",
+    "start": "npm-run-all -p watch-css start-js",
+    "build": "npm run build-css && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
