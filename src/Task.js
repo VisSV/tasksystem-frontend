@@ -6,9 +6,9 @@ class Task extends Component {
       <div className="task">
         <span className="code">{this.props.task.code}</span>
         <span className="desc">{this.props.task.desc}</span>
-        <time className="day">Mon{this.props.task.date}</time>
-        <time className="time">{this.props.task.starttime}</time>
-        <time className="time">{this.props.task.endtime}</time>
+        <time className="day">{this.props.task.date.format('ddd')}</time>
+        <time className="time">{this.props.task.starttime.format('hh:mm')}</time>
+        <time className="time">{this.props.task.endtime.format('hh:mm')}</time>
       </div>
     );
   }

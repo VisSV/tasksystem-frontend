@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
 import Cortex from 'cortexjs';
 import axios from 'axios';
+import moment from 'moment';
+
 import './App.css';
 import config from './config';
 
 import LoadingScreen from './LoadingScreen';
 import TaskSelector from './TaskSelector';
+
+function convertTask(task) {
+  task.starttime = moment(task.date + ' ' + task.starttime);
+  task.endtime = moment(task.date + ' ' + task.endtime);
+  task.date = moment(task.date); // set this last so we don't break nice things
+}
 
 class App extends Component {
   constructor(props) {
@@ -30,6 +38,8 @@ class App extends Component {
     var myTasksLoad = axios.get('http://' + config.hostname + '/selected_tasks');
     axios.all([availLoad, myTasksLoad])
       .then(axios.spread(function(avails, mine) {
+        mine.data.forEach(convertTask);
+        avails.data.forEach(convertTask);
         self.state.cortex.set({
           status: "loaded", 
           availableTasks: avails.data, 

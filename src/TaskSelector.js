@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import CalendarView from './CalendarView';
 import SelectedTaskList from './SelectedTaskList';
 import AvailableTaskList from './AvailableTaskList';
 

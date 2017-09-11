@@ -3,6 +3,7 @@ import axios from 'axios';
 import config from './config';
 
 import Task from './Task';
+import CalendarView from './CalendarView';
 
 class SelectedTaskList extends Component {
   unacceptTask(task) {
@@ -27,6 +28,7 @@ class SelectedTaskList extends Component {
     });
     return (
       <div className="SelectedTaskList">
+        <CalendarView size={[500,500]} tasks={self.props.tasks} />
         <ul>
           {tasks}
         </ul>
