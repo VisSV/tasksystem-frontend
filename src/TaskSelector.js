@@ -17,11 +17,10 @@ class TaskSelector extends Component {
       };
       axios.put('http://' + config.hostname + '/select_task/' + task.code, {}, reqConfig)
         .then(function(res) {
-          self.props.selectedTasks.push(task);
-          task = self.props.availableTasks.find(function(t) {
-            return t.code.val() === task.code;
-          });
-          task.destroy();
+          var obj = {};
+          obj[task.code] = task;
+          self.props.selectedTasks.merge(obj);
+          self.props.availableTasks[task.code].destroy();
         })
         .catch(function(err) {
           console.log(err);
@@ -35,11 +34,10 @@ class TaskSelector extends Component {
       };
       axios.delete('http://' + config.hostname + '/select_task/' + task.code, reqConfig)
         .then(function(res) {
-          self.props.availableTasks.push(task);
-          task = self.props.selectedTasks.find(function(t) {
-            return t.code.val() === task.code;
-          });
-          task.destroy();
+          var obj = {};
+          obj[task.code] = task;
+          self.props.availableTasks.merge(obj);
+          self.props.selectedTasks[task.code].destroy();
         })
         .catch(function(err) {
           console.log(err);
@@ -48,7 +46,8 @@ class TaskSelector extends Component {
     return (
       <div className="TaskSelector">
         <AvailableTaskList clickHandler={handleTaskSelect} 
-                           tasks={this.props.availableTasks} />
+                           tasks={this.props.availableTasks} 
+                           selectedTasks={this.props.selectedTasks} />
         <SelectedTaskList clickHandler={handleTaskDeselect}
                           tasks={this.props.selectedTasks} />
       </div>

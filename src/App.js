@@ -29,8 +29,8 @@ class App extends Component {
       status: "loading",
       authToken: '3f5fbf167ddda607626889ce07d1c401abeddc0f',
       errText: null,
-      availableTasks: [],
-      selectedTasks: []
+      availableTasks: {},
+      selectedTasks: {}
     };
     var cortex = new Cortex(initState, (updatedCortex) => {
       this.setState({cortex: updatedCortex});
@@ -48,17 +48,14 @@ class App extends Component {
       if(self.state.cortex.status.val() === "loaded") {
         switch(evt.action) {
           case "remove":
-            var idx = self.state.cortex.availableTasks.findIndex(function(task) {
-              return task.code.val() === evt.task.code;
-            });
-            if(idx >= 0) {
-              self.state.cortex.availableTasks.splice(idx, 1);
-            }
+            self.state.cortex.availableTasks[evt.task.code].destroy();
             break;
           case "add":
             var task = evt.task;
             convertTask(task);
-            self.state.cortex.availableTasks.push(task);
+            var obj = {};
+            obj[task.code] = task;
+            self.state.cortex.availableTasks.merge(obj);
             break;
         }
       }
@@ -67,7 +64,6 @@ class App extends Component {
 
   // TODO: load the user's available and selected tasks
   loadInitialData() {
-    this.wsConnect();
     const self = this;
     var reqConfig = {
       headers: {
@@ -78,12 +74,20 @@ class App extends Component {
     var myTasksLoad = axios.get('http://' + config.hostname + '/selected_tasks', reqConfig);
     axios.all([availLoad, myTasksLoad])
       .then(axios.spread(function(avails, mine) {
-        mine.data.forEach(convertTask);
-        avails.data.forEach(convertTask);
+        var myTasks = {};
+        var availTasks = {};
+        mine.data.forEach(function(task) {
+          convertTask(task);
+          myTasks[task.code] = task;
+        });
+        avails.data.forEach(function(task) {
+          convertTask(task);
+          availTasks[task.code] = task;
+        });
         self.state.cortex.merge({
           status: "loaded", 
-          availableTasks: avails.data, 
-          selectedTasks: mine.data
+          availableTasks: availTasks,
+          selectedTasks: myTasks
         });
       }))
       .catch(function(err) {
@@ -113,6 +117,7 @@ class App extends Component {
     // This is really only for debugging now...
     if(this.state.cortex.status.val() === "loading" && 
        this.state.cortex.authToken.val() !== null) {
+      this.wsConnect();
       this.loadInitialData();
     }
   }
@@ -120,6 +125,7 @@ class App extends Component {
   componentDidUpdate() {
     if(this.state.cortex.status.val() === "loading" && 
        this.state.cortex.authToken.val() !== null) {
+      this.wsConnect();
       this.loadInitialData();
     }
   }

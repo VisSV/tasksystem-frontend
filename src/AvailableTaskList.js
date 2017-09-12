@@ -28,8 +28,22 @@ class AvailableTaskList extends Component {
   render() {
     var self = this;
     // TODO: filter tasks by this.state.showConflicts
-    // TODO: sort by date and time
-    var groupedTasks = _.groupBy(this.props.tasks.val(), self.state.groupBy);
+    var availTasks = this.props.tasks.val();
+    if(!this.state.showConflicts) {
+      const selTasks = _.values(self.props.selectedTasks.val());
+      _.keys(availTasks).forEach(function(k) {
+        var task = availTasks[k];
+        var overlapIdx = _.findIndex(selTasks, function(st) {
+          var maxStart = Math.max(task.starttime, st.starttime);
+          var minEnd = Math.min(task.endtime, st.endtime);
+          return maxStart < minEnd;
+        });
+        if(overlapIdx >= 0) {
+          _.unset(availTasks, k);
+        }
+      });
+    }
+    var groupedTasks = _.groupBy(availTasks, self.state.groupBy);
     var groups = _.sortBy(_.keys(groupedTasks));
     var availTasks = groups.map(function(gid, i) {
       var taskGroup = _.sortBy(groupedTasks[gid], 'code');
