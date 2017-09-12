@@ -27,16 +27,6 @@ class AvailableTaskList extends Component {
     this.setState({groupBy: e.target.value});
   }
 
-  acceptTask(task, e) {
-    axios.put('http://' + config.hostname + '/select_task/' + task.code)
-      .then(function(res) {
-        console.log(res);
-      })
-      .catch(function(err) {
-        console.log(err);
-      });
-  }
-
   render() {
     var self = this;
     // TODO: filter tasks by this.state.showConflicts
@@ -44,11 +34,11 @@ class AvailableTaskList extends Component {
     var groupedTasks = _.groupBy(this.props.tasks.val(), self.state.groupBy);
     var groups = _.sortBy(_.keys(groupedTasks));
     var availTasks = groups.map(function(gid, i) {
-      var taskGroup = groupedTasks[gid];
+      var taskGroup = _.sortBy(groupedTasks[gid], 'code');
       var groupName = self.state.groupBy + ' ' + gid;
       var tasks = taskGroup.map(function(task, j) {
         return(
-          <li className="task" key={j} onClick={self.acceptTask.bind(this, task)}>
+          <li className="task" key={j} onClick={self.props.clickHandler.bind(this, task)}>
             <Task task={task} />
           </li>
         );

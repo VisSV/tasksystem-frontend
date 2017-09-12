@@ -31,7 +31,8 @@ class CalendarView extends Component {
       .domain(days);
     this.timeScale = d3.scaleLinear()
       .domain([0, 24]); // hours
-
+    this.catScale = d3.scaleOrdinal(d3.schemeCategory10)
+      .domain([1, 8]);
     // create the basic structure
     this.timeAxis = svg.append('g')
       .attr('class', 'time axis');
@@ -61,28 +62,42 @@ class CalendarView extends Component {
       .attr('x', function(d) {return self.dayScale(d);})
       .attr('y', 14);
 
-    svg.selectAll('.task').data(self.props.tasks.val())
-      .enter()
-        .append('rect')
-          .attr('class', 'task')
-      //.merge()
-        .attr('x', function(d) {
-          return self.dayScale(d.date);
-        })
-        .attr('y', function(d) {
-          return self.timeScale(hoursFromMidnight(d.starttime));
-        })
-        .attr('width', function(d) {
-          return self.dayScale.bandwidth();
-        })
-        .attr('height', function(d) {
-          return self.timeScale(hoursFromMidnight(d.starttime)) - 
-                 self.timeScale(hoursFromMidnight(d.endtime));
-        })
-        .attr('fill', 'grey')
-        //.text(function(d) {return d.desc;})
-      .exit()
-        .remove();
+    var taskBlocks = svg.selectAll('.task').data(self.props.tasks);
+    var blockGroups = taskBlocks.enter()
+      .append('g')
+        .attr('class', 'task');
+    blockGroups.append('rect');
+    blockGroups.append('text')
+      .attr('alignment-baseline', 'hanging');
+
+    taskBlocks = svg.selectAll('.task').data(self.props.tasks);
+    taskBlocks
+      .attr('transform', function(d) {
+        return 'translate(' + self.dayScale(d.date.format("ddd")) + ',' +
+                              self.timeScale(hoursFromMidnight(d.starttime)) +
+                              ')';
+      })
+      .on('click', function(d) {
+        self.props.clickHandler(d);
+      });
+    taskBlocks.selectAll('rect')
+      .attr('x', 0)
+      .attr('y', 0)
+      .attr('width', function(d) {
+        return self.dayScale.bandwidth();
+      })
+      .attr('height', function(d) {
+        return self.timeScale(hoursFromMidnight(d.starttime)) - 
+               self.timeScale(hoursFromMidnight(d.endtime));
+      })
+      .attr('fill', function(d) {
+        return self.catScale(d.category);
+      });
+    taskBlocks.select('text')
+      .text(function(d) {
+        return d.desc;
+      });
+    taskBlocks.exit().remove();
   }
 
   render() {
