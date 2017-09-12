@@ -1010,3 +1010,13 @@ div.task .day {
 
 label {
   display: inline; }
+
+.alert {
+  display: block;
+  padding: 20px;
+  border-left: 5px solid; }
+
+.alert-error {
+  background-color: #F2D7D5;
+  border-left-color: #C0392B;
+  color: #C0392B; }
