@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Cortex from 'cortexjs';
 import axios from 'axios';
 import moment from 'moment';
+import { WebSocketBridge } from 'django-channels';
 
 import './App.css';
 import config from './config';
@@ -23,8 +24,10 @@ class App extends Component {
 
     // initialize the state and set up the re-rendering callback
     var initState = {
-      status: "unauthorized",
-      authToken: null,
+      //status: "unauthorized",
+      //authToken: null,
+      status: "loading",
+      authToken: '3f5fbf167ddda607626889ce07d1c401abeddc0f',
       errText: null,
       availableTasks: [],
       selectedTasks: []
@@ -33,10 +36,38 @@ class App extends Component {
       this.setState({cortex: updatedCortex});
     });
     this.state = {cortex: cortex};
+
+    this.wsConnect = this.wsConnect.bind(this);
+  }
+
+  wsConnect() {
+    var self = this;
+    var sock = new WebSocketBridge();
+    sock.connect('ws://' + config.hostname);
+    sock.listen(function(evt, stream) {
+      if(self.state.cortex.status.val() === "loaded") {
+        switch(evt.action) {
+          case "remove":
+            var idx = self.state.cortex.availableTasks.findIndex(function(task) {
+              return task.code.val() === evt.task.code;
+            });
+            if(idx >= 0) {
+              self.state.cortex.availableTasks.splice(idx, 1);
+            }
+            break;
+          case "add":
+            var task = evt.task;
+            convertTask(task);
+            self.state.cortex.availableTasks.push(task);
+            break;
+        }
+      }
+    });
   }
 
   // TODO: load the user's available and selected tasks
   loadInitialData() {
+    this.wsConnect();
     const self = this;
     var reqConfig = {
       headers: {
@@ -76,6 +107,14 @@ class App extends Component {
           });
         }
       });
+  }
+
+  componentDidMount() {
+    // This is really only for debugging now...
+    if(this.state.cortex.status.val() === "loading" && 
+       this.state.cortex.authToken.val() !== null) {
+      this.loadInitialData();
+    }
   }
 
   componentDidUpdate() {
