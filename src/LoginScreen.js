@@ -26,7 +26,7 @@ class LoginScreen extends Component {
     axios.post('http://' + config.hostname + '/api-token-auth/', data)
       .then(function(res) {
         self.setState({loginErrors: [], isLoading: false});
-        self.props.cortex.set({
+        self.props.cortex.merge({
           status: "loading",
           authToken: res.data.token
         });

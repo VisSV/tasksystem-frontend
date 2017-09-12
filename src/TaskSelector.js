@@ -10,9 +10,13 @@ class TaskSelector extends Component {
   render() {
     var self = this;
     var handleTaskSelect = function(task) {
-      axios.put('http://' + config.hostname + '/select_task/' + task.code)
+      var reqConfig = {
+        headers: {
+          'Authorization': 'Token ' + self.props.authToken.val()
+        }
+      };
+      axios.put('http://' + config.hostname + '/select_task/' + task.code, {}, reqConfig)
         .then(function(res) {
-          console.log(res);
           self.props.selectedTasks.push(task);
           task = self.props.availableTasks.find(function(t) {
             return t.code.val() === task.code;
@@ -24,9 +28,13 @@ class TaskSelector extends Component {
         });
     };
     var handleTaskDeselect = function(task) {
-      axios.delete('http://' + config.hostname + '/select_task/' + task.code)
+      var reqConfig = {
+        headers: {
+          'Authorization': 'Token ' + self.props.authToken.val()
+        }
+      };
+      axios.delete('http://' + config.hostname + '/select_task/' + task.code, reqConfig)
         .then(function(res) {
-          console.log(res);
           self.props.availableTasks.push(task);
           task = self.props.selectedTasks.find(function(t) {
             return t.code.val() === task.code;

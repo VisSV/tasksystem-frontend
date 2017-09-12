@@ -23,7 +23,7 @@ class App extends Component {
 
     // initialize the state and set up the re-rendering callback
     var initState = {
-      status: "initializing",
+      status: "unauthorized",
       authToken: null,
       errText: null,
       availableTasks: [],
@@ -49,7 +49,7 @@ class App extends Component {
       .then(axios.spread(function(avails, mine) {
         mine.data.forEach(convertTask);
         avails.data.forEach(convertTask);
-        self.state.cortex.set({
+        self.state.cortex.merge({
           status: "loaded", 
           availableTasks: avails.data, 
           selectedTasks: mine.data
@@ -59,18 +59,18 @@ class App extends Component {
         // It's possible that we just need to log in...
         if(err.response) {
           if(err.response.status === 401 || err.response.status === 403) {
-            self.state.cortex.set({
+            self.state.cortex.merge({
               status: "unauthorized",
               authToken: null
             });
           } else {
-            self.state.cortex.set({
+            self.state.cortex.merge({
               status: "error",
               errText: err.response.statusText
             });
           }
         } else {
-          self.state.cortex.set({
+          self.state.cortex.merge({
             status: "error",
             errText: "server error"
           });
@@ -78,19 +78,16 @@ class App extends Component {
       });
   }
 
-  componentDidMount() {
-    this.loadInitialData();
-  }
-
   componentDidUpdate() {
-    if(this.state.cortex.status.val() === "loading")
+    if(this.state.cortex.status.val() === "loading" && 
+       this.state.cortex.authToken.val() !== null) {
       this.loadInitialData();
+    }
   }
 
   render() {
     var screen;
     switch(this.state.cortex.status.getValue()) {
-      case "initializing":
       case "loading":
         screen = <LoadingScreen />;
         break;
@@ -102,6 +99,7 @@ class App extends Component {
         break;
       case "loaded":
         screen = <TaskSelector 
+                    authToken={this.state.cortex.authToken}
                     availableTasks={this.state.cortex.availableTasks}
                     selectedTasks={this.state.cortex.selectedTasks} />
         break;
