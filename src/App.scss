@@ -45,29 +45,76 @@ label {
   display: inline;
 }
 
-div.task {
+h1 {
+  font-size: 3.5rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.7rem;
+}
+
+.view-controls {
+  h3 {
+    margin-bottom: 0.1rem;
+  }
+
+  label {
+    margin-left: 0.5em;
+    margin-right: 1.2em;
+  }
+}
+
+.task {
   @extend .row;
 
+  margin: 0px;
+  margin-bottom: 0.2em;
+  background-color: #e5e5e5;
+
   &:hover {
-    // TODO: nice drop shadow
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+    .tooltip {
+      display: inline;
+    }
+  }
+
+  .task-info {
+    height: 3em;
   }
 
   .code {
-    @extend .two;
-    @extend .columns;
-  }
-
-  .desc {
-    @extend .eight;
-    @extend .columns;
+    margin-right: 1em;
   }
 
   .day {
-    @extend .two;
-    @extend .columns;
+    margin-right: 1em;
   }
 
-  // TODO: put the times on the next row nicely
+  time.time {
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+  }
+
+  position: relative;
+
+  .tooltip {
+    display: none;
+    position: absolute;
+    bottom: -1.5em;
+    right: 0.7em;
+
+    color: #949494;
+    text-transform: uppercase;
+    text-align: right;
+    font-weight: bold;
+  }
 }
 
 .alert {
@@ -80,5 +127,9 @@ div.task {
   background-color: #F2D7D5;
   border-left-color: #C0392B;
   color: #C0392B;
+}
+
+.SelectedTaskList ul {
+  list-style: none;
 }
 

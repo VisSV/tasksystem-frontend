@@ -735,15 +735,12 @@ img.scale-with-grid {
   box-sizing: border-box; }
 
 .column, .SelectedTaskList, .AvailableTaskList,
-.columns,
-div.task .code,
-div.task .desc,
-div.task .day {
+.columns {
   width: 100%;
   float: left;
   box-sizing: border-box; }
 
-.row, .TaskSelector, div.task {
+.row, .TaskSelector, .task {
   margin-bottom: 2rem; }
 
 /* For devices larger than 400px */
@@ -758,77 +755,50 @@ div.task .day {
   .container, .App {
     width: 80%; }
   .column, .SelectedTaskList, .AvailableTaskList,
-  .columns,
-  div.task .code,
-  div.task .desc,
-  div.task .day {
+  .columns {
     margin-left: 4%; }
     .column:first-child:not([class^="offset"]), .SelectedTaskList:first-child:not([class^="offset"]), .AvailableTaskList:first-child:not([class^="offset"]),
-    .columns:first-child:not([class^="offset"]),
-    div.task .code:first-child:not([class^="offset"]),
-    div.task .desc:first-child:not([class^="offset"]),
-    div.task .day:first-child:not([class^="offset"]) {
+    .columns:first-child:not([class^="offset"]) {
       margin-left: 0; }
   .one.column, .one.SelectedTaskList, .one.AvailableTaskList,
-  .one.columns,
-  div.task .one.code,
-  div.task .one.desc,
-  div.task .one.day {
+  .one.columns {
     width: 4.66667%; }
-  .two.columns, div.task .code, div.task .two.desc, div.task .day {
+  .two.columns {
     width: 13.33333%; }
-  .three.columns, div.task .three.code, div.task .three.desc, div.task .three.day {
+  .three.columns {
     width: 22%; }
-  .four.columns, div.task .four.code, div.task .four.desc, div.task .four.day {
+  .four.columns {
     width: 30.66667%; }
-  .five.columns, div.task .five.code, div.task .five.desc, div.task .five.day {
+  .five.columns {
     width: 39.33333%; }
-  .six.columns, div.task .six.code, div.task .six.desc, div.task .six.day {
+  .six.columns {
     width: 48%; }
-  .seven.columns, div.task .seven.code, div.task .seven.desc, div.task .seven.day {
+  .seven.columns {
     width: 56.66667%; }
-  .eight.columns, div.task .eight.code, div.task .desc, div.task .eight.day {
+  .eight.columns {
     width: 65.33333%; }
-  .nine.columns, div.task .nine.code, div.task .nine.desc, div.task .nine.day {
+  .nine.columns {
     width: 74%; }
-  .ten.columns, div.task .ten.code, div.task .ten.desc, div.task .ten.day {
+  .ten.columns {
     width: 82.66667%; }
-  .eleven.columns, div.task .eleven.code, div.task .eleven.desc, div.task .eleven.day {
+  .eleven.columns {
     width: 91.33333%; }
-  .twelve.columns, div.task .twelve.code, div.task .twelve.desc, div.task .twelve.day {
+  .twelve.columns {
     width: 100%;
     margin-left: 0; }
   .one-third.column, .one-third.SelectedTaskList, .AvailableTaskList,
   .one-third.columns,
-  .columns.AvailableTaskList,
-  div.task .AvailableTaskList.code,
-  div.task .AvailableTaskList.desc,
-  div.task .AvailableTaskList.day,
-  div.task .one-third.code,
-  div.task .one-third.desc,
-  div.task .one-third.day {
+  .columns.AvailableTaskList {
     width: 30.66667%; }
   .two-thirds.column, .SelectedTaskList, .two-thirds.AvailableTaskList,
   .two-thirds.columns,
-  .columns.SelectedTaskList,
-  div.task .SelectedTaskList.code,
-  div.task .SelectedTaskList.desc,
-  div.task .SelectedTaskList.day,
-  div.task .two-thirds.code,
-  div.task .two-thirds.desc,
-  div.task .two-thirds.day {
+  .columns.SelectedTaskList {
     width: 63.33333%; }
   .one-half.column, .one-half.SelectedTaskList, .one-half.AvailableTaskList,
-  .one-half.columns,
-  div.task .one-half.code,
-  div.task .one-half.desc,
-  div.task .one-half.day {
+  .one-half.columns {
     width: 48%; }
   .full-width.column, .full-width.SelectedTaskList, .full-width.AvailableTaskList,
-  .full-width.columns,
-  div.task .full-width.code,
-  div.task .full-width.desc,
-  div.task .full-width.day {
+  .full-width.columns {
     width: 100%;
     margin-left: 0;
     margin-right: 0; }
@@ -855,22 +825,13 @@ div.task .day {
   .offset-by-eleven {
     margin-left: 95.33333%; }
   .offset-by-one-third.column, .offset-by-one-third.SelectedTaskList, .offset-by-one-third.AvailableTaskList,
-  .offset-by-one-third.columns,
-  div.task .offset-by-one-third.code,
-  div.task .offset-by-one-third.desc,
-  div.task .offset-by-one-third.day {
+  .offset-by-one-third.columns {
     margin-left: 34.66667%; }
   .offset-by-two-thirds.column, .offset-by-two-thirds.SelectedTaskList, .offset-by-two-thirds.AvailableTaskList,
-  .offset-by-two-thirds.columns,
-  div.task .offset-by-two-thirds.code,
-  div.task .offset-by-two-thirds.desc,
-  div.task .offset-by-two-thirds.day {
+  .offset-by-two-thirds.columns {
     margin-left: 69.33333%; }
   .offset-by-one-half.column, .offset-by-one-half.SelectedTaskList, .offset-by-one-half.AvailableTaskList,
-  .offset-by-one-half.columns,
-  div.task .offset-by-one-half.code,
-  div.task .offset-by-one-half.desc,
-  div.task .offset-by-one-half.day {
+  .offset-by-one-half.columns {
     margin-left: 52%; } }
 
 /* TABLET (PORTRAIT)
@@ -879,23 +840,11 @@ div.task .day {
   .container, .App {
     width: 768px; }
     .container .column.alpha, .App .column.alpha, .container .alpha.SelectedTaskList, .App .alpha.SelectedTaskList, .container .alpha.AvailableTaskList, .App .alpha.AvailableTaskList,
-    .container .columns.alpha, .App .columns.alpha,
-    .container div.task .alpha.code, div.task
-    .container .alpha.code, .App div.task .alpha.code, div.task .App .alpha.code,
-    .container div.task .alpha.desc, div.task
-    .container .alpha.desc, .App div.task .alpha.desc, div.task .App .alpha.desc,
-    .container div.task .alpha.day, div.task
-    .container .alpha.day, .App div.task .alpha.day, div.task .App .alpha.day {
+    .container .columns.alpha, .App .columns.alpha {
       margin-left: 0;
       margin-right: 2%; }
     .container .column.omega, .App .column.omega, .container .omega.SelectedTaskList, .App .omega.SelectedTaskList, .container .omega.AvailableTaskList, .App .omega.AvailableTaskList,
-    .container .columns.omega, .App .columns.omega,
-    .container div.task .omega.code, div.task
-    .container .omega.code, .App div.task .omega.code, div.task .App .omega.code,
-    .container div.task .omega.desc, div.task
-    .container .omega.desc, .App div.task .omega.desc, div.task .App .omega.desc,
-    .container div.task .omega.day, div.task
-    .container .omega.day, .App div.task .omega.day, div.task .App .omega.day {
+    .container .columns.omega, .App .columns.omega {
       margin-right: 0;
       margin-left: 2%; }
   .alpha.omega {
@@ -908,25 +857,19 @@ div.task .day {
   .container, .App {
     width: 100%; }
     .container .column, .App .column, .container .SelectedTaskList, .App .SelectedTaskList, .container .AvailableTaskList, .App .AvailableTaskList,
-    .container .columns, .App .columns,
-    .container div.task .code, div.task
-    .container .code, .App div.task .code, div.task .App .code,
-    .container div.task .desc, div.task
-    .container .desc, .App div.task .desc, div.task .App .desc,
-    .container div.task .day, div.task
-    .container .day, .App div.task .day, div.task .App .day {
+    .container .columns, .App .columns {
       max-width: 100%;
       margin-left: 2%;
       margin-right: 2%; }
     .container .one.column, .App .one.column, .container .one.SelectedTaskList, .App .one.SelectedTaskList, .container .one.AvailableTaskList, .App .one.AvailableTaskList {
       width: 96%; }
-    .container .one.columns, .App .one.columns, .container div.task .one.code, div.task .container .one.code, .App div.task .one.code, div.task .App .one.code, .container div.task .one.desc, div.task .container .one.desc, .App div.task .one.desc, div.task .App .one.desc, .container div.task .one.day, div.task .container .one.day, .App div.task .one.day, div.task .App .one.day, .container .two.columns, .App .two.columns, .container div.task .code, div.task .container .code, .App div.task .code, div.task .App .code, .container div.task .two.desc, div.task .container .two.desc, .App div.task .two.desc, div.task .App .two.desc, .container div.task .day, div.task .container .day, .App div.task .day, div.task .App .day, .container .three.columns, .App .three.columns, .container div.task .three.code, div.task .container .three.code, .App div.task .three.code, div.task .App .three.code, .container div.task .three.desc, div.task .container .three.desc, .App div.task .three.desc, div.task .App .three.desc, .container div.task .three.day, div.task .container .three.day, .App div.task .three.day, div.task .App .three.day, .container .four.columns, .App .four.columns, .container div.task .four.code, div.task .container .four.code, .App div.task .four.code, div.task .App .four.code, .container div.task .four.desc, div.task .container .four.desc, .App div.task .four.desc, div.task .App .four.desc, .container div.task .four.day, div.task .container .four.day, .App div.task .four.day, div.task .App .four.day, .container .five.columns, .App .five.columns, .container div.task .five.code, div.task .container .five.code, .App div.task .five.code, div.task .App .five.code, .container div.task .five.desc, div.task .container .five.desc, .App div.task .five.desc, div.task .App .five.desc, .container div.task .five.day, div.task .container .five.day, .App div.task .five.day, div.task .App .five.day, .container .six.columns, .App .six.columns, .container div.task .six.code, div.task .container .six.code, .App div.task .six.code, div.task .App .six.code, .container div.task .six.desc, div.task .container .six.desc, .App div.task .six.desc, div.task .App .six.desc, .container div.task .six.day, div.task .container .six.day, .App div.task .six.day, div.task .App .six.day, .container .seven.columns, .App .seven.columns, .container div.task .seven.code, div.task .container .seven.code, .App div.task .seven.code, div.task .App .seven.code, .container div.task .seven.desc, div.task .container .seven.desc, .App div.task .seven.desc, div.task .App .seven.desc, .container div.task .seven.day, div.task .container .seven.day, .App div.task .seven.day, div.task .App .seven.day, .container .eight.columns, .App .eight.columns, .container div.task .eight.code, div.task .container .eight.code, .App div.task .eight.code, div.task .App .eight.code, .container div.task .desc, div.task .container .desc, .App div.task .desc, div.task .App .desc, .container div.task .eight.day, div.task .container .eight.day, .App div.task .eight.day, div.task .App .eight.day, .container .nine.columns, .App .nine.columns, .container div.task .nine.code, div.task .container .nine.code, .App div.task .nine.code, div.task .App .nine.code, .container div.task .nine.desc, div.task .container .nine.desc, .App div.task .nine.desc, div.task .App .nine.desc, .container div.task .nine.day, div.task .container .nine.day, .App div.task .nine.day, div.task .App .nine.day, .container .ten.columns, .App .ten.columns, .container div.task .ten.code, div.task .container .ten.code, .App div.task .ten.code, div.task .App .ten.code, .container div.task .ten.desc, div.task .container .ten.desc, .App div.task .ten.desc, div.task .App .ten.desc, .container div.task .ten.day, div.task .container .ten.day, .App div.task .ten.day, div.task .App .ten.day, .container .eleven.columns, .App .eleven.columns, .container div.task .eleven.code, div.task .container .eleven.code, .App div.task .eleven.code, div.task .App .eleven.code, .container div.task .eleven.desc, div.task .container .eleven.desc, .App div.task .eleven.desc, div.task .App .eleven.desc, .container div.task .eleven.day, div.task .container .eleven.day, .App div.task .eleven.day, div.task .App .eleven.day, .container .twelve.columns, .App .twelve.columns, .container div.task .twelve.code, div.task .container .twelve.code, .App div.task .twelve.code, div.task .App .twelve.code, .container div.task .twelve.desc, div.task .container .twelve.desc, .App div.task .twelve.desc, div.task .App .twelve.desc, .container div.task .twelve.day, div.task .container .twelve.day, .App div.task .twelve.day, div.task .App .twelve.day {
+    .container .one.columns, .App .one.columns, .container .two.columns, .App .two.columns, .container .three.columns, .App .three.columns, .container .four.columns, .App .four.columns, .container .five.columns, .App .five.columns, .container .six.columns, .App .six.columns, .container .seven.columns, .App .seven.columns, .container .eight.columns, .App .eight.columns, .container .nine.columns, .App .nine.columns, .container .ten.columns, .App .ten.columns, .container .eleven.columns, .App .eleven.columns, .container .twelve.columns, .App .twelve.columns {
       width: 96%; }
     .container .one-third.column, .App .one-third.column, .container .one-third.SelectedTaskList, .App .one-third.SelectedTaskList, .container .SelectedTaskList.AvailableTaskList, .container .AvailableTaskList, .App .AvailableTaskList {
       width: 96%; }
     .container .two-thirds.column, .App .two-thirds.column, .container .SelectedTaskList, .App .SelectedTaskList, .container .two-thirds.AvailableTaskList, .App .two-thirds.AvailableTaskList, .container .AvailableTaskList.SelectedTaskList {
       width: 96%; }
-    .container .full-width.columns, .App .full-width.columns, .container div.task .full-width.code, div.task .container .full-width.code, .App div.task .full-width.code, div.task .App .full-width.code, .container div.task .full-width.desc, div.task .container .full-width.desc, .App div.task .full-width.desc, div.task .App .full-width.desc, .container div.task .full-width.day, div.task .container .full-width.day, .App div.task .full-width.day, div.task .App .full-width.day {
+    .container .full-width.columns, .App .full-width.columns {
       width: 100%;
       margin-left: 0;
       margin-right: 0; }
@@ -939,25 +882,19 @@ div.task .day {
   .container, .App {
     width: 100%; }
     .container .column, .App .column, .container .SelectedTaskList, .App .SelectedTaskList, .container .AvailableTaskList, .App .AvailableTaskList,
-    .container .columns, .App .columns,
-    .container div.task .code, div.task
-    .container .code, .App div.task .code, div.task .App .code,
-    .container div.task .desc, div.task
-    .container .desc, .App div.task .desc, div.task .App .desc,
-    .container div.task .day, div.task
-    .container .day, .App div.task .day, div.task .App .day {
+    .container .columns, .App .columns {
       max-width: 100%;
       margin-left: 2%;
       margin-right: 2%; }
     .container .one.column, .App .one.column, .container .one.SelectedTaskList, .App .one.SelectedTaskList, .container .one.AvailableTaskList, .App .one.AvailableTaskList {
       width: 96%; }
-    .container .one.columns, .App .one.columns, .container div.task .one.code, div.task .container .one.code, .App div.task .one.code, div.task .App .one.code, .container div.task .one.desc, div.task .container .one.desc, .App div.task .one.desc, div.task .App .one.desc, .container div.task .one.day, div.task .container .one.day, .App div.task .one.day, div.task .App .one.day, .container .two.columns, .App .two.columns, .container div.task .code, div.task .container .code, .App div.task .code, div.task .App .code, .container div.task .two.desc, div.task .container .two.desc, .App div.task .two.desc, div.task .App .two.desc, .container div.task .day, div.task .container .day, .App div.task .day, div.task .App .day, .container .three.columns, .App .three.columns, .container div.task .three.code, div.task .container .three.code, .App div.task .three.code, div.task .App .three.code, .container div.task .three.desc, div.task .container .three.desc, .App div.task .three.desc, div.task .App .three.desc, .container div.task .three.day, div.task .container .three.day, .App div.task .three.day, div.task .App .three.day, .container .four.columns, .App .four.columns, .container div.task .four.code, div.task .container .four.code, .App div.task .four.code, div.task .App .four.code, .container div.task .four.desc, div.task .container .four.desc, .App div.task .four.desc, div.task .App .four.desc, .container div.task .four.day, div.task .container .four.day, .App div.task .four.day, div.task .App .four.day, .container .five.columns, .App .five.columns, .container div.task .five.code, div.task .container .five.code, .App div.task .five.code, div.task .App .five.code, .container div.task .five.desc, div.task .container .five.desc, .App div.task .five.desc, div.task .App .five.desc, .container div.task .five.day, div.task .container .five.day, .App div.task .five.day, div.task .App .five.day, .container .six.columns, .App .six.columns, .container div.task .six.code, div.task .container .six.code, .App div.task .six.code, div.task .App .six.code, .container div.task .six.desc, div.task .container .six.desc, .App div.task .six.desc, div.task .App .six.desc, .container div.task .six.day, div.task .container .six.day, .App div.task .six.day, div.task .App .six.day, .container .seven.columns, .App .seven.columns, .container div.task .seven.code, div.task .container .seven.code, .App div.task .seven.code, div.task .App .seven.code, .container div.task .seven.desc, div.task .container .seven.desc, .App div.task .seven.desc, div.task .App .seven.desc, .container div.task .seven.day, div.task .container .seven.day, .App div.task .seven.day, div.task .App .seven.day, .container .eight.columns, .App .eight.columns, .container div.task .eight.code, div.task .container .eight.code, .App div.task .eight.code, div.task .App .eight.code, .container div.task .desc, div.task .container .desc, .App div.task .desc, div.task .App .desc, .container div.task .eight.day, div.task .container .eight.day, .App div.task .eight.day, div.task .App .eight.day, .container .nine.columns, .App .nine.columns, .container div.task .nine.code, div.task .container .nine.code, .App div.task .nine.code, div.task .App .nine.code, .container div.task .nine.desc, div.task .container .nine.desc, .App div.task .nine.desc, div.task .App .nine.desc, .container div.task .nine.day, div.task .container .nine.day, .App div.task .nine.day, div.task .App .nine.day, .container .ten.columns, .App .ten.columns, .container div.task .ten.code, div.task .container .ten.code, .App div.task .ten.code, div.task .App .ten.code, .container div.task .ten.desc, div.task .container .ten.desc, .App div.task .ten.desc, div.task .App .ten.desc, .container div.task .ten.day, div.task .container .ten.day, .App div.task .ten.day, div.task .App .ten.day, .container .eleven.columns, .App .eleven.columns, .container div.task .eleven.code, div.task .container .eleven.code, .App div.task .eleven.code, div.task .App .eleven.code, .container div.task .eleven.desc, div.task .container .eleven.desc, .App div.task .eleven.desc, div.task .App .eleven.desc, .container div.task .eleven.day, div.task .container .eleven.day, .App div.task .eleven.day, div.task .App .eleven.day, .container .twelve.columns, .App .twelve.columns, .container div.task .twelve.code, div.task .container .twelve.code, .App div.task .twelve.code, div.task .App .twelve.code, .container div.task .twelve.desc, div.task .container .twelve.desc, .App div.task .twelve.desc, div.task .App .twelve.desc, .container div.task .twelve.day, div.task .container .twelve.day, .App div.task .twelve.day, div.task .App .twelve.day {
+    .container .one.columns, .App .one.columns, .container .two.columns, .App .two.columns, .container .three.columns, .App .three.columns, .container .four.columns, .App .four.columns, .container .five.columns, .App .five.columns, .container .six.columns, .App .six.columns, .container .seven.columns, .App .seven.columns, .container .eight.columns, .App .eight.columns, .container .nine.columns, .App .nine.columns, .container .ten.columns, .App .ten.columns, .container .eleven.columns, .App .eleven.columns, .container .twelve.columns, .App .twelve.columns {
       width: 96%; }
     .container .one-third.column, .App .one-third.column, .container .one-third.SelectedTaskList, .App .one-third.SelectedTaskList, .container .SelectedTaskList.AvailableTaskList, .container .AvailableTaskList, .App .AvailableTaskList {
       width: 96%; }
     .container .two-thirds.column, .App .two-thirds.column, .container .SelectedTaskList, .App .SelectedTaskList, .container .two-thirds.AvailableTaskList, .App .two-thirds.AvailableTaskList, .container .AvailableTaskList.SelectedTaskList {
       width: 96%; }
-    .container .full-width.columns, .App .full-width.columns, .container div.task .full-width.code, div.task .container .full-width.code, .App div.task .full-width.code, div.task .App .full-width.code, .container div.task .full-width.desc, div.task .container .full-width.desc, .App div.task .full-width.desc, div.task .App .full-width.desc, .container div.task .full-width.day, div.task .container .full-width.day, .App div.task .full-width.day, div.task .App .full-width.day {
+    .container .full-width.columns, .App .full-width.columns {
       width: 100%;
       margin-left: 0;
       margin-right: 0; }
@@ -973,16 +910,16 @@ div.task .day {
   clear: both;
   visibility: hidden; }
 
-.clearfix, .row, .TaskSelector, div.task {
+.clearfix, .row, .TaskSelector, .task {
   zoom: 1; }
-  .clearfix:before, .clearfix:after, .row:before, .TaskSelector:before, div.task:before, .row:after, .TaskSelector:after, div.task:after {
+  .clearfix:before, .clearfix:after, .row:before, .TaskSelector:before, .task:before, .row:after, .TaskSelector:after, .task:after {
     content: "\0020";
     display: block;
     overflow: hidden;
     visibility: hidden;
     width: 0;
     height: 0; }
-  .clearfix:after, .row:after, .TaskSelector:after, div.task:after {
+  .clearfix:after, .row:after, .TaskSelector:after, .task:after {
     clear: both; }
 
 .clear {
@@ -1011,6 +948,52 @@ div.task .day {
 label {
   display: inline; }
 
+h1 {
+  font-size: 3.5rem;
+  text-align: center; }
+
+h2 {
+  font-size: 2.2rem;
+  text-align: center; }
+
+h3 {
+  font-size: 1.7rem; }
+
+.view-controls h3 {
+  margin-bottom: 0.1rem; }
+
+.view-controls label {
+  margin-left: 0.5em;
+  margin-right: 1.2em; }
+
+.task {
+  margin: 0px;
+  margin-bottom: 0.2em;
+  background-color: #e5e5e5;
+  position: relative; }
+  .task:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+    .task:hover .tooltip {
+      display: inline; }
+  .task .task-info {
+    height: 3em; }
+  .task .code {
+    margin-right: 1em; }
+  .task .day {
+    margin-right: 1em; }
+  .task time.time {
+    margin-left: 0.25em;
+    margin-right: 0.25em; }
+  .task .tooltip {
+    display: none;
+    position: absolute;
+    bottom: -1.5em;
+    right: 0.7em;
+    color: #949494;
+    text-transform: uppercase;
+    text-align: right;
+    font-weight: bold; }
+
 .alert {
   display: block;
   padding: 20px;
@@ -1020,3 +1003,6 @@ label {
   background-color: #F2D7D5;
   border-left-color: #C0392B;
   color: #C0392B; }
+
+.SelectedTaskList ul {
+  list-style: none; }

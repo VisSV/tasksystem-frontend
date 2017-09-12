@@ -12,14 +12,16 @@ class SelectedTaskList extends Component {
     var sortedTasks = _.sortBy(_.values(this.props.tasks.val()), 'starttime');
     var tasks = sortedTasks.map(function(task, i) {
       return (
-        <li key={i} onClick={self.props.clickHandler.bind(this, task)}>
-          <Task task={task} />
+        <li key={i} onClick={self.props.clickHandler.bind(this, task)}
+            className="task">
+          <Task task={task} tooltipText={"remove"} />
         </li>
       );
     });
     return (
       <div className="SelectedTaskList">
-        <CalendarView size={[500,500]} clickHandler={self.props.clickHandler} 
+        <h1>Selected Tasks</h1>
+        <CalendarView size={[600,500]} clickHandler={self.props.clickHandler} 
                                        tasks={_.values(self.props.tasks.val())} />
         <ul>
           {tasks}
