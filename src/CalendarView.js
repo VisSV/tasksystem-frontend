@@ -8,6 +8,13 @@ function hoursFromMidnight(t) {
   return t.diff(tt, 'hours', true); // real number diff
 }
 
+const margin = {
+  top: 15,
+  bottom: 5,
+  left: 45,
+  right: 5
+};
+
 class CalendarView extends Component {
   constructor(props) {
     super(props);
@@ -26,22 +33,26 @@ class CalendarView extends Component {
 
   createCalendar() {
     const svg = d3.select(this.svgNode);
+    this.plot = svg.append('g')
+      .attr('class', 'cal');
 
     this.dayScale = d3.scaleBand()
       .domain(days);
     this.timeScale = d3.scaleLinear()
-      .domain([0, 24]); // hours
+      .domain([7, 21]); // hours
     this.catScale = d3.scaleOrdinal(d3.schemeCategory10)
       .domain([1, 8]);
     // create the basic structure
     this.timeAxis = svg.append('g')
       .attr('class', 'time axis');
+    this.dateAxis = svg.append('g')
+      .attr('class', 'date axis');
 
-    svg.selectAll('.day.label').data(days)
+    this.dateAxis.selectAll('.day.label').data(days)
       .enter()
         .append('text')
           .attr('class', 'day label')
-          .attr('alignment-baseline', 'hanging')
+          //.attr('alignment-baseline', 'hanging')
           .attr('font-size', '12px')
           .text(function(d) {return d;});
   }
@@ -50,19 +61,24 @@ class CalendarView extends Component {
     const self = this;
     const svg = d3.select(this.svgNode);
 
+    var plotWidth = this.props.size[0] - margin.left - margin.right,
+        plotHeight = this.props.size[1] - margin.top - margin.bottom;
     // update scales
-    this.dayScale.range([0, this.props.size[0]]);
-    this.timeScale.range([this.props.size[1], 0]);
+    this.dayScale.range([0, plotWidth]);
+    this.timeScale.range([0, plotHeight]);
 
+    var timeAxis = d3.axisLeft(this.timeScale);
     this.timeAxis
-      .attr('transform', 'translate(0, ' + this.props.size[1] + ')');
-      //.attr(
+      .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
+      .call(timeAxis);
+    this.dateAxis.attr('transform', 'translate(' + margin.left + ', 0)');
+    this.plot.attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
     svg.selectAll('.day.label').data(days)
       .attr('x', function(d) {return self.dayScale(d);})
       .attr('y', 14);
 
-    var taskBlocks = svg.selectAll('.task').data(self.props.tasks);
+    var taskBlocks = this.plot.selectAll('.task').data(self.props.tasks);
     var blockGroups = taskBlocks.enter()
       .append('g')
         .attr('class', 'task');
@@ -70,7 +86,7 @@ class CalendarView extends Component {
     blockGroups.append('text')
       .attr('alignment-baseline', 'hanging');
 
-    taskBlocks = svg.selectAll('.task').data(self.props.tasks);
+    taskBlocks = this.plot.selectAll('.task').data(self.props.tasks);
     taskBlocks
       .attr('transform', function(d) {
         return 'translate(' + self.dayScale(d.date.format("ddd")) + ',' +
@@ -87,8 +103,8 @@ class CalendarView extends Component {
         return self.dayScale.bandwidth();
       })
       .attr('height', function(d) {
-        return self.timeScale(hoursFromMidnight(d.starttime)) - 
-               self.timeScale(hoursFromMidnight(d.endtime));
+        return self.timeScale(hoursFromMidnight(d.endtime)) - 
+               self.timeScale(hoursFromMidnight(d.starttime));
       })
       .attr('fill', function(d) {
         return self.catScale(d.category);
