@@ -10,7 +10,7 @@ function hoursFromMidnight(t) {
 }
 
 const margin = {
-  top: 15,
+  top: 18,
   bottom: 5,
   left: 45,
   right: 5
@@ -41,21 +41,12 @@ class CalendarView extends Component {
       .domain(days);
     this.timeScale = d3.scaleLinear()
       .domain([7, 21]); // hours
-    this.catScale = d3.scaleOrdinal(config.colorScale)
-      .domain([1, 8]);
+    
     // create the basic structure
     this.timeAxis = svg.append('g')
       .attr('class', 'time axis');
     this.dateAxis = svg.append('g')
       .attr('class', 'date axis');
-
-    this.dateAxis.selectAll('.day.label').data(days)
-      .enter()
-        .append('text')
-          .attr('class', 'day label')
-          //.attr('alignment-baseline', 'hanging')
-          .attr('font-size', '12px')
-          .text(function(d) {return d;});
   }
 
   updateCalendar() {
@@ -70,18 +61,21 @@ class CalendarView extends Component {
     this.timeScale.range([0, plotHeight]);
 
     // Axes and positioning updates
+    var dayAxis = d3.axisTop(this.dayScale);
+    this.dateAxis
+      .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
+      .call(dayAxis);
     var timeAxis = d3.axisLeft(this.timeScale);
     this.timeAxis
       .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
       .call(timeAxis);
-    this.dateAxis.attr('transform', 'translate(' + margin.left + ', 0)');
     this.plot.attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
     svg.selectAll('.day.label').data(days)
       .attr('x', function(d) {return self.dayScale(d);})
       .attr('y', 14);
 
-    var taskBlocks = this.plot.selectAll('.task').data(self.props.tasks);
+    var taskBlocks = this.plot.selectAll('.task').data(self.props.tasks, function(d) {return d.code});
     var blockGroups = taskBlocks.enter()
       .append('g')
         .attr('class', 'task');
@@ -89,7 +83,7 @@ class CalendarView extends Component {
     blockGroups.append('text')
       .attr('alignment-baseline', 'hanging');
 
-    taskBlocks = this.plot.selectAll('.task').data(self.props.tasks);
+    taskBlocks = this.plot.selectAll('.task').data(self.props.tasks, function(d) {return d.code});
     taskBlocks
       .attr('transform', function(d) {
         return 'translate(' + self.dayScale(d.date.format("ddd")) + ',' +
@@ -110,9 +104,12 @@ class CalendarView extends Component {
                self.timeScale(hoursFromMidnight(d.starttime));
       })
       .attr('fill', function(d) {
-        return self.catScale(d.category);
+        return config.colorScale[d.category];
       });
-    taskBlocks.select('text')
+    taskBlocks.selectAll('text')
+      .attr('width', function(d) {
+        return self.dayScale.bandwidth();
+      })
       .text(function(d) {
         return d.desc;
       });
