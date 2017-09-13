@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as d3 from 'd3';
+import config from './config';
 
 const days = ["Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
 
@@ -40,7 +41,7 @@ class CalendarView extends Component {
       .domain(days);
     this.timeScale = d3.scaleLinear()
       .domain([7, 21]); // hours
-    this.catScale = d3.scaleOrdinal(d3.schemeCategory10)
+    this.catScale = d3.scaleOrdinal(config.colorScale)
       .domain([1, 8]);
     // create the basic structure
     this.timeAxis = svg.append('g')
@@ -63,10 +64,12 @@ class CalendarView extends Component {
 
     var plotWidth = this.props.size[0] - margin.left - margin.right,
         plotHeight = this.props.size[1] - margin.top - margin.bottom;
+    
     // update scales
     this.dayScale.range([0, plotWidth]);
     this.timeScale.range([0, plotHeight]);
 
+    // Axes and positioning updates
     var timeAxis = d3.axisLeft(this.timeScale);
     this.timeAxis
       .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import config from './config';
 
 class Task extends Component {
   render() {
     return (
-      <div className="Task">
+      <div className="Task" style={{backgroundColor: config.colorScale[this.props.task.category]}}>
         <div className="task-info">
           <span className="code">{this.props.task.code}</span>
           <span className="desc">{this.props.task.desc}</span>
