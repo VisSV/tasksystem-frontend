@@ -735,12 +735,14 @@ img.scale-with-grid {
   box-sizing: border-box; }
 
 .column, .SelectedTaskList, .AvailableTaskList, .TaskSelector .alert,
-.columns {
+.columns,
+.LimitPanel li label,
+.LimitPanel li .count {
   width: 100%;
   float: left;
   box-sizing: border-box; }
 
-.row, .TaskSelector, .task {
+.row, .TaskSelector, .task, .LimitPanel li {
   margin-bottom: 2rem; }
 
 /* For devices larger than 400px */
@@ -755,50 +757,68 @@ img.scale-with-grid {
   .container, .App {
     width: 80%; }
   .column, .SelectedTaskList, .AvailableTaskList, .TaskSelector .alert,
-  .columns {
+  .columns,
+  .LimitPanel li label,
+  .LimitPanel li .count {
     margin-left: 4%; }
     .column:first-child:not([class^="offset"]), .SelectedTaskList:first-child:not([class^="offset"]), .AvailableTaskList:first-child:not([class^="offset"]), .TaskSelector .alert:first-child:not([class^="offset"]),
-    .columns:first-child:not([class^="offset"]) {
+    .columns:first-child:not([class^="offset"]),
+    .LimitPanel li label:first-child:not([class^="offset"]),
+    .LimitPanel li .count:first-child:not([class^="offset"]) {
       margin-left: 0; }
   .one.column, .one.SelectedTaskList, .one.AvailableTaskList, .TaskSelector .one.alert,
-  .one.columns {
+  .one.columns,
+  .LimitPanel li label.one,
+  .LimitPanel li .one.count {
     width: 4.66667%; }
-  .two.columns {
+  .two.columns, .LimitPanel li label.two, .LimitPanel li .two.count {
     width: 13.33333%; }
-  .three.columns {
+  .three.columns, .LimitPanel li label.three, .LimitPanel li .count {
     width: 22%; }
-  .four.columns {
+  .four.columns, .LimitPanel li label.four, .LimitPanel li .four.count {
     width: 30.66667%; }
-  .five.columns {
+  .five.columns, .LimitPanel li label.five, .LimitPanel li .five.count {
     width: 39.33333%; }
-  .six.columns {
+  .six.columns, .LimitPanel li label.six, .LimitPanel li .six.count {
     width: 48%; }
-  .seven.columns {
+  .seven.columns, .LimitPanel li label.seven, .LimitPanel li .seven.count {
     width: 56.66667%; }
-  .eight.columns {
+  .eight.columns, .LimitPanel li label.eight, .LimitPanel li .eight.count {
     width: 65.33333%; }
-  .nine.columns {
+  .nine.columns, .LimitPanel li label, .LimitPanel li .nine.count, .LimitPanel li label.count {
     width: 74%; }
-  .ten.columns {
+  .ten.columns, .LimitPanel li label.ten, .LimitPanel li .ten.count {
     width: 82.66667%; }
-  .eleven.columns {
+  .eleven.columns, .LimitPanel li label.eleven, .LimitPanel li .eleven.count {
     width: 91.33333%; }
-  .twelve.columns, .TaskSelector .columns.alert {
+  .twelve.columns, .TaskSelector .columns.alert, .TaskSelector .LimitPanel li label.alert, .LimitPanel li .TaskSelector label.alert, .TaskSelector .LimitPanel li .alert.count, .LimitPanel li .TaskSelector .alert.count, .LimitPanel li label.twelve, .LimitPanel li .twelve.count {
     width: 100%;
     margin-left: 0; }
   .one-third.column, .one-third.SelectedTaskList, .AvailableTaskList, .TaskSelector .one-third.alert, .TaskSelector .alert.AvailableTaskList,
   .one-third.columns,
-  .columns.AvailableTaskList {
+  .columns.AvailableTaskList,
+  .LimitPanel li label.AvailableTaskList,
+  .LimitPanel li .AvailableTaskList.count,
+  .LimitPanel li label.one-third,
+  .LimitPanel li .one-third.count {
     width: 30.66667%; }
   .two-thirds.column, .SelectedTaskList, .two-thirds.AvailableTaskList, .TaskSelector .two-thirds.alert, .TaskSelector .alert.SelectedTaskList,
   .two-thirds.columns,
-  .columns.SelectedTaskList {
+  .columns.SelectedTaskList,
+  .LimitPanel li label.SelectedTaskList,
+  .LimitPanel li .SelectedTaskList.count,
+  .LimitPanel li label.two-thirds,
+  .LimitPanel li .two-thirds.count {
     width: 63.33333%; }
   .one-half.column, .one-half.SelectedTaskList, .one-half.AvailableTaskList, .TaskSelector .one-half.alert,
-  .one-half.columns {
+  .one-half.columns,
+  .LimitPanel li label.one-half,
+  .LimitPanel li .one-half.count {
     width: 48%; }
   .full-width.column, .full-width.SelectedTaskList, .full-width.AvailableTaskList, .TaskSelector .full-width.alert,
-  .full-width.columns {
+  .full-width.columns,
+  .LimitPanel li label.full-width,
+  .LimitPanel li .full-width.count {
     width: 100%;
     margin-left: 0;
     margin-right: 0; }
@@ -825,13 +845,19 @@ img.scale-with-grid {
   .offset-by-eleven {
     margin-left: 95.33333%; }
   .offset-by-one-third.column, .offset-by-one-third.SelectedTaskList, .offset-by-one-third.AvailableTaskList, .TaskSelector .offset-by-one-third.alert,
-  .offset-by-one-third.columns {
+  .offset-by-one-third.columns,
+  .LimitPanel li label.offset-by-one-third,
+  .LimitPanel li .offset-by-one-third.count {
     margin-left: 34.66667%; }
   .offset-by-two-thirds.column, .offset-by-two-thirds.SelectedTaskList, .offset-by-two-thirds.AvailableTaskList, .TaskSelector .offset-by-two-thirds.alert,
-  .offset-by-two-thirds.columns {
+  .offset-by-two-thirds.columns,
+  .LimitPanel li label.offset-by-two-thirds,
+  .LimitPanel li .offset-by-two-thirds.count {
     margin-left: 69.33333%; }
   .offset-by-one-half.column, .offset-by-one-half.SelectedTaskList, .offset-by-one-half.AvailableTaskList, .TaskSelector .offset-by-one-half.alert,
-  .offset-by-one-half.columns {
+  .offset-by-one-half.columns,
+  .LimitPanel li label.offset-by-one-half,
+  .LimitPanel li .offset-by-one-half.count {
     margin-left: 52%; } }
 
 /* TABLET (PORTRAIT)
@@ -840,11 +866,19 @@ img.scale-with-grid {
   .container, .App {
     width: 768px; }
     .container .column.alpha, .App .column.alpha, .container .alpha.SelectedTaskList, .App .alpha.SelectedTaskList, .container .alpha.AvailableTaskList, .App .alpha.AvailableTaskList, .container .TaskSelector .alpha.alert, .TaskSelector .container .alpha.alert, .App .TaskSelector .alpha.alert, .TaskSelector .App .alpha.alert,
-    .container .columns.alpha, .App .columns.alpha {
+    .container .columns.alpha, .App .columns.alpha,
+    .container .LimitPanel li label.alpha, .LimitPanel li
+    .container label.alpha, .App .LimitPanel li label.alpha, .LimitPanel li .App label.alpha,
+    .container .LimitPanel li .alpha.count, .LimitPanel li
+    .container .alpha.count, .App .LimitPanel li .alpha.count, .LimitPanel li .App .alpha.count {
       margin-left: 0;
       margin-right: 2%; }
     .container .column.omega, .App .column.omega, .container .omega.SelectedTaskList, .App .omega.SelectedTaskList, .container .omega.AvailableTaskList, .App .omega.AvailableTaskList, .container .TaskSelector .omega.alert, .TaskSelector .container .omega.alert, .App .TaskSelector .omega.alert, .TaskSelector .App .omega.alert,
-    .container .columns.omega, .App .columns.omega {
+    .container .columns.omega, .App .columns.omega,
+    .container .LimitPanel li label.omega, .LimitPanel li
+    .container label.omega, .App .LimitPanel li label.omega, .LimitPanel li .App label.omega,
+    .container .LimitPanel li .omega.count, .LimitPanel li
+    .container .omega.count, .App .LimitPanel li .omega.count, .LimitPanel li .App .omega.count {
       margin-right: 0;
       margin-left: 2%; }
   .alpha.omega {
@@ -857,19 +891,23 @@ img.scale-with-grid {
   .container, .App {
     width: 100%; }
     .container .column, .App .column, .container .SelectedTaskList, .App .SelectedTaskList, .container .AvailableTaskList, .App .AvailableTaskList, .container .TaskSelector .alert, .TaskSelector .container .alert, .App .TaskSelector .alert, .TaskSelector .App .alert,
-    .container .columns, .App .columns {
+    .container .columns, .App .columns,
+    .container .LimitPanel li label, .LimitPanel li
+    .container label, .App .LimitPanel li label, .LimitPanel li .App label,
+    .container .LimitPanel li .count, .LimitPanel li
+    .container .count, .App .LimitPanel li .count, .LimitPanel li .App .count {
       max-width: 100%;
       margin-left: 2%;
       margin-right: 2%; }
     .container .one.column, .App .one.column, .container .one.SelectedTaskList, .App .one.SelectedTaskList, .container .one.AvailableTaskList, .App .one.AvailableTaskList, .container .TaskSelector .one.alert, .TaskSelector .container .one.alert, .App .TaskSelector .one.alert, .TaskSelector .App .one.alert {
       width: 96%; }
-    .container .one.columns, .App .one.columns, .container .two.columns, .App .two.columns, .container .three.columns, .App .three.columns, .container .four.columns, .App .four.columns, .container .five.columns, .App .five.columns, .container .six.columns, .App .six.columns, .container .seven.columns, .App .seven.columns, .container .eight.columns, .App .eight.columns, .container .nine.columns, .App .nine.columns, .container .ten.columns, .App .ten.columns, .container .eleven.columns, .App .eleven.columns, .container .twelve.columns, .App .twelve.columns, .container .TaskSelector .columns.alert, .TaskSelector .container .columns.alert, .App .TaskSelector .columns.alert, .TaskSelector .App .columns.alert {
+    .container .one.columns, .App .one.columns, .container .LimitPanel li label.one, .LimitPanel li .container label.one, .App .LimitPanel li label.one, .LimitPanel li .App label.one, .container .LimitPanel li .one.count, .LimitPanel li .container .one.count, .App .LimitPanel li .one.count, .LimitPanel li .App .one.count, .container .two.columns, .App .two.columns, .container .LimitPanel li label.two, .LimitPanel li .container label.two, .App .LimitPanel li label.two, .LimitPanel li .App label.two, .container .LimitPanel li .two.count, .LimitPanel li .container .two.count, .App .LimitPanel li .two.count, .LimitPanel li .App .two.count, .container .three.columns, .App .three.columns, .container .LimitPanel li label.three, .LimitPanel li .container label.three, .App .LimitPanel li label.three, .LimitPanel li .App label.three, .container .LimitPanel li .count, .LimitPanel li .container .count, .App .LimitPanel li .count, .LimitPanel li .App .count, .container .four.columns, .App .four.columns, .container .LimitPanel li label.four, .LimitPanel li .container label.four, .App .LimitPanel li label.four, .LimitPanel li .App label.four, .container .LimitPanel li .four.count, .LimitPanel li .container .four.count, .App .LimitPanel li .four.count, .LimitPanel li .App .four.count, .container .five.columns, .App .five.columns, .container .LimitPanel li label.five, .LimitPanel li .container label.five, .App .LimitPanel li label.five, .LimitPanel li .App label.five, .container .LimitPanel li .five.count, .LimitPanel li .container .five.count, .App .LimitPanel li .five.count, .LimitPanel li .App .five.count, .container .six.columns, .App .six.columns, .container .LimitPanel li label.six, .LimitPanel li .container label.six, .App .LimitPanel li label.six, .LimitPanel li .App label.six, .container .LimitPanel li .six.count, .LimitPanel li .container .six.count, .App .LimitPanel li .six.count, .LimitPanel li .App .six.count, .container .seven.columns, .App .seven.columns, .container .LimitPanel li label.seven, .LimitPanel li .container label.seven, .App .LimitPanel li label.seven, .LimitPanel li .App label.seven, .container .LimitPanel li .seven.count, .LimitPanel li .container .seven.count, .App .LimitPanel li .seven.count, .LimitPanel li .App .seven.count, .container .eight.columns, .App .eight.columns, .container .LimitPanel li label.eight, .LimitPanel li .container label.eight, .App .LimitPanel li label.eight, .LimitPanel li .App label.eight, .container .LimitPanel li .eight.count, .LimitPanel li .container .eight.count, .App .LimitPanel li .eight.count, .LimitPanel li .App .eight.count, .container .nine.columns, .App .nine.columns, .container .LimitPanel li label, .LimitPanel li .container label, .App .LimitPanel li label, .LimitPanel li .App label, .container .LimitPanel li .nine.count, .LimitPanel li .container .nine.count, .App .LimitPanel li .nine.count, .LimitPanel li .App .nine.count, .container .LimitPanel li label.count, .LimitPanel li .container label.count, .container .ten.columns, .App .ten.columns, .container .LimitPanel li label.ten, .LimitPanel li .container label.ten, .App .LimitPanel li label.ten, .LimitPanel li .App label.ten, .container .LimitPanel li .ten.count, .LimitPanel li .container .ten.count, .App .LimitPanel li .ten.count, .LimitPanel li .App .ten.count, .container .eleven.columns, .App .eleven.columns, .container .LimitPanel li label.eleven, .LimitPanel li .container label.eleven, .App .LimitPanel li label.eleven, .LimitPanel li .App label.eleven, .container .LimitPanel li .eleven.count, .LimitPanel li .container .eleven.count, .App .LimitPanel li .eleven.count, .LimitPanel li .App .eleven.count, .container .twelve.columns, .App .twelve.columns, .container .TaskSelector .columns.alert, .TaskSelector .container .columns.alert, .App .TaskSelector .columns.alert, .TaskSelector .App .columns.alert, .container .TaskSelector .LimitPanel li label.alert, .TaskSelector .LimitPanel li .container label.alert, .App .TaskSelector .LimitPanel li label.alert, .TaskSelector .LimitPanel li .App label.alert, .container .LimitPanel li .TaskSelector label.alert, .LimitPanel li .TaskSelector .container label.alert, .App .LimitPanel li .TaskSelector label.alert, .LimitPanel li .TaskSelector .App label.alert, .container .TaskSelector .LimitPanel li .alert.count, .TaskSelector .LimitPanel li .container .alert.count, .App .TaskSelector .LimitPanel li .alert.count, .TaskSelector .LimitPanel li .App .alert.count, .container .LimitPanel li .TaskSelector .alert.count, .LimitPanel li .TaskSelector .container .alert.count, .App .LimitPanel li .TaskSelector .alert.count, .LimitPanel li .TaskSelector .App .alert.count, .container .LimitPanel li label.twelve, .LimitPanel li .container label.twelve, .App .LimitPanel li label.twelve, .LimitPanel li .App label.twelve, .container .LimitPanel li .twelve.count, .LimitPanel li .container .twelve.count, .App .LimitPanel li .twelve.count, .LimitPanel li .App .twelve.count {
       width: 96%; }
     .container .one-third.column, .App .one-third.column, .container .one-third.SelectedTaskList, .App .one-third.SelectedTaskList, .container .SelectedTaskList.AvailableTaskList, .container .AvailableTaskList, .App .AvailableTaskList, .container .TaskSelector .one-third.alert, .TaskSelector .container .one-third.alert, .App .TaskSelector .one-third.alert, .TaskSelector .App .one-third.alert, .container .TaskSelector .alert.AvailableTaskList, .TaskSelector .container .alert.AvailableTaskList {
       width: 96%; }
     .container .two-thirds.column, .App .two-thirds.column, .container .SelectedTaskList, .App .SelectedTaskList, .container .two-thirds.AvailableTaskList, .App .two-thirds.AvailableTaskList, .container .AvailableTaskList.SelectedTaskList, .container .TaskSelector .two-thirds.alert, .TaskSelector .container .two-thirds.alert, .App .TaskSelector .two-thirds.alert, .TaskSelector .App .two-thirds.alert, .container .TaskSelector .alert.SelectedTaskList, .TaskSelector .container .alert.SelectedTaskList {
       width: 96%; }
-    .container .full-width.columns, .App .full-width.columns {
+    .container .full-width.columns, .App .full-width.columns, .container .LimitPanel li label.full-width, .LimitPanel li .container label.full-width, .App .LimitPanel li label.full-width, .LimitPanel li .App label.full-width, .container .LimitPanel li .full-width.count, .LimitPanel li .container .full-width.count, .App .LimitPanel li .full-width.count, .LimitPanel li .App .full-width.count {
       width: 100%;
       margin-left: 0;
       margin-right: 0; }
@@ -882,19 +920,23 @@ img.scale-with-grid {
   .container, .App {
     width: 100%; }
     .container .column, .App .column, .container .SelectedTaskList, .App .SelectedTaskList, .container .AvailableTaskList, .App .AvailableTaskList, .container .TaskSelector .alert, .TaskSelector .container .alert, .App .TaskSelector .alert, .TaskSelector .App .alert,
-    .container .columns, .App .columns {
+    .container .columns, .App .columns,
+    .container .LimitPanel li label, .LimitPanel li
+    .container label, .App .LimitPanel li label, .LimitPanel li .App label,
+    .container .LimitPanel li .count, .LimitPanel li
+    .container .count, .App .LimitPanel li .count, .LimitPanel li .App .count {
       max-width: 100%;
       margin-left: 2%;
       margin-right: 2%; }
     .container .one.column, .App .one.column, .container .one.SelectedTaskList, .App .one.SelectedTaskList, .container .one.AvailableTaskList, .App .one.AvailableTaskList, .container .TaskSelector .one.alert, .TaskSelector .container .one.alert, .App .TaskSelector .one.alert, .TaskSelector .App .one.alert {
       width: 96%; }
-    .container .one.columns, .App .one.columns, .container .two.columns, .App .two.columns, .container .three.columns, .App .three.columns, .container .four.columns, .App .four.columns, .container .five.columns, .App .five.columns, .container .six.columns, .App .six.columns, .container .seven.columns, .App .seven.columns, .container .eight.columns, .App .eight.columns, .container .nine.columns, .App .nine.columns, .container .ten.columns, .App .ten.columns, .container .eleven.columns, .App .eleven.columns, .container .twelve.columns, .App .twelve.columns, .container .TaskSelector .columns.alert, .TaskSelector .container .columns.alert, .App .TaskSelector .columns.alert, .TaskSelector .App .columns.alert {
+    .container .one.columns, .App .one.columns, .container .LimitPanel li label.one, .LimitPanel li .container label.one, .App .LimitPanel li label.one, .LimitPanel li .App label.one, .container .LimitPanel li .one.count, .LimitPanel li .container .one.count, .App .LimitPanel li .one.count, .LimitPanel li .App .one.count, .container .two.columns, .App .two.columns, .container .LimitPanel li label.two, .LimitPanel li .container label.two, .App .LimitPanel li label.two, .LimitPanel li .App label.two, .container .LimitPanel li .two.count, .LimitPanel li .container .two.count, .App .LimitPanel li .two.count, .LimitPanel li .App .two.count, .container .three.columns, .App .three.columns, .container .LimitPanel li label.three, .LimitPanel li .container label.three, .App .LimitPanel li label.three, .LimitPanel li .App label.three, .container .LimitPanel li .count, .LimitPanel li .container .count, .App .LimitPanel li .count, .LimitPanel li .App .count, .container .four.columns, .App .four.columns, .container .LimitPanel li label.four, .LimitPanel li .container label.four, .App .LimitPanel li label.four, .LimitPanel li .App label.four, .container .LimitPanel li .four.count, .LimitPanel li .container .four.count, .App .LimitPanel li .four.count, .LimitPanel li .App .four.count, .container .five.columns, .App .five.columns, .container .LimitPanel li label.five, .LimitPanel li .container label.five, .App .LimitPanel li label.five, .LimitPanel li .App label.five, .container .LimitPanel li .five.count, .LimitPanel li .container .five.count, .App .LimitPanel li .five.count, .LimitPanel li .App .five.count, .container .six.columns, .App .six.columns, .container .LimitPanel li label.six, .LimitPanel li .container label.six, .App .LimitPanel li label.six, .LimitPanel li .App label.six, .container .LimitPanel li .six.count, .LimitPanel li .container .six.count, .App .LimitPanel li .six.count, .LimitPanel li .App .six.count, .container .seven.columns, .App .seven.columns, .container .LimitPanel li label.seven, .LimitPanel li .container label.seven, .App .LimitPanel li label.seven, .LimitPanel li .App label.seven, .container .LimitPanel li .seven.count, .LimitPanel li .container .seven.count, .App .LimitPanel li .seven.count, .LimitPanel li .App .seven.count, .container .eight.columns, .App .eight.columns, .container .LimitPanel li label.eight, .LimitPanel li .container label.eight, .App .LimitPanel li label.eight, .LimitPanel li .App label.eight, .container .LimitPanel li .eight.count, .LimitPanel li .container .eight.count, .App .LimitPanel li .eight.count, .LimitPanel li .App .eight.count, .container .nine.columns, .App .nine.columns, .container .LimitPanel li label, .LimitPanel li .container label, .App .LimitPanel li label, .LimitPanel li .App label, .container .LimitPanel li .nine.count, .LimitPanel li .container .nine.count, .App .LimitPanel li .nine.count, .LimitPanel li .App .nine.count, .container .LimitPanel li label.count, .LimitPanel li .container label.count, .container .ten.columns, .App .ten.columns, .container .LimitPanel li label.ten, .LimitPanel li .container label.ten, .App .LimitPanel li label.ten, .LimitPanel li .App label.ten, .container .LimitPanel li .ten.count, .LimitPanel li .container .ten.count, .App .LimitPanel li .ten.count, .LimitPanel li .App .ten.count, .container .eleven.columns, .App .eleven.columns, .container .LimitPanel li label.eleven, .LimitPanel li .container label.eleven, .App .LimitPanel li label.eleven, .LimitPanel li .App label.eleven, .container .LimitPanel li .eleven.count, .LimitPanel li .container .eleven.count, .App .LimitPanel li .eleven.count, .LimitPanel li .App .eleven.count, .container .twelve.columns, .App .twelve.columns, .container .TaskSelector .columns.alert, .TaskSelector .container .columns.alert, .App .TaskSelector .columns.alert, .TaskSelector .App .columns.alert, .container .TaskSelector .LimitPanel li label.alert, .TaskSelector .LimitPanel li .container label.alert, .App .TaskSelector .LimitPanel li label.alert, .TaskSelector .LimitPanel li .App label.alert, .container .LimitPanel li .TaskSelector label.alert, .LimitPanel li .TaskSelector .container label.alert, .App .LimitPanel li .TaskSelector label.alert, .LimitPanel li .TaskSelector .App label.alert, .container .TaskSelector .LimitPanel li .alert.count, .TaskSelector .LimitPanel li .container .alert.count, .App .TaskSelector .LimitPanel li .alert.count, .TaskSelector .LimitPanel li .App .alert.count, .container .LimitPanel li .TaskSelector .alert.count, .LimitPanel li .TaskSelector .container .alert.count, .App .LimitPanel li .TaskSelector .alert.count, .LimitPanel li .TaskSelector .App .alert.count, .container .LimitPanel li label.twelve, .LimitPanel li .container label.twelve, .App .LimitPanel li label.twelve, .LimitPanel li .App label.twelve, .container .LimitPanel li .twelve.count, .LimitPanel li .container .twelve.count, .App .LimitPanel li .twelve.count, .LimitPanel li .App .twelve.count {
       width: 96%; }
     .container .one-third.column, .App .one-third.column, .container .one-third.SelectedTaskList, .App .one-third.SelectedTaskList, .container .SelectedTaskList.AvailableTaskList, .container .AvailableTaskList, .App .AvailableTaskList, .container .TaskSelector .one-third.alert, .TaskSelector .container .one-third.alert, .App .TaskSelector .one-third.alert, .TaskSelector .App .one-third.alert, .container .TaskSelector .alert.AvailableTaskList, .TaskSelector .container .alert.AvailableTaskList {
       width: 96%; }
     .container .two-thirds.column, .App .two-thirds.column, .container .SelectedTaskList, .App .SelectedTaskList, .container .two-thirds.AvailableTaskList, .App .two-thirds.AvailableTaskList, .container .AvailableTaskList.SelectedTaskList, .container .TaskSelector .two-thirds.alert, .TaskSelector .container .two-thirds.alert, .App .TaskSelector .two-thirds.alert, .TaskSelector .App .two-thirds.alert, .container .TaskSelector .alert.SelectedTaskList, .TaskSelector .container .alert.SelectedTaskList {
       width: 96%; }
-    .container .full-width.columns, .App .full-width.columns {
+    .container .full-width.columns, .App .full-width.columns, .container .LimitPanel li label.full-width, .LimitPanel li .container label.full-width, .App .LimitPanel li label.full-width, .LimitPanel li .App label.full-width, .container .LimitPanel li .full-width.count, .LimitPanel li .container .full-width.count, .App .LimitPanel li .full-width.count, .LimitPanel li .App .full-width.count {
       width: 100%;
       margin-left: 0;
       margin-right: 0; }
@@ -910,16 +952,16 @@ img.scale-with-grid {
   clear: both;
   visibility: hidden; }
 
-.clearfix, .row, .TaskSelector, .task {
+.clearfix, .row, .TaskSelector, .task, .LimitPanel li {
   zoom: 1; }
-  .clearfix:before, .clearfix:after, .row:before, .TaskSelector:before, .task:before, .row:after, .TaskSelector:after, .task:after {
+  .clearfix:before, .clearfix:after, .row:before, .TaskSelector:before, .task:before, .LimitPanel li:before, .row:after, .TaskSelector:after, .task:after, .LimitPanel li:after {
     content: "\0020";
     display: block;
     overflow: hidden;
     visibility: hidden;
     width: 0;
     height: 0; }
-  .clearfix:after, .row:after, .TaskSelector:after, .task:after {
+  .clearfix:after, .row:after, .TaskSelector:after, .task:after, .LimitPanel li:after {
     clear: both; }
 
 .clear {
@@ -1021,3 +1063,17 @@ h3 {
 
 .SelectedTaskList ul {
   list-style: none; }
+
+.LimitPanel h2 {
+  text-align: left;
+  margin-bottom: 0.3em; }
+
+.LimitPanel ul {
+  width: 15em; }
+
+.LimitPanel li {
+  margin-bottom: 0.2em; }
+  .LimitPanel li.violation {
+    border-left: 5px solid;
+    background-color: #F2D7D5;
+    border-left-color: #C0392B; }
