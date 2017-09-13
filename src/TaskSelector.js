@@ -30,7 +30,7 @@ class TaskSelector extends Component {
         })
         .catch(function(err) {
           if(err.response && err.response.data) {
-            if(err.response.data.code == "task_taken") {
+            if(err.response.data.code === "task_taken") {
               self.setState({
                 message: task.desc + " already taken"
               });
