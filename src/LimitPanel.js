@@ -7,6 +7,8 @@ const groupLimits = {
 }
 const hourLimit = 20;
 
+// Limits are not explicitly enforced. The old system did this so 
+// this one does the same
 class LimitPanel extends Component {
   render() {
     var tasks = _.values(this.props.tasks.val());
