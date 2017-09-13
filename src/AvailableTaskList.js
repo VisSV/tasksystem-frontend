@@ -28,7 +28,7 @@ class AvailableTaskList extends Component {
   render() {
     var self = this;
     // Filter by the available tasks
-    var tasks = this.props.tasks.val();
+    var tasks = Object.assign({}, this.props.tasks.val());
     if(!this.state.showConflicts) {
       const selTasks = _.values(self.props.selectedTasks.val());
       _.keys(tasks).forEach(function(k) {
@@ -43,6 +43,7 @@ class AvailableTaskList extends Component {
         }
       });
     }
+    // Group by whatever the thing is set to
     var groupedTasks = _.groupBy(_.values(tasks), self.state.groupBy);
     var groups = _.sortBy(_.keys(groupedTasks));
     var availTasks = groups.map(function(gid, i) {
