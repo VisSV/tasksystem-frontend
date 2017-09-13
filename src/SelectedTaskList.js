@@ -3,6 +3,7 @@ import _ from 'lodash';
 
 import Task from './Task';
 import CalendarView from './CalendarView';
+import LimitPanel from './LimitPanel';
 
 class SelectedTaskList extends Component {
 
@@ -21,6 +22,7 @@ class SelectedTaskList extends Component {
     return (
       <div className="SelectedTaskList">
         <h1>Selected Tasks</h1>
+        <LimitPanel tasks={self.props.tasks} />
         <CalendarView size={[600,500]} clickHandler={self.props.clickHandler} 
                                        tasks={_.values(self.props.tasks.val())} />
         <ul>
