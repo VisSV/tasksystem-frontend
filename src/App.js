@@ -24,10 +24,10 @@ class App extends Component {
 
     // initialize the state and set up the re-rendering callback
     var initState = {
-      //status: "unauthorized",
-      //authToken: null,
-      status: "loading",
-      authToken: '3f5fbf167ddda607626889ce07d1c401abeddc0f',
+      status: "unauthorized",
+      authToken: null,
+      //status: "loading",
+      //authToken: '3f5fbf167ddda607626889ce07d1c401abeddc0f',
       errText: null,
       availableTasks: {},
       selectedTasks: {}
