@@ -23,7 +23,7 @@ class LoginScreen extends Component {
       password: e.target.password.value
     };
     self.setState({isLoading: true});
-    axios.post('http://' + config.hostname + '/api-token-auth/', data)
+    axios.post(config.httpaddr + '/api-token-auth/', data)
       .then(function(res) {
         self.setState({loginErrors: [], isLoading: false});
         self.props.cortex.merge({

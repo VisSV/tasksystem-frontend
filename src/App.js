@@ -43,7 +43,7 @@ class App extends Component {
   wsConnect() {
     var self = this;
     var sock = new WebSocketBridge();
-    sock.connect('ws://' + config.hostname);
+    sock.connect(config.wsaddr);
     sock.listen(function(evt, stream) {
       if(self.state.cortex.status.val() === "loaded") {
         switch(evt.action) {
@@ -70,8 +70,8 @@ class App extends Component {
         'Authorization': 'Token ' + this.state.cortex.authToken.val()
       }
     };
-    var availLoad = axios.get('http://' + config.hostname + '/available_tasks', reqConfig);
-    var myTasksLoad = axios.get('http://' + config.hostname + '/selected_tasks', reqConfig);
+    var availLoad = axios.get(config.httpaddr + '/available_tasks', reqConfig);
+    var myTasksLoad = axios.get(config.httpaddr + '/selected_tasks', reqConfig);
     axios.all([availLoad, myTasksLoad])
       .then(axios.spread(function(avails, mine) {
         var myTasks = {};

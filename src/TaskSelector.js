@@ -20,7 +20,7 @@ class TaskSelector extends Component {
           'Authorization': 'Token ' + self.props.authToken.val()
         }
       };
-      axios.put('http://' + config.hostname + '/select_task/' + task.code, {}, reqConfig)
+      axios.put(config.httpaddr + '/select_task/' + task.code, {}, reqConfig)
         .then(function(res) {
           var obj = {};
           obj[task.code] = task;
@@ -47,7 +47,7 @@ class TaskSelector extends Component {
           'Authorization': 'Token ' + self.props.authToken.val()
         }
       };
-      axios.delete('http://' + config.hostname + '/select_task/' + task.code, reqConfig)
+      axios.delete(config.httpaddr + '/select_task/' + task.code, reqConfig)
         .then(function(res) {
           var obj = {};
           obj[task.code] = task;
