@@ -8,7 +8,7 @@ var config = {
 };
 
 config['httpaddr'] = config.protocol + '://' + config.hostname;
-config['wsaddr'] = 'ws://' + config.hostname;
+config['wsaddr'] = 'wss://' + config.hostname;
 
 export default config;
 
