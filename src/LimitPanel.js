@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
-import moment from 'moment';
+import taskHours from './util';
 
 const groupLimits = {
-  1: 3
+  1: [0, 3]
 }
 const hourLimit = 20;
 
@@ -19,24 +19,26 @@ class LimitPanel extends Component {
     var tasks = _.values(this.props.tasks.val());
     var groupedTasks = _.groupBy(_.values(tasks), 'category');
     groupedTasks = Object.assign({}, defaultGroups, groupedTasks);
+    var groupHours = _.mapValues(groupedTasks, function(group) {
+      return _.reduce(group, taskHours, 0);
+    });
     var groups = _.sortBy(_.keys(groupLimits));
     var categoryCounts = groups.map(function(g) {
       var classes = "";
-      if(groupedTasks[g].length > groupLimits[g]) {
+      if(groupHours[g] < groupLimits[g][0] || groupHours[g] > groupLimits[g][1]) {
         classes = classes + " violation";
       }
       return (
-        <li className={groupedTasks[g].length > groupLimits[g] ? 'violation' : ''} key={g}>
+        <li className={classes} key={g}>
           <label>Category {g}</label>
           <div className="count">
-            {groupedTasks[g].length} / {groupLimits[g]}
+            {groupLimits[g][0]} &le; {groupHours[g]} &le; {groupLimits[g][1]}
           </div>
         </li>
       );
     });
     var ttlHours = _.reduce(tasks, function(ttl, task) {
-      var hours = moment.duration(task.endtime.diff(task.starttime)).asHours();
-      return ttl + hours;
+      return ttl + taskHours(task);
     }, 0);
     
     return (

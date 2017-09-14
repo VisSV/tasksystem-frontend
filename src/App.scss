@@ -179,12 +179,12 @@ h3 {
     margin-bottom: 0.2em;
 
     label {
-      @extend .nine;
+      @extend .eight;
       @extend .columns;
     }
 
     .count {
-      @extend .three;
+      @extend .four;
       @extend .columns;
     }
   }

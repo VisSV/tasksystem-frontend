@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as d3 from 'd3';
 import config from './config';
+import { taskHours } from './util';
 
 const days = ["Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
 
