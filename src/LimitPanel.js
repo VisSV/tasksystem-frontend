@@ -7,7 +7,7 @@ const groupLimits = {
   2: [0, 6],
   3: [0, 6],
   4: [0, 6],
-  5: [1, 6],
+  5: [0, 6],
   7: [1, 1]
 }
 const hourLimit = 20;
