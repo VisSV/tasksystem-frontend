@@ -25,7 +25,7 @@ class LimitPanel extends Component {
     var groupedTasks = _.groupBy(_.values(tasks), 'category');
     groupedTasks = Object.assign({}, defaultGroups, groupedTasks);
     var groupHours = _.mapValues(groupedTasks, function(group) {
-      return _.reduce(group, taskHours, 0);
+      return _.reduce(group, function(ttl, task) {return ttl + taskHours(task);}, 0);
     });
     var groups = _.sortBy(_.keys(groupLimits));
     var categoryCounts = groups.map(function(g) {
