@@ -7,12 +7,18 @@ const groupLimits = {
 }
 const hourLimit = 20;
 
+var defaultGroups = {};
+_.keys(groupLimits).forEach(function(k) {
+  defaultGroups[k] = [];
+});
+
 // Limits are not explicitly enforced. The old system did this so 
 // this one does the same
 class LimitPanel extends Component {
   render() {
     var tasks = _.values(this.props.tasks.val());
     var groupedTasks = _.groupBy(_.values(tasks), 'category');
+    groupedTasks = Object.assign({}, defaultGroups, groupedTasks);
     var groups = _.sortBy(_.keys(groupLimits));
     var categoryCounts = groups.map(function(g) {
       var classes = "";
