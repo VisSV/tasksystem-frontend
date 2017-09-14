@@ -3,7 +3,12 @@ import _ from 'lodash';
 import taskHours from './util';
 
 const groupLimits = {
-  1: [0, 3]
+  1: [0, 6],
+  2: [0, 6],
+  3: [0, 6],
+  4: [0, 6],
+  5: [1, 6],
+  7: [1, 1]
 }
 const hourLimit = 20;
 
