@@ -60,6 +60,7 @@ class LoginScreen extends Component {
     }
     return (
       <div className="LoginScreen">
+        <h1>Please log in</h1>
         {errDisplay}
         <form onSubmit={this.processLogin}>
           <label>Username: <input type="text" name="username" /></label>
