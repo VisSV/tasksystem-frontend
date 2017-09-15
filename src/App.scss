@@ -163,6 +163,14 @@ h3 {
   list-style: none;
 }
 
+.LoginScreen {
+  .loading-spinner {
+    display: inline;
+    position: relative;
+    margin-left: 1.5em;
+  }
+}
+
 .LimitPanel {
   h2 {
     text-align: left;

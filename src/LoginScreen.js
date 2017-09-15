@@ -3,6 +3,7 @@ import axios from 'axios';
 import _ from 'lodash';
 
 import config from './config';
+import Spinner from './Spinner';
 
 class LoginScreen extends Component {
   constructor(props) {
@@ -45,8 +46,8 @@ class LoginScreen extends Component {
   }
 
   render() {
-    var errorList = this.state.loginErrors.map(function(err) {
-      return <li>{err}</li>
+    var errorList = this.state.loginErrors.map(function(err, i) {
+      return <li key={i}>{err}</li>
     });
     if(errorList.length > 0) {
       var errDisplay = (
@@ -58,6 +59,9 @@ class LoginScreen extends Component {
         </div>
       );
     }
+    if(this.state.isLoading) {
+      var spinner = <div className="loading-spinner"></div>;
+    }
     return (
       <div className="LoginScreen">
         <h1>Please log in</h1>
@@ -65,7 +69,7 @@ class LoginScreen extends Component {
         <form onSubmit={this.processLogin}>
           <label>Username: <input type="text" name="username" /></label>
           <label>Password: <input type="password" name="password" /></label>
-          <button type="submit">Login</button>
+          <button type="submit" disabled={this.state.isLoading}>Login {spinner}</button>
         </form>
       </div>
     );
