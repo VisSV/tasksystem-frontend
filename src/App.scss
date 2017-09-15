@@ -1,5 +1,6 @@
 
 @import "skeleton";
+@import "spinner";
 
 // basic site layout
 .App {
@@ -145,6 +146,10 @@ h3 {
   background-color: #F2D7D5;
   border-left-color: #C0392B;
   color: #C0392B;
+}
+
+.info-text {
+  font-size: smaller;
 }
 
 .TaskSelector {
