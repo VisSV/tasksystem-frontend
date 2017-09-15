@@ -49,6 +49,10 @@ class LimitPanel extends Component {
     return (
       <div className="LimitPanel">
         <h2>Limits</h2>
+        <p className="info-text">
+          Please pay attention to any red lines. If you take too many tasks
+          of a certain type then the SV chairs will remove those at random.
+        </p>
         <ul>
           {categoryCounts}
           <li className={ttlHours < hourLimit ? 'violation' : ''}>
