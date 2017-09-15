@@ -8,7 +8,7 @@ class AvailableTaskList extends Component {
     super(props);
 
     this.state = {
-      showConflicts: true,
+      showConflicts: false,
       groupBy: "category"
     };
   }
