@@ -14,7 +14,7 @@ class TaskSelector extends Component {
 
   render() {
     var self = this;
-    var handleTaskSelect = function(task) {
+    var handleTaskSelect = function(task, e) {
       var reqConfig = {
         headers: {
           'Authorization': 'Token ' + self.props.authToken.val()
