@@ -3,7 +3,6 @@ import axios from 'axios';
 import _ from 'lodash';
 
 import config from './config';
-import Spinner from './Spinner';
 
 class LoginScreen extends Component {
   constructor(props) {

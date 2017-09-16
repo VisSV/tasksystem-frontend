@@ -58,6 +58,9 @@ class App extends Component {
             obj[task.code] = task;
             self.state.cortex.availableTasks.merge(obj);
             break;
+          default:
+            console.warn("Unknown action: " + evt.action);
+            break;
         }
       }
     });

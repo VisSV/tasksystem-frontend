@@ -3,7 +3,7 @@
 @import "spinner";
 
 html, body {
-  height: 98%;
+  //height: 98%;
   //overflow: hidden;
 }
 
@@ -20,15 +20,19 @@ html, body {
 .SelectedTaskList {
   @extend .eight;
   @extend .columns;
-  height: 100%;
-  overflow: scroll;
+
+  //make the 2 panels scroll independently
+  position: fixed;
+  left: 35%;
+  height: 98%;
+  overflow: auto;
 }
 
 .AvailableTaskList {
   @extend .four;
   @extend .columns;
-  height: 100%;
-  overflow: scroll;
+  //height: 100%;
+  //overflow: scroll;
 }
 
 .availabletasks {
