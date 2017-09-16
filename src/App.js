@@ -7,6 +7,7 @@ import { WebSocketBridge } from 'django-channels';
 import './App.css';
 import config from './config';
 
+import ServerStatus from './ServerStatus';
 import LoadingScreen from './LoadingScreen';
 import TaskSelector from './TaskSelector';
 import LoginScreen from './LoginScreen';
@@ -158,6 +159,8 @@ class App extends Component {
     };
     return (
       <div className="App">
+        <ServerStatus />
+        <hr/>
         {screen}
       </div>
     );
