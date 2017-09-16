@@ -24,8 +24,9 @@ html, body {
   //make the 2 panels scroll independently
   position: fixed;
   left: 33%;
-  height: 98%;
-  overflow: auto;
+  height: 100%;
+  overflow: scroll;
+  padding-bottom: 6em;
 }
 
 .AvailableTaskList {
