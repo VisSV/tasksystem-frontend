@@ -1,7 +1,18 @@
 import React, { Component } from 'react';
+import moment from 'moment'
 import _ from 'lodash';
 
 import Task from './Task'
+
+const dayOrder = {
+  "Sat": 1,
+  "Sun": 2,
+  "Mon": 3,
+  "Tue": 4,
+  "Wed": 5,
+  "Thu": 6,
+  "Fri": 7
+};
 
 class AvailableTaskList extends Component {
   constructor(props) {
@@ -11,6 +22,8 @@ class AvailableTaskList extends Component {
       showConflicts: false,
       groupBy: "category"
     };
+
+    this.groupTasks = this.groupTasks.bind(this);
   }
 
   showAllTasks(e) {
@@ -23,6 +36,30 @@ class AvailableTaskList extends Component {
 
   updateGroup(e) {
     this.setState({groupBy: e.target.value});
+  }
+
+  groupTasks(tasks) {
+    var self = this;
+    // Group by whatever the thing is set to
+    var groupedTasks;
+    var ts = _.values(tasks);
+    switch(self.state.groupBy) {
+      case "date":
+        groupedTasks = _.groupBy(ts, function(tt) {
+          //return tt.date.format("YYYY-MM-DD");
+          return tt.date.format("ddd");
+        });
+        break;
+      case "category":
+        groupedTasks = _.groupBy(ts, function(tt) {
+          return "Category " + tt.category;
+        });
+        break;
+      default:
+        groupedTasks = _.groupBy(ts, self.state.groupBy);
+        break;
+    }
+    return groupedTasks;
   }
 
   render() {
@@ -43,12 +80,18 @@ class AvailableTaskList extends Component {
         }
       });
     }
-    // Group by whatever the thing is set to
-    var groupedTasks = _.groupBy(_.values(tasks), self.state.groupBy);
-    var groups = _.sortBy(_.keys(groupedTasks));
+    var groupedTasks = this.groupTasks(tasks);
+    var groups = _.keys(groupedTasks);
+    if(self.state.groupBy === "date") {
+      groups = _.sortBy(groups, function(d) {
+        return dayOrder[d];
+      });
+    } else {
+      groups = _.sortBy(groups);
+    }
     var availTasks = groups.map(function(gid, i) {
       var taskGroup = _.sortBy(groupedTasks[gid], 'code');
-      var groupName = self.state.groupBy + ' ' + gid;
+      var groupName = gid;
       var tasks = taskGroup.map(function(task, j) {
         return(
           <li className="task" key={j} onClick={self.props.clickHandler.bind(this, task)}>

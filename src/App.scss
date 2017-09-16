@@ -2,9 +2,15 @@
 @import "skeleton";
 @import "spinner";
 
+html, body {
+  height: 98%;
+  //overflow: hidden;
+}
+
 // basic site layout
 .App {
   @extend .container;
+  //height: 98%;
 }
 
 .TaskSelector {
@@ -12,13 +18,17 @@
 }
 
 .SelectedTaskList {
-  @extend .two-thirds;
-  @extend .column;
+  @extend .eight;
+  @extend .columns;
+  height: 100%;
+  overflow: scroll;
 }
 
 .AvailableTaskList {
-  @extend .one-third;
-  @extend .column;
+  @extend .four;
+  @extend .columns;
+  height: 100%;
+  overflow: scroll;
 }
 
 .availabletasks {
