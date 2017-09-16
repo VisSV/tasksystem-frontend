@@ -48,7 +48,8 @@ class App extends Component {
       if(self.state.cortex.status.val() === "loaded") {
         switch(evt.action) {
           case "remove":
-            self.state.cortex.availableTasks[evt.task.code].destroy();
+            if(self.state.cortex.availableTasks.hasKey(evt.task.code))
+              self.state.cortex.availableTasks[evt.task.code].destroy();
             break;
           case "add":
             var task = evt.task;
@@ -70,8 +71,8 @@ class App extends Component {
         'Authorization': 'Token ' + this.state.cortex.authToken.val()
       }
     };
-    var availLoad = axios.get(config.httpaddr + '/available_tasks', reqConfig);
-    var myTasksLoad = axios.get(config.httpaddr + '/selected_tasks', reqConfig);
+    var availLoad = axios.get(config.httpaddr + '/available_tasks/', reqConfig);
+    var myTasksLoad = axios.get(config.httpaddr + '/selected_tasks/', reqConfig);
     axios.all([availLoad, myTasksLoad])
       .then(axios.spread(function(avails, mine) {
         var myTasks = {};
