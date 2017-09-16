@@ -18,12 +18,12 @@ html, body {
 }
 
 .SelectedTaskList {
-  @extend .eight;
+  @extend .seven;
   @extend .columns;
 
   //make the 2 panels scroll independently
   position: fixed;
-  left: 35%;
+  left: 33%;
   height: 98%;
   overflow: auto;
 }
