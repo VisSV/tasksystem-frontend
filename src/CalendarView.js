@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import * as d3 from 'd3';
 import config from './config';
-import { taskHours } from './util';
 
 const days = ["Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
 
@@ -112,7 +111,7 @@ class CalendarView extends Component {
         return self.dayScale.bandwidth();
       })
       .text(function(d) {
-        return d.desc;
+        return d.code;
       });
     taskBlocks.exit().remove();
   }
