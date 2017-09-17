@@ -101,7 +101,7 @@ class AvailableTaskList extends Component {
           className += " clickable";
         }
         return(
-          <li className="task" key={j} onClick={clickHandler} className={className}>
+          <li key={j} onClick={clickHandler} className={className}>
             <Task task={task} tooltipText={ttText} />
           </li>
         );
