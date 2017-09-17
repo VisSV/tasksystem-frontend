@@ -80,14 +80,11 @@ class CalendarView extends Component {
       .append('g')
         .attr('class', 'task');
     blockGroups.append('rect');
-    blockGroups.append('foreignObject')
-      //.attr('requiredExtensions', "http://www.w3.org/1999/xhtml")
+    var taskDescs = blockGroups.append('foreignObject')
       .append('xhtml:body')
-        .style('background-color', 'rgba(0,0,0,0)')
-        //.attr('xmlns', 'http://www.w3.org/1999/xhtml')
-        .append('xhtml:p')
-          //.attr('xmlns', 'http://www.w3.org/1999/xhtml');
-      //.attr('alignment-baseline', 'hanging');
+        .style('background-color', 'rgba(0,0,0,0)');
+    taskDescs.append('xhtml:p').attr('class', 'taskdesc');
+    taskDescs.append('xhtml:p').attr('class', 'tooltip').text('remove');
 
     taskBlocks = this.plot.selectAll('.task').data(self.props.tasks, function(d) {return d.code});
     taskBlocks
@@ -97,7 +94,9 @@ class CalendarView extends Component {
                               ')';
       })
       .on('click', function(d) {
-        self.props.clickHandler(d);
+        if(!d.is_sticky) {
+          return self.props.clickHandler(d);
+        }
       });
     taskBlocks.selectAll('rect')
       .attr('x', 0)
@@ -122,7 +121,10 @@ class CalendarView extends Component {
         return self.timeScale(hoursFromMidnight(d.endtime)) - 
                self.timeScale(hoursFromMidnight(d.starttime));
       });
-    taskBlocks.selectAll('p')
+    taskBlocks.selectAll('body').classed('clickable', function(d) {
+      return !d.is_sticky;
+    });
+    taskBlocks.selectAll('.taskdesc')
       .attr('style', function(d) {
         var h = self.timeScale(hoursFromMidnight(d.endtime)) - 
                 self.timeScale(hoursFromMidnight(d.starttime));

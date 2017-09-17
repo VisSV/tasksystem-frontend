@@ -29,16 +29,18 @@ class TaskSelector extends Component {
           self.setState({message: null});
         })
         .catch(function(err) {
+          var message = "Server error";
           if(err.response && err.response.data) {
-            if(err.response.data.code === "task_taken") {
-              self.setState({
-                message: task.desc + " already taken"
-              });
-              self.props.availableTasks[task.code].destroy();
+            switch(err.response.data.code) {
+              case "task_taken":
+                message = task.desc + " already taken";
+                break;
+              default:
+                message = err.response.data.code;
+                break;
             }
-          } else {
-            self.setState({message: "Server error"});
           }
+          self.setState({message: message});
         });
     };
     var handleTaskDeselect = function(task) {
@@ -56,7 +58,18 @@ class TaskSelector extends Component {
           self.setState({message: null});
         })
         .catch(function(err) {
-          self.setState({message: "Server error"});
+          var message = "Server error";
+          if(err.response && err.response.data) {
+            switch(err.response.data.code) {
+              case "task_not_removable":
+                message = task.desc + " cannot be removed";
+                break;
+              default:
+                message = err.response.data.code;
+                break;
+            }
+          }
+          self.setState({message: message});
         });
     };
     var msgPanel;

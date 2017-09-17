@@ -12,10 +12,17 @@ class SelectedTaskList extends Component {
 
     var sortedTasks = _.sortBy(_.values(this.props.tasks.val()), 'starttime');
     var tasks = sortedTasks.map(function(task, i) {
+      var clickHandler = null;
+      var ttText = "";
+      var className = "task";
+      if(!task.is_sticky) {
+        clickHandler = self.props.clickHandler.bind(this, task);
+        ttText = "remove";
+        className += " clickable";
+      }
       return (
-        <li key={i} onClick={self.props.clickHandler.bind(this, task)}
-            className="task">
-          <Task task={task} tooltipText={"remove"} />
+        <li key={i} onClick={clickHandler} className={className}>
+          <Task task={task} tooltipText={ttText} />
         </li>
       );
     });

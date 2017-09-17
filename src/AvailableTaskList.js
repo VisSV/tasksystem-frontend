@@ -92,9 +92,17 @@ class AvailableTaskList extends Component {
       var taskGroup = _.sortBy(groupedTasks[gid], 'code');
       var groupName = gid;
       var tasks = taskGroup.map(function(task, j) {
+        var clickHandler = null;
+        var ttText = "";
+        var className = "task";
+        if(!task.is_sticky) {
+          clickHandler = self.props.clickHandler.bind(this, task);
+          ttText = "add";
+          className += " clickable";
+        }
         return(
-          <li className="task" key={j} onClick={self.props.clickHandler.bind(this, task)}>
-            <Task task={task} tooltipText={"add"} />
+          <li className="task" key={j} onClick={clickHandler} className={className}>
+            <Task task={task} tooltipText={ttText} />
           </li>
         );
         // TODO: need a spinner here for the selecting task query

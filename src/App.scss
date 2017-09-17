@@ -93,20 +93,20 @@ h3 {
   }
 }
 
+.clickable:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
+  & .tooltip {
+    display: inline;
+  }
+}
+
 .task {
   @extend .row;
 
   margin: 0px;
   margin-bottom: 0.2em;
   background-color: #e5e5e5;
-
-  &:hover {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    
-    .tooltip {
-      display: inline;
-    }
-  }
 
   .task-info {
     height: 3em;
@@ -131,7 +131,7 @@ h3 {
   .tooltip {
     display: none;
     position: absolute;
-    bottom: -1.5em;
+    bottom: 0em;
     right: 0.7em;
 
     color: #949494;
@@ -139,6 +139,10 @@ h3 {
     text-align: right;
     font-weight: bold;
   }
+}
+
+.ui {
+  @extend .row;
 }
 
 .alert {
@@ -180,6 +184,10 @@ h3 {
   .alert {
     @extend .twelve;
     @extend .column;
+  }
+
+  p {
+    margin-bottom: 0;
   }
 }
 
