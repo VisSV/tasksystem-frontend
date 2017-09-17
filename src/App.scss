@@ -29,9 +29,11 @@ hr {
 
   //make the 2 panels scroll independently
   position: fixed;
-  left: 33%;
+  //left: 33%;
+  transform: translateX(50%);
+  width: 35em;
   height: 100%;
-  overflow: scroll;
+  overflow-y: scroll;
   padding-bottom: 6em;
 }
 
