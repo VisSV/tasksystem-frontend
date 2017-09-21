@@ -142,11 +142,10 @@ class AvailableTaskList extends Component {
     });
     return (
       <div className="AvailableTaskList">
+
         <h1>Available Tasks</h1>
         <div className="view-controls">
           <div className="taskfilter">
-            <input type="text" id="search-text" 
-                   onChange={self.updateTextFilter.bind(this)} />
             <h3>Filter by</h3>
             <input type="radio" name="taskfilter" id="taskfilter-all" 
                    checked={self.state.showConflicts}
@@ -170,6 +169,9 @@ class AvailableTaskList extends Component {
                    value="date" />
             <label htmlFor="taskgroup-date">Date</label>
           </div>
+          <input type="text" id="search-text" className="task-textfilter"
+                 placeholder="Search tasks"
+                 onChange={self.updateTextFilter.bind(this)} />
         </div>
         <ul className="availabletasks">
           {availTasks}
