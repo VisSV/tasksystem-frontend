@@ -20,6 +20,11 @@ hr {
   //height: 98%;
 }
 
+.Task {
+  border-width: 2px;
+  border-style: solid;
+}
+
 .TaskSelector {
   @extend .row;
 }

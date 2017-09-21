@@ -5,6 +5,7 @@
   "homepage": "https://vissv.org/tasksystem/",
   "dependencies": {
     "axios": "^0.16.2",
+    "color": "^2.0.0",
     "cortexjs": "^2.1.1",
     "d3": "^4.10.2",
     "django-channels": "^1.1.5",

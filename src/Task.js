@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import config from './config';
+import Color from 'color';
 
 class Task extends Component {
   render() {
+    var c = new Color(config.colorScale[this.props.task.category]);
+    var style = {
+      backgroundColor: c, 
+      borderColor: c.darken(0.2)
+    };
     return (
-      <div className="Task" style={{backgroundColor: config.colorScale[this.props.task.category]}}>
+      <div className="Task" style={style}>
         <div className="task-info">
           <span className="code">{this.props.task.code}</span>
           <span className="desc">{this.props.task.desc}</span>
