@@ -19,9 +19,12 @@ class AvailableTaskList extends Component {
 
     this.state = {
       showConflicts: false,
-      groupBy: "category"
+      groupBy: "category",
+      filterText: ""
     };
 
+    this.filterSearched = this.filterSearched.bind(this);
+    this.filterAvailable = this.filterAvailable.bind(this);
     this.groupTasks = this.groupTasks.bind(this);
   }
 
@@ -35,6 +38,39 @@ class AvailableTaskList extends Component {
 
   updateGroup(e) {
     this.setState({groupBy: e.target.value});
+  }
+
+  updateTextFilter(e) {
+    this.setState({filterText: e.target.value.trim()});
+  }
+
+  filterSearched(tasks) {
+    if(this.state.filterText) {
+      var re = new RegExp(this.state.filterText, 'i');
+      tasks = _.filter(tasks, function(task, k) {
+        return re.test(task.code + ' ' + task.desc);
+      })
+    }
+    return tasks;
+  }
+
+  filterAvailable(tasks) {
+    var self = this;
+    if(!this.state.showConflicts) {
+      const selTasks = _.values(self.props.selectedTasks.val());
+      _.keys(tasks).forEach(function(k) {
+        var task = tasks[k];
+        var overlapIdx = _.findIndex(selTasks, function(st) {
+          var maxStart = Math.max(task.starttime, st.starttime);
+          var minEnd = Math.min(task.endtime, st.endtime);
+          return maxStart < minEnd;
+        });
+        if(overlapIdx >= 0) {
+          _.unset(tasks, k);
+        }
+      });
+    }
+    return tasks;
   }
 
   groupTasks(tasks) {
@@ -63,22 +99,9 @@ class AvailableTaskList extends Component {
 
   render() {
     var self = this;
-    // Filter by the available tasks
-    var tasks = Object.assign({}, this.props.tasks.val());
-    if(!this.state.showConflicts) {
-      const selTasks = _.values(self.props.selectedTasks.val());
-      _.keys(tasks).forEach(function(k) {
-        var task = tasks[k];
-        var overlapIdx = _.findIndex(selTasks, function(st) {
-          var maxStart = Math.max(task.starttime, st.starttime);
-          var minEnd = Math.min(task.endtime, st.endtime);
-          return maxStart < minEnd;
-        });
-        if(overlapIdx >= 0) {
-          _.unset(tasks, k);
-        }
-      });
-    }
+    // Filter and group the tasks
+    var tasks = this.filterAvailable(Object.assign({}, this.props.tasks.val()));
+    tasks = this.filterSearched(tasks);
     var groupedTasks = this.groupTasks(tasks);
     var groups = _.keys(groupedTasks);
     if(self.state.groupBy === "date") {
@@ -88,6 +111,7 @@ class AvailableTaskList extends Component {
     } else {
       groups = _.sortBy(groups);
     }
+    // Render all the individual tasks
     var availTasks = groups.map(function(gid, i) {
       var taskGroup = _.sortBy(groupedTasks[gid], 'code');
       var groupName = gid;
@@ -121,6 +145,8 @@ class AvailableTaskList extends Component {
         <h1>Available Tasks</h1>
         <div className="view-controls">
           <div className="taskfilter">
+            <input type="text" id="search-text" 
+                   onChange={self.updateTextFilter.bind(this)} />
             <h3>Filter by</h3>
             <input type="radio" name="taskfilter" id="taskfilter-all" 
                    checked={self.state.showConflicts}
