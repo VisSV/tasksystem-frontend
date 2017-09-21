@@ -5,11 +5,21 @@ import config from './config';
 import SelectedTaskList from './SelectedTaskList';
 import AvailableTaskList from './AvailableTaskList';
 
+var savingPanel = (
+  <div className="SavingPanel">
+    <label className="message">Saving...</label>
+    <div className="loading-spinner"></div>
+  </div>
+);
+
 class TaskSelector extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {message: null};
+    this.state = {
+      message: null,
+      requests: 0
+    };
   }
 
   render() {
@@ -20,7 +30,7 @@ class TaskSelector extends Component {
           'Authorization': 'Token ' + self.props.authToken.val()
         }
       };
-      axios.put(config.httpaddr + '/select_task/' + task.code, {}, reqConfig)
+      var req = axios.put(config.httpaddr + '/select_task/' + task.code, {}, reqConfig)
         .then(function(res) {
           var obj = {};
           obj[task.code] = task;
@@ -41,7 +51,12 @@ class TaskSelector extends Component {
             }
           }
           self.setState({message: message});
+        })
+        .then(function() {
+          self.setState({requests: self.state.requests-1});
         });
+      // put this in the req state
+      self.setState({requests: self.state.requests+1});
     };
     var handleTaskDeselect = function(task) {
       var reqConfig = {
@@ -49,7 +64,7 @@ class TaskSelector extends Component {
           'Authorization': 'Token ' + self.props.authToken.val()
         }
       };
-      axios.delete(config.httpaddr + '/select_task/' + task.code, reqConfig)
+      var req = axios.delete(config.httpaddr + '/select_task/' + task.code, reqConfig)
         .then(function(res) {
           var obj = {};
           obj[task.code] = task;
@@ -70,7 +85,12 @@ class TaskSelector extends Component {
             }
           }
           self.setState({message: message});
+        })
+        .then(function() {
+          self.setState({requests: self.state.requests-1});
         });
+      // put this in the req state
+      self.setState({requests: self.state.requests+1});
     };
     var msgPanel;
     if(this.state.message) {
@@ -83,6 +103,7 @@ class TaskSelector extends Component {
     return (
       <div className="TaskSelector">
         {msgPanel}
+        {this.state.requests > 0 ? savingPanel : null}
         <div className="ui">
           <AvailableTaskList clickHandler={handleTaskSelect} 
                              tasks={this.props.availableTasks} 

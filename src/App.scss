@@ -283,6 +283,18 @@ h3 {
   }
 }
 
+.SavingPanel {
+  position: fixed;
+  top: 11px;
+  left: 11px;
+
+  .loading-spinner {
+    display: inline;
+    margin-left: 6em;
+  }
+}
+
+
 svg .task p {
   font-size: 0.95rem;
   hyphens: auto;
