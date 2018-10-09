@@ -66,8 +66,8 @@ class LoginScreen extends Component {
         <h1>Please log in</h1>
         {errDisplay}
         <form onSubmit={this.processLogin}>
-          <label>Username: <input type="text" name="username" /></label>
-          <label>Password: <input type="password" name="password" /></label>
+          <label>Username: <input type="text" name="username" class = "container"/></label>
+          <label>Password: <input type="password" name="password" class = "container"/></label>
           <button type="submit" disabled={this.state.isLoading}>Login {spinner}</button>
         </form>
       </div>
