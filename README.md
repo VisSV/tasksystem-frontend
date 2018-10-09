@@ -27,10 +27,10 @@ npm start
 or build everything to be copied to a local server:
 
 ```
-npm build
+npm run-script build
 ```
 
-You can then copy the files in the `build` directory to a local web server.
+You can then copy the files in the `build` directory to a static web server.
 
 ## Configuration
 
