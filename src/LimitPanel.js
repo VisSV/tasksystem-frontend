@@ -8,7 +8,7 @@ const groupLimits = {
   3: [0, 6],
   4: [0, 6],
   5: [0, 6],
-  7: [1, 1]
+  7: [1, 2]
 }
 const hourLimit = 20;
 
@@ -37,7 +37,7 @@ class LimitPanel extends Component {
         <li className={classes} key={g}>
           <label>Category {g}</label>
           <div className="count">
-            {groupLimits[g][0]} &le; {groupHours[g]} &le; {groupLimits[g][1]}
+            {groupLimits[g][0]} &le; {groupHours[g].toFixed(2)} &le; {groupLimits[g][1]}
           </div>
         </li>
       );
@@ -58,7 +58,7 @@ class LimitPanel extends Component {
           <li className={ttlHours < hourLimit ? 'violation' : ''}>
             <label>Total hours</label>
             <div className="count">
-              {ttlHours} / {hourLimit}
+              {ttlHours.toFixed(2)} / {hourLimit}
             </div>
           </li>
         </ul>

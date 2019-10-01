@@ -40,7 +40,7 @@ class CalendarView extends Component {
     this.dayScale = d3.scaleBand()
       .domain(days);
     this.timeScale = d3.scaleLinear()
-      .domain([7, 21]); // hours
+      .domain([7, 22]); // hours
     
     // create the basic structure
     this.timeAxis = svg.append('g')
@@ -82,9 +82,12 @@ class CalendarView extends Component {
     blockGroups.append('rect');
     var taskDescs = blockGroups.append('foreignObject')
       .append('xhtml:body')
-        .style('background-color', 'rgba(0,0,0,0)');
-    taskDescs.append('xhtml:p').attr('class', 'taskdesc');
-    taskDescs.append('xhtml:p').attr('class', 'tooltip').text('remove');
+      .style('background-color', 'rgba(0,0,0,0)');
+    taskDescs.append('xhtml:p').attr('class', 'taskdesc')
+    taskDescs.append('xhtml:p').attr('class', 'tooltip')
+    .style("border", "0.5px solid white")
+    .style("border-radius", "2px")
+    .style("background-color", "white").text('remove');
 
     taskBlocks = this.plot.selectAll('.task').data(self.props.tasks, function(d) {return d.code});
     taskBlocks

@@ -220,7 +220,7 @@ h3 {
   }
 
   ul {
-    width: 15em;
+    width: 19em;
   }
 
   li {
@@ -234,12 +234,12 @@ h3 {
     margin-bottom: 0.2em;
 
     label {
-      @extend .eight;
+      @extend .six;
       @extend .columns;
     }
 
     .count {
-      @extend .four;
+      @extend .six;
       @extend .columns;
     }
   }

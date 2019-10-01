@@ -30,7 +30,7 @@ class SelectedTaskList extends Component {
       <div className="SelectedTaskList">
         <h1>Selected Tasks</h1>
         <LimitPanel tasks={self.props.tasks} />
-        <CalendarView size={[520,500]} clickHandler={self.props.clickHandler} 
+        <CalendarView size={[518,498]} clickHandler={self.props.clickHandler} 
                                        tasks={_.values(self.props.tasks.val())} />
         <ul>
           {tasks}
