@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://vissv.org/tasksystem/",
   "dependencies": {
-    "axios": "^0.16.2",
+    "axios": "^0.18.1",
     "color": "^2.0.0",
     "cortexjs": "^2.1.1",
     "d3": "^4.10.2",
