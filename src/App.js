@@ -45,26 +45,27 @@ class App extends Component {
     var self = this;
     var sock = new WebSocketBridge();
     sock.connect(config.wsaddr);
-    sock.listen(function(evt, stream) {
-      if(self.state.cortex.status.val() === "loaded") {
-        switch(evt.action) {
-          case "remove":
-            if(self.state.cortex.availableTasks.hasKey(evt.task.code))
-              self.state.cortex.availableTasks[evt.task.code].destroy();
-            break;
-          case "add":
-            var task = evt.task;
-            convertTask(task);
-            var obj = {};
-            obj[task.code] = task;
-            self.state.cortex.availableTasks.merge(obj);
-            break;
-          default:
-            console.warn("Unknown action: " + evt.action);
-            break;
-        }
+
+    sock.addEventListener("message", function(event) {
+      let evt = event.data;
+      switch(evt.action) {
+        case "remove":
+          if(self.state.cortex.availableTasks.hasKey(evt.task.code))
+            self.state.cortex.availableTasks[evt.task.code].destroy();
+          break;
+        case "add":
+          var task = evt.task;
+          convertTask(task);
+          var obj = {};
+          obj[task.code] = task;
+          self.state.cortex.availableTasks.merge(obj);
+          break;
+        default:
+          console.warn("Unknown action: " + evt.action);
+          break;
       }
     });
+
   }
 
   // TODO: load the user's available and selected tasks
