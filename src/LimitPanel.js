@@ -7,10 +7,10 @@ const groupLimits = {
   2: [0, 6],
   3: [0, 6],
   4: [0, 6],
-  5: [0, 6],
-  7: [1, 2]
+  5: [0, 4],
+  7: [0, 0]
 }
-const hourLimit = 20;
+const hourLimit = 14;
 
 var defaultGroups = {};
 _.keys(groupLimits).forEach(function(k) {
