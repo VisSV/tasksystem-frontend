@@ -38,3 +38,9 @@ You can then copy the files in the `build` directory to a static web server.
 There isn't much to configure. You can set what url the front-end connects
 to in `src/config.js`. This is useful for switching between development and
 production builds.
+
+## Deploy
+
+```
+scp -i PATH_TO_PEM_KEY -r PATH_TO_BUILD_FOLDER\* ubuntu@ec2-54-201-77-132.us-west-2.compute.amazonaws.com:/var/www/html/tasksystem
+```

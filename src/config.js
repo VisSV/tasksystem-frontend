@@ -1,9 +1,9 @@
 var config = {
   //protocol: 'https',
   //hostname: '54.174.247.37:8000',
-  protocol: "http",
-  hostname: "localhost:8000",
-  // hostname: 'sv-task-system.herokuapp.com',
+  protocol: "https",
+  // hostname: "localhost:8000",
+  hostname: "sv-task-system.herokuapp.com",
   colorScale: [
     "",
     "#f7cbd7",
