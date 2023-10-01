@@ -44,3 +44,7 @@ production builds.
 ```
 scp -i PATH_TO_PEM_KEY -r PATH_TO_BUILD_FOLDER\* ubuntu@ec2-54-201-77-132.us-west-2.compute.amazonaws.com:/var/www/html/tasksystem
 ```
+
+## Test
+
+The URL for the VIS SV task system is at http://vissv.org/tasksystem

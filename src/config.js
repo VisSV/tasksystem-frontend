@@ -2,17 +2,15 @@ var config = {
   //protocol: 'https',
   //hostname: '54.174.247.37:8000',
 
-  protocol: 'https',
-  hostname: 'www2.visus.uni-stuttgart.de/webveta/repo2/',
-  // hostname: 'creststudy1.services.adelaide.edu.au:8443',
-
   //dev: use http
-  // protocol: "http",
-  // hostname: "localhost:8000",
+  protocol: "http",
+  hostname: "localhost:8000",
 
   //prod: use https
   // protocol: "https",
+  // hostname: 'www2.visus.uni-stuttgart.de/webveta/repo2/',
   // hostname: "sv-task-system.herokuapp.com",
+  
   colorScale: [
     "",
     "#f7cbd7",
@@ -28,9 +26,9 @@ var config = {
 
 config["httpaddr"] = config.protocol + "://" + config.hostname;
 //dev: use ws
-// config["wsaddr"] = "ws://" + config.hostname;
+config["wsaddr"] = "ws://" + config.hostname;
 
 //prod: use wss
-config["wsaddr"] = "wss://" + config.hostname;
+// config["wsaddr"] = "wss://" + config.hostname;
 
 export default config;
