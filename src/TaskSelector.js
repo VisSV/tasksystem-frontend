@@ -4,6 +4,7 @@ import config from './config';
 
 import SelectedTaskList from './SelectedTaskList';
 import AvailableTaskList from './AvailableTaskList';
+import _ from 'lodash';
 
 var savingPanel = (
   <div className="SavingPanel">
@@ -25,6 +26,31 @@ class TaskSelector extends Component {
   render() {
     var self = this;
     var handleTaskSelect = function(task, e) {
+      
+      //check if the task to be selected overlaps with any existing selected task
+      const selTasks = _.values(self.props.selectedTasks.val());
+      var overlapTaskId = 0;
+      var overlapTaskDess = "";
+      var overlappingTasks = [];
+      var overlapIdx = _.findIndex(selTasks, function(st) {
+        overlapTaskId = st.code;
+        overlapTaskDess = st.desc;
+        var maxStart = Math.max(task.starttime, st.starttime);
+        var minEnd = Math.min(task.endtime, st.endtime);
+        if(maxStart < minEnd)
+          overlappingTasks.push(st);
+        return maxStart < minEnd;
+      });
+      if(overlappingTasks.length > 0) {
+        var message = " Overlap with tasks: " ;
+        overlappingTasks.forEach(function(overlapTask) {
+          message += ` ${overlapTask.code} - ${overlapTask.desc}`;
+        });
+        message += ". Remove these tasks before selecting this task.";
+        self.setState({ message: message });
+        return;
+      }
+      
       var reqConfig = {
         headers: {
           'Authorization': 'Token ' + self.props.authToken.val()
@@ -35,11 +61,14 @@ class TaskSelector extends Component {
           var obj = {};
           obj[task.code] = task;
           self.props.selectedTasks.merge(obj);
-          self.props.availableTasks[task.code].destroy();
+          if (self.props.availableTasks[task.code]) {
+            self.props.availableTasks[task.code].destroy();
+          }
           self.setState({message: null});
         })
         .catch(function(err) {
           var message = "Server error";
+          console.log("err: "+err.response);
           if(err.response && err.response.data) {
             switch(err.response.data.code) {
               case "task_taken":
