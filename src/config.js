@@ -1,6 +1,6 @@
 var config = {
-  //protocol: 'https',
-  //hostname: '54.174.247.37:8000',
+  // protocol: 'https',
+  // hostname: '54.174.247.37:8000',
 
   //dev: use http
   // protocol: "http",
@@ -8,8 +8,8 @@ var config = {
 
   //prod: use https
   protocol: "https",
-  hostname: 'www2.visus.uni-stuttgart.de/webveta/repo2/',
-  // hostname: "sv-task-system.herokuapp.com",
+  // hostname: 'www2.visus.uni-stuttgart.de/webveta/repo2/',
+  hostname: "old-copy-tasksystem.herokuapp.com", //OLD - don't use
 
   colorScale: [
     "",
