@@ -1,7 +1,4 @@
 var config = {
-  // protocol: 'https',
-  // hostname: '54.174.247.37:8000',
-
   //dev: use http
   // protocol: "http",
   // hostname: "localhost:8000",
