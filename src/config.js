@@ -9,7 +9,7 @@ var config = {
   //prod: use https
   protocol: "https",
   // hostname: 'www2.visus.uni-stuttgart.de/webveta/repo2/',
-  hostname: "old-copy-tasksystem.herokuapp.com", //OLD - don't use
+  hostname: "old-copy-tasksystem-9f16a052b963.herokuapp.com/", //OLD - don't use
 
   colorScale: [
     "",
