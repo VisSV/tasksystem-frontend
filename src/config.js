@@ -3,13 +3,13 @@ var config = {
   // hostname: '54.174.247.37:8000',
 
   //dev: use http
-  // protocol: "http",
-  // hostname: "localhost:8000",
+//  protocol: "http",
+//  hostname: "127.0.0.1:8000/", //"localhost:8000",
 
   //prod: use https
-  protocol: "https",
-  // hostname: 'www2.visus.uni-stuttgart.de/webveta/repo2/',
-  hostname: "old-copy-tasksystem-9f16a052b963.herokuapp.com/", //OLD - don't use
+protocol: "https",
+  // // hostname: 'www2.visus.uni-stuttgart.de/webveta/repo2/',
+hostname: "old-copy-tasksystem-9f16a052b963.herokuapp.com", //OLD - don't use
 
   colorScale: [
     "",
