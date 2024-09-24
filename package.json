@@ -49,11 +49,6 @@
     "babel-preset-stage-0": "^6.24.1"
   },
   "engines": {
-    "name": "node",
-    "description": "Node.js version",
-    "version": "14.19.1",
-    "engines": {
-      "node": "14.19.1"
-    }
+    "node": "14.19.1"
   }
 }
