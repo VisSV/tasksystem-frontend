@@ -7,7 +7,7 @@
 /coverage
 
 # production
-/build
+# /build # Don't ignore build for Heroku
 
 # misc
 .DS_Store

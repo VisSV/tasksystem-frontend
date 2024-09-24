@@ -16,14 +16,16 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "^3.4.3",
+    "serve": "^14.2.3",
     "skeleton-sass-official": "^3.1.4"
   },
   "scripts": {
     "build-css": "node-sass-chokidar src/ --include-path ./node_modules -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar src/ --include-path ./node_modules -o src/ --watch --recursive",
     "start-js": "react-scripts start",
-    "start": "npm-run-all -p watch-css start-js",
-    "build": "npm run build-css && react-scripts build",
+    "start": "serve -s build",
+    "build": "react-scripts build",
+    "dev": "react-scripts start",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
