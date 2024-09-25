@@ -4,7 +4,7 @@ import axios from 'axios';
 import moment from 'moment';
 import { WebSocketBridge } from 'django-channels';
 
-import App from './App.css';
+import './App.css';
 import config from './config';
 
 import ServerStatus from './ServerStatus';
