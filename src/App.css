@@ -1,0 +1,1301 @@
+/*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */
+/* Document
+       ========================================================================== */
+/**
+     * 1. Correct the line height in all browsers.
+     * 2. Prevent adjustments of font size after orientation changes in
+     *    IE on Windows Phone and in iOS.
+     */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/* Sections
+       ========================================================================== */
+/**
+     * Remove the margin in all browsers (opinionated).
+     */
+body {
+  margin: 0; }
+
+/**
+     * Add the correct display in IE 9-.
+     */
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block; }
+
+/**
+     * Correct the font size and margin on `h1` elements within `section` and
+     * `article` contexts in Chrome, Firefox, and Safari.
+     */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/* Grouping content
+       ========================================================================== */
+/**
+     * Add the correct display in IE 9-.
+     */
+figcaption,
+figure {
+  display: block; }
+
+/**
+     * Add the correct margin in IE 8.
+     */
+figure {
+  margin: 1em 40px; }
+
+/**
+     * 1. Add the correct box sizing in Firefox.
+     * 2. Show the overflow in Edge and IE.
+     */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */ }
+
+/**
+     * Add the correct display in IE.
+     */
+main {
+  display: block; }
+
+/**
+     * 1. Correct the inheritance and scaling of font size in all browsers.
+     * 2. Correct the odd `em` font sizing in all browsers.
+     */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/* Links
+       ========================================================================== */
+/**
+     * 1. Remove the gray background on active links in IE 10.
+     * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+     */
+a {
+  background-color: transparent;
+  /* 1 */
+  -webkit-text-decoration-skip: objects;
+  /* 2 */ }
+
+/* Text-level semantics
+       ========================================================================== */
+/**
+     * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
+     * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+     */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */ }
+
+/**
+     * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+     */
+b,
+strong {
+  font-weight: inherit; }
+
+/**
+     * Add the correct font weight in Chrome, Edge, and Safari.
+     */
+b,
+strong {
+  font-weight: bolder; }
+
+/**
+     * 1. Correct the inheritance and scaling of font size in all browsers.
+     * 2. Correct the odd `em` font sizing in all browsers.
+     */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/**
+     * Add the correct font style in Android 4.3-.
+     */
+dfn {
+  font-style: italic; }
+
+/**
+     * Add the correct background and color in IE 9-.
+     */
+mark {
+  background-color: #ff0;
+  color: #000; }
+
+/**
+     * Add the correct font size in all browsers.
+     */
+small {
+  font-size: 80%; }
+
+/**
+     * Prevent `sub` and `sup` elements from affecting the line height in
+     * all browsers.
+     */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sub {
+  bottom: -0.25em; }
+
+sup {
+  top: -0.5em; }
+
+/* Embedded content
+       ========================================================================== */
+/**
+     * Add the correct display in IE 9-.
+     */
+audio,
+video {
+  display: inline-block; }
+
+/**
+     * Add the correct display in iOS 4-7.
+     */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+     * Remove the border on images inside links in IE 10-.
+     */
+img {
+  border-style: none; }
+
+/**
+     * Hide the overflow in IE.
+     */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Forms
+       ========================================================================== */
+/**
+     * 1. Change the font styles in all browsers (opinionated).
+     * 2. Remove the margin in Firefox and Safari.
+     */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: sans-serif;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */ }
+
+/**
+     * Show the overflow in IE.
+     */
+button {
+  overflow: visible; }
+
+/**
+     * Remove the inheritance of text transform in Edge, Firefox, and IE.
+     * 1. Remove the inheritance of text transform in Firefox.
+     */
+button,
+select {
+  /* 1 */
+  text-transform: none; }
+
+/**
+     * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+     *    controls in Android 4.
+     * 2. Correct the inability to style clickable types in iOS and Safari.
+     */
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */ }
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  /**
+       * Remove the inner border and padding in Firefox.
+       */
+  /**
+       * Restore the focus styles unset by the previous rule.
+       */ }
+  button::-moz-focus-inner,
+  [type="button"]::-moz-focus-inner,
+  [type="reset"]::-moz-focus-inner,
+  [type="submit"]::-moz-focus-inner {
+    border-style: none;
+    padding: 0; }
+  button:-moz-focusring,
+  [type="button"]:-moz-focusring,
+  [type="reset"]:-moz-focusring,
+  [type="submit"]:-moz-focusring {
+    outline: 1px dotted ButtonText; }
+
+/**
+     * Show the overflow in Edge.
+     */
+input {
+  overflow: visible; }
+
+/**
+     * 1. Add the correct box sizing in IE 10-.
+     * 2. Remove the padding in IE 10-.
+     */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+     * Correct the cursor style of increment and decrement buttons in Chrome.
+     */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+     * 1. Correct the odd appearance in Chrome and Safari.
+     * 2. Correct the outline style in Safari.
+     */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+  /**
+       * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+       */ }
+  [type="search"]::-webkit-search-cancel-button, [type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none; }
+
+/**
+     * 1. Correct the inability to style clickable types in iOS and Safari.
+     * 2. Change font properties to `inherit` in Safari.
+     */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */ }
+
+/**
+     * Correct the padding in Firefox.
+     */
+fieldset {
+  padding: 0.35em 0.75em 0.625em; }
+
+/**
+     * 1. Correct the text wrapping in Edge and IE.
+     * 2. Correct the color inheritance from `fieldset` elements in IE.
+     * 3. Remove the padding so developers are not caught out when they zero out
+     *    `fieldset` elements in all browsers.
+     */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  color: inherit;
+  /* 2 */
+  white-space: normal;
+  /* 1 */ }
+
+/**
+     * 1. Add the correct display in IE 9-.
+     * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+     */
+progress {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */ }
+
+/**
+     * Remove the default vertical scrollbar in IE.
+     */
+textarea {
+  overflow: auto; }
+
+/* Interactive
+       ========================================================================== */
+/*
+     * Add the correct display in Edge, IE, and Firefox.
+     */
+details {
+  display: block; }
+
+/*
+     * Add the correct display in all browsers.
+     */
+summary {
+  display: list-item; }
+
+/*
+     * Add the correct display in IE 9-.
+     */
+menu {
+  display: block; }
+
+/* Scripting
+       ========================================================================== */
+/**
+     * Add the correct display in IE 9-.
+     */
+canvas {
+  display: inline-block; }
+
+/**
+     * Add the correct display in IE.
+     */
+template {
+  display: none; }
+
+/* Hidden
+       ========================================================================== */
+/**
+     * Add the correct display in IE 10-.
+     */
+[hidden] {
+  display: none; }
+
+/* BASIC STYLES
+ * ------------------------------------------------ */
+html {
+  font-size: 62.5%; }
+
+body {
+  background: #fff;
+  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: #222;
+  margin: 0 auto; }
+
+/* SPACING
+ * ------------------------------------------------ */
+button,
+.button {
+  margin-bottom: 1rem; }
+
+input,
+textarea,
+select,
+fieldset {
+  margin-bottom: 1.5rem; }
+
+pre,
+blockquote,
+dl,
+figure,
+table,
+p,
+ul,
+ol,
+form {
+  margin-bottom: 2.5rem; }
+
+/* TYPOGRAPHY
+ * ------------------------------------------------ */
+h1, h2, h3, h4, h5, h6 {
+  color: #222;
+  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  margin-top: 0;
+  margin-bottom: 2rem; }
+
+h1 {
+  font-size: 4rem;
+  line-height: 1.2;
+  letter-spacing: -0.1rem; }
+
+h2 {
+  font-size: 3.6rem;
+  line-height: 1.25;
+  letter-spacing: -0.1rem; }
+
+h3 {
+  font-size: 3rem;
+  line-height: 1.3;
+  letter-spacing: -0.1rem; }
+
+h4 {
+  font-size: 2.4rem;
+  line-height: 1.35;
+  letter-spacing: -0.08rem; }
+
+h5 {
+  font-size: 1.8rem;
+  line-height: 1.5;
+  letter-spacing: -0.05rem; }
+
+h6 {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  letter-spacing: 0; }
+
+/* Larger than phablet */
+@media (min-width: 550px) {
+  h1 {
+    font-size: 5rem; }
+  h2 {
+    font-size: 4.2rem; }
+  h3 {
+    font-size: 3.6rem; }
+  h4 {
+    font-size: 3rem; }
+  h5 {
+    font-size: 2.4rem; }
+  h6 {
+    font-size: 1.5rem; } }
+
+p {
+  margin-top: 0; }
+
+/* BUTTONS
+ * ------------------------------------------------ */
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  display: inline-block;
+  height: 38px;
+  padding: 0 3rem;
+  color: #555;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 38px;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  cursor: pointer;
+  box-sizing: border-box; }
+  .button:hover, .button:focus,
+  button:hover,
+  button:focus,
+  input[type="submit"]:hover,
+  input[type="submit"]:focus,
+  input[type="reset"]:hover,
+  input[type="reset"]:focus,
+  input[type="button"]:hover,
+  input[type="button"]:focus {
+    color: #FFF;
+    border-color: #888;
+    background-color: transparent;
+    outline: 0; }
+  .button.button-primary,
+  button.button-primary,
+  input[type="submit"].button-primary,
+  input[type="reset"].button-primary,
+  input[type="button"].button-primary {
+    color: #333;
+    background-color: #33C3F0;
+    border-color: #333; }
+    .button.button-primary:hover, .button.button-primary:focus,
+    button.button-primary:hover,
+    button.button-primary:focus,
+    input[type="submit"].button-primary:hover,
+    input[type="submit"].button-primary:focus,
+    input[type="reset"].button-primary:hover,
+    input[type="reset"].button-primary:focus,
+    input[type="button"].button-primary:hover,
+    input[type="button"].button-primary:focus {
+      color: #FFF;
+      background-color: #1EAEDB;
+      border-color: #1EAEDB; }
+
+.button:visited {
+  color: #555; }
+
+/* Fix for odd Mozilla border & padding issues */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/* CODE
+ * ------------------------------------------------ */
+code {
+  padding: 0.2rem 0.5rem;
+  margin: 0 0.2rem;
+  font-size: 90%;
+  white-space: nowrap;
+  background: #F1F1F1;
+  border: 1px solid #E1E1E1;
+  border-radius: 4px; }
+
+pre > code {
+  display: block;
+  padding: 1rem 1.5rem;
+  white-space: pre; }
+
+/* MISC
+ * ------------------------------------------------ */
+hr {
+  margin-top: 3rem;
+  margin-bottom: 3.5rem;
+  border-width: 0;
+  border-top: 1px solid #E1E1E1; }
+
+/* LINKS
+ * ------------------------------------------------ */
+a, a:visited {
+  color: #1EAEDB;
+  text-decoration: underline; }
+
+a:hover, a:focus, a:active {
+  color: #0FA0CE; }
+
+/* LISTS
+ * ------------------------------------------------ */
+ul {
+  list-style: circle inside; }
+
+ol {
+  list-style: decimal inside; }
+
+ol, ul {
+  padding-left: 0;
+  margin-top: 0; }
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin: 1.5rem 0 1.5rem 3rem;
+  font-size: 90%; }
+
+li {
+  margin-bottom: 1rem; }
+
+/* FORMS
+ * ------------------------------------------------ */
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea,
+select {
+  height: 38px;
+  padding: 6px 10px;
+  /* The 6px vertically centers text on FF, ignored by Webkit */
+  background-color: #fff;
+  border: 1px solid #D1D1D1;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box; }
+
+/* Removes awkward default styles on some inputs for iOS */
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; }
+
+textarea {
+  min-height: 65px;
+  padding-top: 6px;
+  padding-bottom: 6px; }
+
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  border: 1px solid #33C3F0;
+  outline: 0; }
+
+label,
+legend {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600; }
+
+fieldset {
+  padding: 0;
+  border-width: 0; }
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline; }
+
+label > .label-body {
+  display: inline-block;
+  margin-left: 0.5rem;
+  font-weight: normal; }
+
+/* TABLES
+ * ------------------------------------------------ */
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #E1E1E1; }
+  th:first-child,
+  td:first-child {
+    padding-left: 0; }
+  th:last-child,
+  td:last-child {
+    padding-right: 0; }
+
+/* UTILITIES
+ * ------------------------------------------------ */
+.u-full-width {
+  width: 100%;
+  box-sizing: border-box; }
+
+.u-max-full-width {
+  max-width: 100%;
+  box-sizing: border-box; }
+
+.u-pull-right {
+  float: right; }
+
+.u-pull-left {
+  float: left; }
+
+/* IMAGES
+ * ------------------------------------------------ */
+img.scale-with-grid {
+  max-width: 100%;
+  height: auto; }
+
+/* BASE GRID
+ * ------------------------------------------------ */
+.container, .App {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  box-sizing: border-box; }
+
+.column, .TaskSelector .alert,
+.columns,
+.SelectedTaskList,
+.AvailableTaskList,
+.LimitPanel li label,
+.LimitPanel li .count {
+  width: 100%;
+  float: left;
+  box-sizing: border-box; }
+
+.row, .TaskSelector, .task, .ui, .LimitPanel li, .ServerStatus {
+  margin-bottom: 2rem; }
+
+/* For devices larger than 400px */
+@media (min-width: 400px) {
+  .container, .App {
+    width: 85%;
+    padding: 0; } }
+
+/* For devices larger than 550px */
+@media (min-width: 550px) {
+  /* Overrides */
+  .container, .App {
+    width: 80%; }
+  .column, .TaskSelector .alert,
+  .columns,
+  .SelectedTaskList,
+  .AvailableTaskList,
+  .LimitPanel li label,
+  .LimitPanel li .count {
+    margin-left: 4%; }
+    .column:first-child:not([class^="offset"]), .TaskSelector .alert:first-child:not([class^="offset"]),
+    .columns:first-child:not([class^="offset"]),
+    .SelectedTaskList:first-child:not([class^="offset"]),
+    .AvailableTaskList:first-child:not([class^="offset"]),
+    .LimitPanel li label:first-child:not([class^="offset"]),
+    .LimitPanel li .count:first-child:not([class^="offset"]) {
+      margin-left: 0; }
+  .one.column, .TaskSelector .one.alert,
+  .one.columns,
+  .one.SelectedTaskList,
+  .one.AvailableTaskList,
+  .LimitPanel li label.one,
+  .LimitPanel li .one.count {
+    width: 4.66667%; }
+  .two.columns, .two.SelectedTaskList, .two.AvailableTaskList, .LimitPanel li label.two, .LimitPanel li .two.count {
+    width: 13.33333%; }
+  .three.columns, .three.SelectedTaskList, .three.AvailableTaskList, .LimitPanel li label.three, .LimitPanel li .three.count {
+    width: 22%; }
+  .four.columns, .four.SelectedTaskList, .AvailableTaskList, .LimitPanel li label.four, .LimitPanel li label.AvailableTaskList, .LimitPanel li .four.count, .LimitPanel li .count.AvailableTaskList {
+    width: 30.66667%; }
+  .five.columns, .five.SelectedTaskList, .five.AvailableTaskList, .LimitPanel li label.five, .LimitPanel li .five.count {
+    width: 39.33333%; }
+  .six.columns, .six.SelectedTaskList, .six.AvailableTaskList, .LimitPanel li label, .LimitPanel li .count {
+    width: 48%; }
+  .seven.columns, .SelectedTaskList, .seven.AvailableTaskList, .LimitPanel li label.seven, .LimitPanel li label.SelectedTaskList, .LimitPanel li .seven.count, .LimitPanel li .count.SelectedTaskList {
+    width: 56.66667%; }
+  .eight.columns, .eight.SelectedTaskList, .eight.AvailableTaskList, .LimitPanel li label.eight, .LimitPanel li .eight.count {
+    width: 65.33333%; }
+  .nine.columns, .nine.SelectedTaskList, .nine.AvailableTaskList, .LimitPanel li label.nine, .LimitPanel li .nine.count {
+    width: 74%; }
+  .ten.columns, .ten.SelectedTaskList, .ten.AvailableTaskList, .LimitPanel li label.ten, .LimitPanel li .ten.count {
+    width: 82.66667%; }
+  .eleven.columns, .eleven.SelectedTaskList, .eleven.AvailableTaskList, .LimitPanel li label.eleven, .LimitPanel li .eleven.count {
+    width: 91.33333%; }
+  .twelve.columns, .twelve.SelectedTaskList, .TaskSelector .SelectedTaskList.alert, .twelve.AvailableTaskList, .TaskSelector .AvailableTaskList.alert, .TaskSelector .columns.alert, .TaskSelector .LimitPanel li label.alert, .LimitPanel li .TaskSelector label.alert, .TaskSelector .LimitPanel li .alert.count, .LimitPanel li .TaskSelector .alert.count, .LimitPanel li label.twelve, .LimitPanel li .twelve.count {
+    width: 100%;
+    margin-left: 0; }
+  .one-third.column, .TaskSelector .one-third.alert,
+  .one-third.columns,
+  .one-third.SelectedTaskList,
+  .one-third.AvailableTaskList,
+  .LimitPanel li label.one-third,
+  .LimitPanel li .one-third.count {
+    width: 30.66667%; }
+  .two-thirds.column, .TaskSelector .two-thirds.alert,
+  .two-thirds.columns,
+  .two-thirds.SelectedTaskList,
+  .two-thirds.AvailableTaskList,
+  .LimitPanel li label.two-thirds,
+  .LimitPanel li .two-thirds.count {
+    width: 63.33333%; }
+  .one-half.column, .TaskSelector .one-half.alert,
+  .one-half.columns,
+  .one-half.SelectedTaskList,
+  .one-half.AvailableTaskList,
+  .LimitPanel li label.one-half,
+  .LimitPanel li .one-half.count {
+    width: 48%; }
+  .full-width.column, .TaskSelector .full-width.alert,
+  .full-width.columns,
+  .full-width.SelectedTaskList,
+  .full-width.AvailableTaskList,
+  .LimitPanel li label.full-width,
+  .LimitPanel li .full-width.count {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0; }
+  .offset-by-one {
+    margin-left: 8.66667%; }
+  .offset-by-two {
+    margin-left: 17.33333%; }
+  .offset-by-three {
+    margin-left: 26%; }
+  .offset-by-four {
+    margin-left: 34.66667%; }
+  .offset-by-five {
+    margin-left: 43.33333%; }
+  .offset-by-six {
+    margin-left: 52%; }
+  .offset-by-seven {
+    margin-left: 60.66667%; }
+  .offset-by-eight {
+    margin-left: 69.33333%; }
+  .offset-by-nine {
+    margin-left: 78%; }
+  .offset-by-ten {
+    margin-left: 86.66667%; }
+  .offset-by-eleven {
+    margin-left: 95.33333%; }
+  .offset-by-one-third.column, .TaskSelector .offset-by-one-third.alert,
+  .offset-by-one-third.columns,
+  .offset-by-one-third.SelectedTaskList,
+  .offset-by-one-third.AvailableTaskList,
+  .LimitPanel li label.offset-by-one-third,
+  .LimitPanel li .offset-by-one-third.count {
+    margin-left: 34.66667%; }
+  .offset-by-two-thirds.column, .TaskSelector .offset-by-two-thirds.alert,
+  .offset-by-two-thirds.columns,
+  .offset-by-two-thirds.SelectedTaskList,
+  .offset-by-two-thirds.AvailableTaskList,
+  .LimitPanel li label.offset-by-two-thirds,
+  .LimitPanel li .offset-by-two-thirds.count {
+    margin-left: 69.33333%; }
+  .offset-by-one-half.column, .TaskSelector .offset-by-one-half.alert,
+  .offset-by-one-half.columns,
+  .offset-by-one-half.SelectedTaskList,
+  .offset-by-one-half.AvailableTaskList,
+  .LimitPanel li label.offset-by-one-half,
+  .LimitPanel li .offset-by-one-half.count {
+    margin-left: 52%; } }
+
+/* TABLET (PORTRAIT)
+ * ------------------------------------------------ */
+@media only screen and (min-width: 768px) and (max-width: 99%) {
+  .container, .App {
+    width: 768px; }
+    .container .column.alpha, .App .column.alpha, .container .TaskSelector .alpha.alert, .TaskSelector .container .alpha.alert, .App .TaskSelector .alpha.alert, .TaskSelector .App .alpha.alert,
+    .container .columns.alpha,
+    .App .columns.alpha,
+    .container .alpha.SelectedTaskList,
+    .App .alpha.SelectedTaskList,
+    .container .alpha.AvailableTaskList,
+    .App .alpha.AvailableTaskList,
+    .container .LimitPanel li label.alpha,
+    .LimitPanel li .container label.alpha,
+    .App .LimitPanel li label.alpha,
+    .LimitPanel li .App label.alpha,
+    .container .LimitPanel li .alpha.count,
+    .LimitPanel li .container .alpha.count,
+    .App .LimitPanel li .alpha.count,
+    .LimitPanel li .App .alpha.count {
+      margin-left: 0;
+      margin-right: 2%; }
+    .container .column.omega, .App .column.omega, .container .TaskSelector .omega.alert, .TaskSelector .container .omega.alert, .App .TaskSelector .omega.alert, .TaskSelector .App .omega.alert,
+    .container .columns.omega,
+    .App .columns.omega,
+    .container .omega.SelectedTaskList,
+    .App .omega.SelectedTaskList,
+    .container .omega.AvailableTaskList,
+    .App .omega.AvailableTaskList,
+    .container .LimitPanel li label.omega,
+    .LimitPanel li .container label.omega,
+    .App .LimitPanel li label.omega,
+    .LimitPanel li .App label.omega,
+    .container .LimitPanel li .omega.count,
+    .LimitPanel li .container .omega.count,
+    .App .LimitPanel li .omega.count,
+    .LimitPanel li .App .omega.count {
+      margin-right: 0;
+      margin-left: 2%; }
+  .alpha.omega {
+    margin-left: 0;
+    margin-right: 0; } }
+
+/*  MOBILE (PORTRAIT)
+ * ------------------------------------------------ */
+@media only screen and (max-width: 767px) {
+  .container, .App {
+    width: 100%; }
+    .container .column, .App .column, .container .TaskSelector .alert, .TaskSelector .container .alert, .App .TaskSelector .alert, .TaskSelector .App .alert,
+    .container .columns,
+    .App .columns,
+    .container .SelectedTaskList,
+    .App .SelectedTaskList,
+    .container .AvailableTaskList,
+    .App .AvailableTaskList,
+    .container .LimitPanel li label,
+    .LimitPanel li .container label,
+    .App .LimitPanel li label,
+    .LimitPanel li .App label,
+    .container .LimitPanel li .count,
+    .LimitPanel li .container .count,
+    .App .LimitPanel li .count,
+    .LimitPanel li .App .count {
+      max-width: 100%;
+      margin-left: 2%;
+      margin-right: 2%; }
+    .container .one.column, .App .one.column, .container .TaskSelector .one.alert, .TaskSelector .container .one.alert, .App .TaskSelector .one.alert, .TaskSelector .App .one.alert {
+      width: 96%; }
+    .container .one.columns, .App .one.columns, .container .one.SelectedTaskList, .App .one.SelectedTaskList, .container .one.AvailableTaskList, .App .one.AvailableTaskList, .container .LimitPanel li label.one, .LimitPanel li .container label.one, .App .LimitPanel li label.one, .LimitPanel li .App label.one, .container .LimitPanel li .one.count, .LimitPanel li .container .one.count, .App .LimitPanel li .one.count, .LimitPanel li .App .one.count, .container .two.columns, .App .two.columns, .container .two.SelectedTaskList, .App .two.SelectedTaskList, .container .two.AvailableTaskList, .App .two.AvailableTaskList, .container .LimitPanel li label.two, .LimitPanel li .container label.two, .App .LimitPanel li label.two, .LimitPanel li .App label.two, .container .LimitPanel li .two.count, .LimitPanel li .container .two.count, .App .LimitPanel li .two.count, .LimitPanel li .App .two.count, .container .three.columns, .App .three.columns, .container .three.SelectedTaskList, .App .three.SelectedTaskList, .container .three.AvailableTaskList, .App .three.AvailableTaskList, .container .LimitPanel li label.three, .LimitPanel li .container label.three, .App .LimitPanel li label.three, .LimitPanel li .App label.three, .container .LimitPanel li .three.count, .LimitPanel li .container .three.count, .App .LimitPanel li .three.count, .LimitPanel li .App .three.count, .container .four.columns, .App .four.columns, .container .four.SelectedTaskList, .App .four.SelectedTaskList, .container .SelectedTaskList.AvailableTaskList, .container .AvailableTaskList, .App .AvailableTaskList, .container .LimitPanel li label.four, .LimitPanel li .container label.four, .App .LimitPanel li label.four, .LimitPanel li .App label.four, .container .LimitPanel li label.AvailableTaskList, .LimitPanel li .container label.AvailableTaskList, .container .LimitPanel li .four.count, .LimitPanel li .container .four.count, .App .LimitPanel li .four.count, .LimitPanel li .App .four.count, .container .LimitPanel li .count.AvailableTaskList, .LimitPanel li .container .count.AvailableTaskList, .App .LimitPanel li .count.AvailableTaskList, .LimitPanel li .App .count.AvailableTaskList, .container .five.columns, .App .five.columns, .container .five.SelectedTaskList, .App .five.SelectedTaskList, .container .five.AvailableTaskList, .App .five.AvailableTaskList, .container .LimitPanel li label.five, .LimitPanel li .container label.five, .App .LimitPanel li label.five, .LimitPanel li .App label.five, .container .LimitPanel li .five.count, .LimitPanel li .container .five.count, .App .LimitPanel li .five.count, .LimitPanel li .App .five.count, .container .six.columns, .App .six.columns, .container .six.SelectedTaskList, .App .six.SelectedTaskList, .container .LimitPanel li label.SelectedTaskList, .LimitPanel li .container label.SelectedTaskList, .container .six.AvailableTaskList, .App .six.AvailableTaskList, .container .LimitPanel li label.AvailableTaskList, .LimitPanel li .container label.AvailableTaskList, .container .LimitPanel li label, .LimitPanel li .container label, .App .LimitPanel li label, .LimitPanel li .App label, .container .LimitPanel li .count, .LimitPanel li .container .count, .App .LimitPanel li .count, .LimitPanel li .App .count, .container .seven.columns, .App .seven.columns, .container .SelectedTaskList, .App .SelectedTaskList, .container .seven.AvailableTaskList, .App .seven.AvailableTaskList, .container .AvailableTaskList.SelectedTaskList, .container .LimitPanel li label.seven, .LimitPanel li .container label.seven, .App .LimitPanel li label.seven, .LimitPanel li .App label.seven, .container .LimitPanel li label.SelectedTaskList, .LimitPanel li .container label.SelectedTaskList, .container .LimitPanel li .seven.count, .LimitPanel li .container .seven.count, .App .LimitPanel li .seven.count, .LimitPanel li .App .seven.count, .container .LimitPanel li .count.SelectedTaskList, .LimitPanel li .container .count.SelectedTaskList, .App .LimitPanel li .count.SelectedTaskList, .LimitPanel li .App .count.SelectedTaskList, .container .eight.columns, .App .eight.columns, .container .eight.SelectedTaskList, .App .eight.SelectedTaskList, .container .eight.AvailableTaskList, .App .eight.AvailableTaskList, .container .LimitPanel li label.eight, .LimitPanel li .container label.eight, .App .LimitPanel li label.eight, .LimitPanel li .App label.eight, .container .LimitPanel li .eight.count, .LimitPanel li .container .eight.count, .App .LimitPanel li .eight.count, .LimitPanel li .App .eight.count, .container .nine.columns, .App .nine.columns, .container .nine.SelectedTaskList, .App .nine.SelectedTaskList, .container .nine.AvailableTaskList, .App .nine.AvailableTaskList, .container .LimitPanel li label.nine, .LimitPanel li .container label.nine, .App .LimitPanel li label.nine, .LimitPanel li .App label.nine, .container .LimitPanel li .nine.count, .LimitPanel li .container .nine.count, .App .LimitPanel li .nine.count, .LimitPanel li .App .nine.count, .container .ten.columns, .App .ten.columns, .container .ten.SelectedTaskList, .App .ten.SelectedTaskList, .container .ten.AvailableTaskList, .App .ten.AvailableTaskList, .container .LimitPanel li label.ten, .LimitPanel li .container label.ten, .App .LimitPanel li label.ten, .LimitPanel li .App label.ten, .container .LimitPanel li .ten.count, .LimitPanel li .container .ten.count, .App .LimitPanel li .ten.count, .LimitPanel li .App .ten.count, .container .eleven.columns, .App .eleven.columns, .container .eleven.SelectedTaskList, .App .eleven.SelectedTaskList, .container .eleven.AvailableTaskList, .App .eleven.AvailableTaskList, .container .LimitPanel li label.eleven, .LimitPanel li .container label.eleven, .App .LimitPanel li label.eleven, .LimitPanel li .App label.eleven, .container .LimitPanel li .eleven.count, .LimitPanel li .container .eleven.count, .App .LimitPanel li .eleven.count, .LimitPanel li .App .eleven.count, .container .twelve.columns, .App .twelve.columns, .container .twelve.SelectedTaskList, .App .twelve.SelectedTaskList, .container .TaskSelector .SelectedTaskList.alert, .TaskSelector .container .SelectedTaskList.alert, .App .TaskSelector .SelectedTaskList.alert, .TaskSelector .App .SelectedTaskList.alert, .container .twelve.AvailableTaskList, .App .twelve.AvailableTaskList, .container .TaskSelector .AvailableTaskList.alert, .TaskSelector .container .AvailableTaskList.alert, .App .TaskSelector .AvailableTaskList.alert, .TaskSelector .App .AvailableTaskList.alert, .container .TaskSelector .columns.alert, .TaskSelector .container .columns.alert, .App .TaskSelector .columns.alert, .TaskSelector .App .columns.alert, .container .TaskSelector .LimitPanel li label.alert, .TaskSelector .LimitPanel li .container label.alert, .App .TaskSelector .LimitPanel li label.alert, .TaskSelector .LimitPanel li .App label.alert, .container .LimitPanel li .TaskSelector label.alert, .LimitPanel li .TaskSelector .container label.alert, .App .LimitPanel li .TaskSelector label.alert, .LimitPanel li .TaskSelector .App label.alert, .container .TaskSelector .LimitPanel li .alert.count, .TaskSelector .LimitPanel li .container .alert.count, .App .TaskSelector .LimitPanel li .alert.count, .TaskSelector .LimitPanel li .App .alert.count, .container .LimitPanel li .TaskSelector .alert.count, .LimitPanel li .TaskSelector .container .alert.count, .App .LimitPanel li .TaskSelector .alert.count, .LimitPanel li .TaskSelector .App .alert.count, .container .LimitPanel li label.twelve, .LimitPanel li .container label.twelve, .App .LimitPanel li label.twelve, .LimitPanel li .App label.twelve, .container .LimitPanel li .twelve.count, .LimitPanel li .container .twelve.count, .App .LimitPanel li .twelve.count, .LimitPanel li .App .twelve.count {
+      width: 96%; }
+    .container .one-third.column, .App .one-third.column, .container .TaskSelector .one-third.alert, .TaskSelector .container .one-third.alert, .App .TaskSelector .one-third.alert, .TaskSelector .App .one-third.alert {
+      width: 96%; }
+    .container .two-thirds.column, .App .two-thirds.column, .container .TaskSelector .two-thirds.alert, .TaskSelector .container .two-thirds.alert, .App .TaskSelector .two-thirds.alert, .TaskSelector .App .two-thirds.alert {
+      width: 96%; }
+    .container .full-width.columns, .App .full-width.columns, .container .full-width.SelectedTaskList, .App .full-width.SelectedTaskList, .container .full-width.AvailableTaskList, .App .full-width.AvailableTaskList, .container .LimitPanel li label.full-width, .LimitPanel li .container label.full-width, .App .LimitPanel li label.full-width, .LimitPanel li .App label.full-width, .container .LimitPanel li .full-width.count, .LimitPanel li .container .full-width.count, .App .LimitPanel li .full-width.count, .LimitPanel li .App .full-width.count {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0; }
+    .container .offset-by-one, .App .offset-by-one, .container .offset-by-two, .App .offset-by-two, .container .offset-by-three, .App .offset-by-three, .container .offset-by-four, .App .offset-by-four, .container .offset-by-five, .App .offset-by-five, .container .offset-by-six, .App .offset-by-six, .container .offset-by-seven, .App .offset-by-seven, .container .offset-by-eight, .App .offset-by-eight, .container .offset-by-nine, .App .offset-by-nine, .container .offset-by-ten, .App .offset-by-ten, .container .offset-by-eleven, .App .offset-by-eleven {
+      padding-left: 0; } }
+
+/* MOBILE (LANDSCAPE)
+ * ------------------------------------------------ */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  .container, .App {
+    width: 100%; }
+    .container .column, .App .column, .container .TaskSelector .alert, .TaskSelector .container .alert, .App .TaskSelector .alert, .TaskSelector .App .alert,
+    .container .columns,
+    .App .columns,
+    .container .SelectedTaskList,
+    .App .SelectedTaskList,
+    .container .AvailableTaskList,
+    .App .AvailableTaskList,
+    .container .LimitPanel li label,
+    .LimitPanel li .container label,
+    .App .LimitPanel li label,
+    .LimitPanel li .App label,
+    .container .LimitPanel li .count,
+    .LimitPanel li .container .count,
+    .App .LimitPanel li .count,
+    .LimitPanel li .App .count {
+      max-width: 100%;
+      margin-left: 2%;
+      margin-right: 2%; }
+    .container .one.column, .App .one.column, .container .TaskSelector .one.alert, .TaskSelector .container .one.alert, .App .TaskSelector .one.alert, .TaskSelector .App .one.alert {
+      width: 96%; }
+    .container .one.columns, .App .one.columns, .container .one.SelectedTaskList, .App .one.SelectedTaskList, .container .one.AvailableTaskList, .App .one.AvailableTaskList, .container .LimitPanel li label.one, .LimitPanel li .container label.one, .App .LimitPanel li label.one, .LimitPanel li .App label.one, .container .LimitPanel li .one.count, .LimitPanel li .container .one.count, .App .LimitPanel li .one.count, .LimitPanel li .App .one.count, .container .two.columns, .App .two.columns, .container .two.SelectedTaskList, .App .two.SelectedTaskList, .container .two.AvailableTaskList, .App .two.AvailableTaskList, .container .LimitPanel li label.two, .LimitPanel li .container label.two, .App .LimitPanel li label.two, .LimitPanel li .App label.two, .container .LimitPanel li .two.count, .LimitPanel li .container .two.count, .App .LimitPanel li .two.count, .LimitPanel li .App .two.count, .container .three.columns, .App .three.columns, .container .three.SelectedTaskList, .App .three.SelectedTaskList, .container .three.AvailableTaskList, .App .three.AvailableTaskList, .container .LimitPanel li label.three, .LimitPanel li .container label.three, .App .LimitPanel li label.three, .LimitPanel li .App label.three, .container .LimitPanel li .three.count, .LimitPanel li .container .three.count, .App .LimitPanel li .three.count, .LimitPanel li .App .three.count, .container .four.columns, .App .four.columns, .container .four.SelectedTaskList, .App .four.SelectedTaskList, .container .SelectedTaskList.AvailableTaskList, .container .AvailableTaskList, .App .AvailableTaskList, .container .LimitPanel li label.four, .LimitPanel li .container label.four, .App .LimitPanel li label.four, .LimitPanel li .App label.four, .container .LimitPanel li label.AvailableTaskList, .LimitPanel li .container label.AvailableTaskList, .container .LimitPanel li .four.count, .LimitPanel li .container .four.count, .App .LimitPanel li .four.count, .LimitPanel li .App .four.count, .container .LimitPanel li .count.AvailableTaskList, .LimitPanel li .container .count.AvailableTaskList, .App .LimitPanel li .count.AvailableTaskList, .LimitPanel li .App .count.AvailableTaskList, .container .five.columns, .App .five.columns, .container .five.SelectedTaskList, .App .five.SelectedTaskList, .container .five.AvailableTaskList, .App .five.AvailableTaskList, .container .LimitPanel li label.five, .LimitPanel li .container label.five, .App .LimitPanel li label.five, .LimitPanel li .App label.five, .container .LimitPanel li .five.count, .LimitPanel li .container .five.count, .App .LimitPanel li .five.count, .LimitPanel li .App .five.count, .container .six.columns, .App .six.columns, .container .six.SelectedTaskList, .App .six.SelectedTaskList, .container .LimitPanel li label.SelectedTaskList, .LimitPanel li .container label.SelectedTaskList, .container .six.AvailableTaskList, .App .six.AvailableTaskList, .container .LimitPanel li label.AvailableTaskList, .LimitPanel li .container label.AvailableTaskList, .container .LimitPanel li label, .LimitPanel li .container label, .App .LimitPanel li label, .LimitPanel li .App label, .container .LimitPanel li .count, .LimitPanel li .container .count, .App .LimitPanel li .count, .LimitPanel li .App .count, .container .seven.columns, .App .seven.columns, .container .SelectedTaskList, .App .SelectedTaskList, .container .seven.AvailableTaskList, .App .seven.AvailableTaskList, .container .AvailableTaskList.SelectedTaskList, .container .LimitPanel li label.seven, .LimitPanel li .container label.seven, .App .LimitPanel li label.seven, .LimitPanel li .App label.seven, .container .LimitPanel li label.SelectedTaskList, .LimitPanel li .container label.SelectedTaskList, .container .LimitPanel li .seven.count, .LimitPanel li .container .seven.count, .App .LimitPanel li .seven.count, .LimitPanel li .App .seven.count, .container .LimitPanel li .count.SelectedTaskList, .LimitPanel li .container .count.SelectedTaskList, .App .LimitPanel li .count.SelectedTaskList, .LimitPanel li .App .count.SelectedTaskList, .container .eight.columns, .App .eight.columns, .container .eight.SelectedTaskList, .App .eight.SelectedTaskList, .container .eight.AvailableTaskList, .App .eight.AvailableTaskList, .container .LimitPanel li label.eight, .LimitPanel li .container label.eight, .App .LimitPanel li label.eight, .LimitPanel li .App label.eight, .container .LimitPanel li .eight.count, .LimitPanel li .container .eight.count, .App .LimitPanel li .eight.count, .LimitPanel li .App .eight.count, .container .nine.columns, .App .nine.columns, .container .nine.SelectedTaskList, .App .nine.SelectedTaskList, .container .nine.AvailableTaskList, .App .nine.AvailableTaskList, .container .LimitPanel li label.nine, .LimitPanel li .container label.nine, .App .LimitPanel li label.nine, .LimitPanel li .App label.nine, .container .LimitPanel li .nine.count, .LimitPanel li .container .nine.count, .App .LimitPanel li .nine.count, .LimitPanel li .App .nine.count, .container .ten.columns, .App .ten.columns, .container .ten.SelectedTaskList, .App .ten.SelectedTaskList, .container .ten.AvailableTaskList, .App .ten.AvailableTaskList, .container .LimitPanel li label.ten, .LimitPanel li .container label.ten, .App .LimitPanel li label.ten, .LimitPanel li .App label.ten, .container .LimitPanel li .ten.count, .LimitPanel li .container .ten.count, .App .LimitPanel li .ten.count, .LimitPanel li .App .ten.count, .container .eleven.columns, .App .eleven.columns, .container .eleven.SelectedTaskList, .App .eleven.SelectedTaskList, .container .eleven.AvailableTaskList, .App .eleven.AvailableTaskList, .container .LimitPanel li label.eleven, .LimitPanel li .container label.eleven, .App .LimitPanel li label.eleven, .LimitPanel li .App label.eleven, .container .LimitPanel li .eleven.count, .LimitPanel li .container .eleven.count, .App .LimitPanel li .eleven.count, .LimitPanel li .App .eleven.count, .container .twelve.columns, .App .twelve.columns, .container .twelve.SelectedTaskList, .App .twelve.SelectedTaskList, .container .TaskSelector .SelectedTaskList.alert, .TaskSelector .container .SelectedTaskList.alert, .App .TaskSelector .SelectedTaskList.alert, .TaskSelector .App .SelectedTaskList.alert, .container .twelve.AvailableTaskList, .App .twelve.AvailableTaskList, .container .TaskSelector .AvailableTaskList.alert, .TaskSelector .container .AvailableTaskList.alert, .App .TaskSelector .AvailableTaskList.alert, .TaskSelector .App .AvailableTaskList.alert, .container .TaskSelector .columns.alert, .TaskSelector .container .columns.alert, .App .TaskSelector .columns.alert, .TaskSelector .App .columns.alert, .container .TaskSelector .LimitPanel li label.alert, .TaskSelector .LimitPanel li .container label.alert, .App .TaskSelector .LimitPanel li label.alert, .TaskSelector .LimitPanel li .App label.alert, .container .LimitPanel li .TaskSelector label.alert, .LimitPanel li .TaskSelector .container label.alert, .App .LimitPanel li .TaskSelector label.alert, .LimitPanel li .TaskSelector .App label.alert, .container .TaskSelector .LimitPanel li .alert.count, .TaskSelector .LimitPanel li .container .alert.count, .App .TaskSelector .LimitPanel li .alert.count, .TaskSelector .LimitPanel li .App .alert.count, .container .LimitPanel li .TaskSelector .alert.count, .LimitPanel li .TaskSelector .container .alert.count, .App .LimitPanel li .TaskSelector .alert.count, .LimitPanel li .TaskSelector .App .alert.count, .container .LimitPanel li label.twelve, .LimitPanel li .container label.twelve, .App .LimitPanel li label.twelve, .LimitPanel li .App label.twelve, .container .LimitPanel li .twelve.count, .LimitPanel li .container .twelve.count, .App .LimitPanel li .twelve.count, .LimitPanel li .App .twelve.count {
+      width: 96%; }
+    .container .one-third.column, .App .one-third.column, .container .TaskSelector .one-third.alert, .TaskSelector .container .one-third.alert, .App .TaskSelector .one-third.alert, .TaskSelector .App .one-third.alert {
+      width: 96%; }
+    .container .two-thirds.column, .App .two-thirds.column, .container .TaskSelector .two-thirds.alert, .TaskSelector .container .two-thirds.alert, .App .TaskSelector .two-thirds.alert, .TaskSelector .App .two-thirds.alert {
+      width: 96%; }
+    .container .full-width.columns, .App .full-width.columns, .container .full-width.SelectedTaskList, .App .full-width.SelectedTaskList, .container .full-width.AvailableTaskList, .App .full-width.AvailableTaskList, .container .LimitPanel li label.full-width, .LimitPanel li .container label.full-width, .App .LimitPanel li label.full-width, .LimitPanel li .App label.full-width, .container .LimitPanel li .full-width.count, .LimitPanel li .container .full-width.count, .App .LimitPanel li .full-width.count, .LimitPanel li .App .full-width.count {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0; }
+    .container .offset-by-one, .App .offset-by-one, .container .offset-by-two, .App .offset-by-two, .container .offset-by-three, .App .offset-by-three, .container .offset-by-four, .App .offset-by-four, .container .offset-by-five, .App .offset-by-five, .container .offset-by-six, .App .offset-by-six, .container .offset-by-seven, .App .offset-by-seven, .container .offset-by-eight, .App .offset-by-eight, .container .offset-by-nine, .App .offset-by-nine, .container .offset-by-ten, .App .offset-by-ten, .container .offset-by-eleven, .App .offset-by-eleven {
+      padding-left: 0; } }
+
+/* CLEARING
+ * ------------------------------------------------ */
+.container:after, .App:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden; }
+
+.clearfix, .row, .TaskSelector, .task, .ui, .LimitPanel li, .ServerStatus {
+  zoom: 1; }
+  .clearfix:before, .clearfix:after, .row:before, .TaskSelector:before, .task:before, .ui:before, .LimitPanel li:before, .ServerStatus:before, .row:after, .TaskSelector:after, .task:after, .ui:after, .LimitPanel li:after, .ServerStatus:after {
+    content: "\0020";
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0; }
+  .clearfix:after, .row:after, .TaskSelector:after, .task:after, .ui:after, .LimitPanel li:after, .ServerStatus:after {
+    clear: both; }
+
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0; }
+
+.LoadingScreen {
+  background-color: #282828;
+  height: 100%;
+  width: 100%;
+  color: white;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0; }
+  .LoadingScreen .spinner-text {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 2rem;
+    text-align: center; }
+
+.spinner {
+  font-size: 10px;
+  margin: 50px auto;
+  text-indent: -9999em;
+  width: 11em;
+  height: 11em;
+  border-radius: 50%;
+  background: white;
+  background: -moz-linear-gradient(left, white 10%, rgba(255, 255, 255, 0) 42%);
+  background: -webkit-linear-gradient(left, white 10%, rgba(255, 255, 255, 0) 42%);
+  background: -o-linear-gradient(left, white 10%, rgba(255, 255, 255, 0) 42%);
+  background: -ms-linear-gradient(left, white 10%, rgba(255, 255, 255, 0) 42%);
+  background: linear-gradient(to right, white 10%, rgba(255, 255, 255, 0) 42%);
+  position: relative;
+  -webkit-animation: load3 1.4s infinite linear;
+  animation: load3 1.4s infinite linear;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0); }
+  .spinner:before {
+    width: 50%;
+    height: 50%;
+    background: white;
+    border-radius: 100% 0 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: ''; }
+  .spinner:after {
+    background: #282828;
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+    content: '';
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0; }
+
+@-webkit-keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg); } }
+
+.loading-spinner:before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  margin-left: -10px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  border-top-color: #333;
+  animation: spinner .6s linear infinite; }
+
+hr {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem; }
+
+.App {
+  margin-top: 0.25em; }
+
+.Task {
+  border-width: 2px;
+  border-style: solid; }
+
+.SelectedTaskList {
+  position: fixed;
+  transform: translateX(50%);
+  width: 35em;
+  height: 100%;
+  overflow-y: scroll;
+  padding-bottom: 6em; }
+
+.availabletasks, .availabletasks ul {
+  list-style: none; }
+
+.availabletasks h3.category {
+  text-align: center; }
+
+.availabletasks ul {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em; }
+
+.taskgroup {
+  border: 1px solid grey; }
+
+label {
+  display: inline; }
+
+h1 {
+  font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: 1rem; }
+
+h2 {
+  font-size: 2.2rem;
+  text-align: center; }
+
+h3 {
+  font-size: 1.7rem; }
+
+.view-controls h3 {
+  margin-bottom: 0.1rem; }
+
+.view-controls label {
+  margin-left: 0.5em;
+  margin-right: 1.2em; }
+
+.clickable:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+  .clickable:hover .tooltip {
+    display: inline; }
+
+.task {
+  margin: 0px;
+  margin-bottom: 0.2em;
+  background-color: #e5e5e5;
+  position: relative; }
+  .task .task-info {
+    height: 3em;
+    overflow: hidden; }
+  .task .code {
+    margin-right: 1em; }
+  .task .day {
+    margin-right: 1em; }
+  .task time.time {
+    margin-left: 0.25em;
+    margin-right: 0.25em; }
+  .task .tooltip {
+    display: none;
+    position: absolute;
+    bottom: 0em;
+    right: 0.7em;
+    color: #313131;
+    text-transform: uppercase;
+    text-align: right;
+    font-weight: bold; }
+
+.alert {
+  display: block;
+  padding: 20px;
+  border-left: 5px solid; }
+
+.alert-success {
+  background-color: #D5F5E3;
+  border-left-color: #2ECC71;
+  color: #2ECC71; }
+
+.alert-info {
+  background-color: #D6EAF8;
+  border-left-color: #3498DB;
+  color: #3498DB; }
+
+.alert-warning {
+  background-color: #FCF3CF;
+  border-left-color: #F1C40F;
+  color: #F1C40F; }
+
+.alert-error {
+  background-color: #F2D7D5;
+  border-left-color: #C0392B;
+  color: #C0392B; }
+
+.info-text {
+  font-size: smaller;
+  margin-bottom: 0.5em; }
+
+.TaskSelector p {
+  margin-bottom: 0; }
+
+.SelectedTaskList ul {
+  list-style: none; }
+
+.LoginScreen .loading-spinner {
+  display: inline;
+  position: relative;
+  margin-left: 1.5em; }
+
+.LoginScreen .needMargin {
+  margin: 0 15px 0 0; }
+
+.LimitPanel h2 {
+  text-align: left;
+  margin-bottom: 0.3em; }
+
+.LimitPanel ul {
+  width: 19em; }
+
+.LimitPanel li {
+  margin-bottom: 0.2em; }
+  .LimitPanel li.violation {
+    border-left: 5px solid;
+    background-color: #F2D7D5;
+    border-left-color: #C0392B; }
+
+.ServerStatus {
+  display: inline; }
+  .ServerStatus label {
+    margin-right: 0.75em; }
+  .ServerStatus p {
+    display: inline; }
+  .ServerStatus .status-icon {
+    display: inline; }
+    .ServerStatus .status-icon.server-online:before {
+      background-color: #94E185;
+      border-color: #78D965;
+      box-shadow: 0px 0px 4px 1px #94E185; }
+    .ServerStatus .status-icon.server-offline:before {
+      background-color: #C9404D;
+      border-color: #C42C3B;
+      box-shadow: 0px 0px 4px 1px #C9404D; }
+    .ServerStatus .status-icon:before {
+      content: ' ';
+      display: inline-block;
+      width: 1rem;
+      height: 1rem;
+      margin-right: 0.5em;
+      border: 1px solid #000;
+      border-radius: 1rem; }
+
+.SavingPanel {
+  position: fixed;
+  top: 11px;
+  left: 11px; }
+  .SavingPanel .loading-spinner {
+    display: inline;
+    margin-left: 6em; }
+
+svg .task p {
+  font-size: 0.95rem;
+  hyphens: auto;
+  overflow: hidden;
+  margin: 0.25rem; }
