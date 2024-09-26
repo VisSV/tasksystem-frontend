@@ -8,7 +8,7 @@ var config = {
 
   //prod: use https
 protocol: "https",
-hostname: "old-copy-tasksystem-9f16a052b963.herokuapp.com", //OLD - don't use
+hostname: "tasksystem-frontend-1ddd9ca6aed7.herokuapp.com", 
 
   colorScale: [
     "",
