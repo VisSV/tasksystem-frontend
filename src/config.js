@@ -9,6 +9,7 @@ var config = {
   //prod: use https
 protocol: "https",
 hostname: "tasksystem-frontend-1ddd9ca6aed7.herokuapp.com", 
+port: process.env.PORT || 8080, 
 
   colorScale: [
     "",
