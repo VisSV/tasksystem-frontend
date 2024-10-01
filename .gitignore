@@ -21,3 +21,8 @@ yarn-debug.log*
 yarn-error.log*
 
 # src/App.css # Heroku needs this! Don't ignore!
+
+# Related to virtual environment
+bin/
+lib/
+venv/

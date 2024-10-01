@@ -48,3 +48,36 @@ scp -i PATH_TO_PEM_KEY -r PATH_TO_BUILD_FOLDER\* ubuntu@ec2-54-201-77-132.us-wes
 ## Test
 
 The URL for the VIS SV task system is at http://vissv.org/tasksystem
+
+
+## Katy's notes
+
+To deploy, you need to make some changes to `package.json` and `config.js`.
+
+In `package.json`, to run the code locally, you need:
+```
+"scripts": {
+    ...
+    "start": "npm-run-all -p watch-css start-js",
+    "build": "npm run build-css && react-scripts build",
+    ...
+}
+```
+
+However, when you are deploying the code to Heroku, you need:
+```
+"scripts": {
+    ...
+  "start": "react-scripts start",
+  "build": "react-scripts build",
+  "heroku-postbuild": "npm run build"
+    ...
+}
+```
+The heroku-postbuild script ensures your app is built when deployed to Heroku.
+
+<!-- Still in `package.json`, we need to change how we start the script.
+
+Local (devlopement): `"start": "react-scripts start",`
+
+Production (Heroku): `"start": "serve -s build"` -->
