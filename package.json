@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "tasksystem/",
   "dependencies": {
-    "axios": "^0.20.0",
+    "axios": "^0.21.2",
     "color": "^2.0.0",
     "cortexjs": "^2.1.1",
     "d3": "^4.10.2",
